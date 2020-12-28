@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_splash_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/tvonlie"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.elancier.healthzone.SplashScreen"
+    tools:showIn="@layout/activity_splash_screen">
+
+  <!--  <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#50000000"
+        android:src="@drawable/ayurvetha"
+        android:scaleType="centerCrop"/>-->
+
+
+  <ImageView
+      android:id="@+id/imageView4"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:adjustViewBounds="true"
+      android:scaleType="centerCrop"
+      app:srcCompat="@drawable/tvonlie" />
+
+  <ImageView
+      android:id="@+id/imageView5"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:adjustViewBounds="true"
+      android:visibility="gone"
+      app:srcCompat="@mipmap/login_logo" />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="72dp"
+
+      android:gravity="center"
+      android:text='" Do reap wonderful life "'
+
+      android:textAlignment="center"
+      android:textColor="@color/colorPrimaryDark"
+      android:textSize="22sp"
+      android:textStyle="bold|italic"
+      android:visibility="gone"
+      app:fontFamily="serif" />
+
+  <ImageView
+      android:id="@+id/logo"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_gravity="center"
+      android:src="@drawable/v3onlinetv"
+      android:visibility="gone"
+      tools:visibility="gone" />
+
+  <FrameLayout
+      android:id="@+id/frameLayout1"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:visibility="gone">
+
+    <VideoView
+        android:id="@+id/geoloc_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/placeholder"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"></FrameLayout>
+  </FrameLayout>
+
+
+</FrameLayout>

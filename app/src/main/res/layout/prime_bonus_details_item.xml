@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/bonusid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="87dp"
+                android:singleLine="true"
+                android:text="9876543210"
+                android:textColor="#333333"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/spdate"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="end"
+                android:text="12-12-9001"
+                android:textColor="#454545"
+                android:textSize="14dp"
+                android:textStyle="italic" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/bonusamt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs.1000023"
+                android:textColor="#666666"
+                android:layout_marginRight="146dp"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/datetime"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="2018-03-13 14:53:41"
+                android:textColor="#666666"
+                android:gravity="end"
+                android:layout_gravity="right"
+                android:textSize="13dp" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line_shadow" />
+
+</LinearLayout>

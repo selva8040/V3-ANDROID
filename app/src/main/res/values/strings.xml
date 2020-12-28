@@ -1,0 +1,733 @@
+<resources>
+    <color name="color1">#dacac9</color>
+    <color name="color2">#fa8072</color>
+    <color name="color3">#ee9a49</color>
+    <color name="color4">#f2c6c6</color>
+    <color name="color5">#A6AEE7</color>
+    <color name="color6">#4CAF50</color>
+
+
+    <color name="color7">#BAD350</color>
+    <color name="color8">#FFB00F</color>
+    <color name="color8red">#DC143C</color>
+
+    <color name="color9">#ddc0c1</color>
+    <color name="color10">#09F3D1</color>
+    <color name="color11">#ffdddd</color>
+    <color name="color12">#E57373</color>
+    <color name="color22">#7E8ED6</color>
+    <color name="color23">#A4D81C95</color>
+    <color name="color24">#1cb5d8</color>
+
+
+    <color name="color13">#e9c2a6</color>
+    <color name="color14">#FF99FF</color>
+    <color name="color15">#f2e6d7</color>
+    <string name="app_name">V3 Online TV</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_forgot">Forgot password</string>
+    <string name="title_activity_sign_up">SignUp</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="Applicant_Personal_Detail">Applicant Personal Detail</string>
+    <string name="DOB">DOB</string>
+    <string name="DOBst">DOB<font fgcolor="red"> *</font></string>
+    <string name="Wedding_Date">Wedding Date</string>
+    <string name="Single">Single</string>
+    <string name="Married">Married</string>
+    <string name="Gender">Gender</string>
+    <string name="Genderst">Gender<font fgcolor="red"> *</font></string>
+    <string name="Pan_No">Pan No</string>
+    <string name="Mobile">Mobile<font fgcolor="red"> *</font></string>
+    <string name="Namest">Name<font fgcolor="red"> *</font></string>
+    <string name="Mobilest">Mobile<font fgcolor="red"> *</font></string>
+    <string name="Mobilewhatsaapp">WhatsApp No.<font fgcolor="red"> *</font></string>
+    <string name="lang">Language<font fgcolor="red"> *</font></string>
+    <string name="utype">Type<font fgcolor="red"> *</font></string>
+
+    <string name="In_Take_Datest">In Take Date<font fgcolor="red"> *</font></string>
+    <string name="Product_Codest">Product Code<font fgcolor="red"> *</font></string>
+    <string name="SponsorId">Sponsor Unique Id<font fgcolor="red"> *</font></string>
+    <string name="Sponsorname">Sponsor Name<font fgcolor="red"> *</font></string>
+    <string name="Upline">Upline<font fgcolor="red"> *</font></string>
+    <string name="Position">Position<font fgcolor="red"> *</font></string>
+    <string name="Uplineuser">Upline Username<font fgcolor="red"> *</font></string>
+    <string name="Username">Username<font fgcolor="red"> *</font></string>
+    <string name="Name1">Name<font fgcolor="red"> *</font></string>
+    <string name="SalesName1">Sales Name<font fgcolor="red"> *</font></string>
+    <string name="manpinno">Pin No<font fgcolor="red"> *</font></string>
+    <string name="Pinno">Pin No</string>
+    <string name="Storename">Store Name</string>
+    <string name="Pintype">Pin Type</string>
+    <string name="Whatsapp_Mobile_Number">Whatsapp Mobile Number</string>
+    <string name="Tel">Tel</string>
+    <string name="Tel_Ofz">Tel (Office)</string>
+    <string name="SponsorBounus">Sponsor Bonus</string>
+    <string name="PairBounus">Pair Match Bonus</string>
+    <string name="PointDetails">Point Details</string>
+    <string name="Email_ID">Email ID</string>
+    <string name="Account_Number">Account Number<font fgcolor="red"> *</font></string>
+    <string name="IFSC">IFSC<font fgcolor="red"> *</font></string>
+    <string name="Last_Transaction_Date">Last Transaction Date</string>
+    <string name="House_No">House No</string>
+    <string name="Floor">Floor</string>
+    <string name="Street_No">Street No</string>
+    <string name="Street_Name">Street Name</string>
+    <string name="City">City</string>
+    <string name="Cityst">City<font fgcolor="red"> *</font></string>
+    <string name="State">State</string>
+    <string name="Statest">State<font fgcolor="red"> *</font></string>
+    <string name="Pincode">Pincode</string>
+    <string name="Pincodest">Pincode<font fgcolor="red"> *</font></string>
+    <string name="Permise_Name">Permise Name</string>
+    <string name="Area">Area</string>
+    <string name="Landmark">Landmark</string>
+    <string name="Company_Name">Company Name</string>
+    <string name="Designation">Designation</string>
+    <string name="Investment">Investment</string>
+    <string name="Monthly_Income">Monthly Income</string>
+    <string name="Building_No">Building No</string>
+    <string name="Primary">Primary</string>
+    <string name="Name">Name</string>
+    <string name="Sponsor_Unique_IDst">Sponsor Unique ID<font fgcolor="red"> *</font></string>
+    <string name="Sponsor_Namest">Sponsor Name<font fgcolor="red"> *</font></string>
+    <string name="Uniquest">Unique<font fgcolor="red"> *</font></string>
+    <string name="Sponsor_Usernamest">Sponsor Username<font fgcolor="red"> *</font></string>
+    <string name="Relationship">Relationship</string>
+    <string name="Relationshipst">Relationship<font fgcolor="red"> *</font></string>
+    <string name="rssym">\u20B9</string>
+    <string name="DOJ">Date Of Joining</string>
+    <string name="Bank_Name">Bank Name <font fgcolor="red"> *</font></string>
+    <string name="Branch_Name">Branch Name<font fgcolor="red"> *</font></string>
+    <string name="ID_Proof_Name">ID Proof Name</string>
+    <string name="ID_Proof_Number">ID Proof Number</string>
+    <string name="ID_Proof_Image">ID Proof Image</string>
+    <string name="User_Name">User Name</string>
+    <string name="User_Namest">User Name<font fgcolor="red"> *</font></string>
+    <string name="Password">Password</string>
+    <string name="Passwordst">Password<font fgcolor="red"> *</font></string>
+    <string name="Confirm_Password">Confirm Password</string>
+    <string name="Confirm_Passwordst">Confirm Password<font fgcolor="red"> *</font></string>
+    <string name="Account_Type">Account Type<font fgcolor="red"> *</font></string>
+    <string name="Male">Male</string>
+    <string name="FeMale">Female</string>
+    <string name="Status">Status</string>
+    <string name="Sponsor_Name">Sponsor Name</string>
+    <string name="Sponsor_FullName">Sponsor FullName</string>
+    <string name="Address">Address</string>
+    <string name="Addressst">Address<font fgcolor="red"> *</font></string>
+    <string name="District">District</string>
+    <string name="Districtst">District<font fgcolor="red"> *</font></string>
+    <string name="First_Name">First Name</string>
+    <string name="name">Name<font fgcolor="red"> *</font></string>
+    <string name="First_Namest">First Name<font fgcolor="red"> *</font></string>
+    <string name="Last_Name">Last Name</string>
+    <string name="Last_Namest">Last Name<font fgcolor="red"> *</font></string>
+    <string name="Mother_Name">Mother Name</string>
+    <string name="Mother_Namest">Mother Name<font fgcolor="red"> *</font></string>
+    <string name="Submit">Submit</string>
+    <string name="Others">Others</string>
+    <string name="passhint"><font color="red" size="10">min 8 characters</font></string>
+    <string name="title_activity_my_portal">MyPortal</string>
+    <string name="User_ID">User ID</string>
+    <string name="Date_Of_Joing">Date Of Joining</string>
+    <string name="IBV">IBV</string>
+    <string name="GBV">GBV</string>
+    <string name="Receivable_Amount">Receivable Amount</string>
+    <string name="Rs">Rs.</string>
+    <string name="Choose_File">Choose Image</string>
+    <string name="No_File_Chosen">No File Chosen</string>
+    <string name="MICR">MICR<font fgcolor="red"> *</font></string>
+    <string name="Profile">Profile</string>
+    <string name="MY_Portal">My Portal</string>
+    <string name="My_Info">My Info</string>
+    <string name="My_Bank_Details">My Bank Details</string>
+    <string name="Tree">Tree</string>
+    <string name="My_Direct_Team">My Direct Team</string>
+    <string name="Genealogy_Tree">Genealogy Tree</string>
+    <string name="IBV_Reports">IBV Reports</string>
+    <string name="GBV_Reports">GBV Reports</string>
+    <string name="Reports">Reports</string>
+    <string name="Logout">Logout</string>
+    <string name="Bonus_Reports">Bonus Reports</string>
+    <string name="tds_reports">TDS Reports</string>
+    <string name="Window_Reports">Window Reports</string>
+    <string name="Withdraw_Reports">Withdraw Reports</string>
+    <string name="My_Sponsor">My Sponsor</string>
+    <string name="title_activity_home_page">Dashboard</string>
+    <string name="Home">Home</string>
+    <string name="golon">:</string>
+    <string name="my_num">+917200232357</string>
+    <string name="From_Date">From Date</string>
+    <string name="Total_Reward">Total Reward</string>
+    <string name="To_Date">To Date</string>
+    <string name="Filter">Filter</string>
+    <string name="Edit">Edit</string>
+    <string name="Search">Search</string>
+    <string name="Stock_List">Stock List</string>
+    <string name="PinDetails">Pin Details</string>
+    <string name="Overallbonus">Overall Bonus</string>
+    <string name="Autowithdraw">Auto Withdraw</string>
+    <string name="Sales_Point">Sales Point</string>
+    <string name="Sales_Id">Sales ID</string>
+    <string name="Sales_Report">Sales Report</string>
+    <string name="Curpswd">Current Password<font fgcolor="red"> *</font></string>
+    <string name="Newpswd">New Password<font fgcolor="red"> *</font></string>
+    <string name="Confirmpswd">Confirm Password<font fgcolor="red"> *</font></string>
+    <string name="pin">Your V3 Pin<font fgcolor="red"> *</font></string>
+    <string name="Purchase_Report">Purchase Report</string>
+    <string name="Customer_Namest">Name<font fgcolor="red"> *</font></string>
+    <string name="Customer_Address">Address<font fgcolor="red"> *</font></string>
+    <string name="Customer_City">City<font fgcolor="red"> *</font></string>
+    <string name="Customer_pincode">Pin Code<font fgcolor="red"> *</font></string>
+    <string name="Customer_Id">Customer Id<font fgcolor="red"> *</font></string>
+    <string name="Categoryst">Category<font fgcolor="red"> *</font></string>
+    <string name="Sub_Categoryst">Sub Category<font fgcolor="red"> *</font></string>
+    <string name="Product_Namest">Product Name<font fgcolor="red"> *</font></string>
+    <string name="Product_MRPst">Product MRP<font fgcolor="red"> *</font></string>
+    <string name="Stock_in_Handst">Stock in Hand<font fgcolor="red"> *</font></string>
+    <string name="No_of_Qtyst">No of Qty<font fgcolor="red"> *</font></string>
+    <string name="Total_Amountst">Total Amount<font fgcolor="red"> *</font></string>
+    <string name="Storest">Store<font fgcolor="red"> *</font></string>
+    <string name="Typest">Type<font fgcolor="red"> *</font></string>
+    <string name="Product_DP_Pricest">Product DP Price<font fgcolor="red"> *</font></string>
+    <string name="Add_Sales">Add Sales</string>
+    <string name="Add_Customer">Add Customer</string>
+    <string name="Grand_Total">Grand Total</string>
+    <string name="Add">Add</string>
+    <string name="About_Us">About Us</string>
+    <string name="Contact_Us">Contact Us</string>
+    <string name="about">We are V3 Online TV, Our Speciality is our Infrared saunas,  A 20 minute session of Infrared Sauna induces profuse sweating and detoxifies the body promoting relaxation and comfort. Besides, it also offers a number of health benefits such as boosting blood circulation, weight loss, relieves muscle and joint pains, acne, eczema, and reduces cellulites.</string>
+    <string name="Vesion">Vesion 2.1.0</string>
+    <string name="Rate_This_App">Rate this app</string>
+    <string name="Share">Share</string>
+    <string name="About">About</string>
+
+    <string name="contact_us">Please write to us using the contact form below if you would like to know more about the opportunity, share ideas, give feedback, have complaints, or would simply like to request a catalogue</string>
+    <string name="Address1">No.18, G.S.T.Road,Nethaji Nagar,</string>
+    <string name="Address2">Puliyankulam Bus Stop,Madurai-625006.</string>
+    <string name="Phone_dot">Phone :</string>
+    <string name="ph_num">+91 7708825000</string>
+    <string name="Email_dot">Email :</string>
+    <string name="mail">v3onlinetvhelp@gmail.com</string>
+    <string name="More">More</string>
+    <string name="Feedback">Feedback</string>
+    <string name="Invite_Friends">Invite Friends</string>
+    <string name="Contact">Contact</string>
+    <string name="AutoFilling">Auto Filling</string>
+    <string name="Binary">Binary</string>
+    <string name="BonusReports">Bonus Reports</string>
+    <string name="Binarytree">Tree</string>
+    <string name="Purchase_Details">Purchase Details</string>
+    <string name="Purchase_Quotation">Purchase Quotation</string>
+    <string name="Live_Fill_Bonus">Live Fill Bonus</string>
+    <string name="BankName">Bank Name</string>
+
+    <string name="Branch">Branch</string>
+    <string name="declare">I hereby declare that all the particulars furnished by me in this registration are true, correct and complete to the best of my knowledge and belief. In the event of any information being found false or incorrect or ineligibility being detected before or after that inserted, my super salary will be canceled by V3 Online TV.</string>
+    <string name="jsoncountry">[
+  {
+    "Status": "Success",
+"Response":
+[
+{"ctime":"Andorra - Andorra","timezone":"Europe\/Andorra"},
+{"ctime":"United Arab Emirates - Dubai","timezone":"Asia\/Dubai"},
+{"ctime":"Afghanistan - Kabul","timezone":"Asia\/Kabul"},
+{"ctime":"Antigua and Barbuda - Antigua","timezone":"America\/Antigua"},
+{"ctime":"Anguilla - Anguilla","timezone":"America\/Anguilla"},
+{"ctime":"Albania - Tirane","timezone":"Europe\/Tirane"},
+{"ctime":"Armenia - Yerevan","timezone":"Asia\/Yerevan"},
+{"ctime":"Angola - Luanda","timezone":"Africa\/Luanda"},
+{"ctime":"Antarctica - McMurdo","timezone":"Antarctica\/McMurdo"},
+{"ctime":"Antarctica - Casey","timezone":"Antarctica\/Casey"},
+{"ctime":"Antarctica - Davis","timezone":"Antarctica\/Davis"},
+{"ctime":"Antarctica - DumontDUrville","timezone":"Antarctica\/DumontDUrville"},
+{"ctime":"Antarctica - Mawson","timezone":"Antarctica\/Mawson"},
+{"ctime":"Antarctica - Palmer","timezone":"Antarctica\/Palmer"},
+{"ctime":"Antarctica - Rothera","timezone":"Antarctica\/Rothera"},
+{"ctime":"Antarctica - Syowa","timezone":"Antarctica\/Syowa"},
+{"ctime":"Antarctica - Troll","timezone":"Antarctica\/Troll"},
+{"ctime":"Antarctica - Vostok","timezone":"Antarctica\/Vostok"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Buenos_Aires"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Cordoba"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Salta"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Jujuy"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Tucuman"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Catamarca"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/La_Rioja"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/San_Juan"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Mendoza"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/San_Luis"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Rio_Gallegos"},
+{"ctime":"Argentina - Argentina","timezone":"America\/Argentina\/Ushuaia"},
+{"ctime":"American Samoa - Pago_Pago","timezone":"Pacific\/Pago_Pago"},
+{"ctime":"Austria - Vienna","timezone":"Europe\/Vienna"},
+{"ctime":"Australia - Lord_Howe","timezone":"Australia\/Lord_Howe"},
+{"ctime":"Australia - Macquarie","timezone":"Antarctica\/Macquarie"},
+{"ctime":"Australia - Hobart","timezone":"Australia\/Hobart"},
+{"ctime":"Australia - Currie","timezone":"Australia\/Currie"},
+{"ctime":"Australia - Melbourne","timezone":"Australia\/Melbourne"},
+{"ctime":"Australia - Sydney","timezone":"Australia\/Sydney"},
+{"ctime":"Australia - Broken_Hill","timezone":"Australia\/Broken_Hill"},
+{"ctime":"Australia - Brisbane","timezone":"Australia\/Brisbane"},
+{"ctime":"Australia - Lindeman","timezone":"Australia\/Lindeman"},
+{"ctime":"Australia - Adelaide","timezone":"Australia\/Adelaide"},
+{"ctime":"Australia - Darwin","timezone":"Australia\/Darwin"},
+{"ctime":"Australia - Perth","timezone":"Australia\/Perth"},
+{"ctime":"Australia - Eucla","timezone":"Australia\/Eucla"},
+{"ctime":"Aruba - Aruba","timezone":"America\/Aruba"},
+{"ctime":"Åland Islands - Mariehamn","timezone":"Europe\/Mariehamn"},
+{"ctime":"Azerbaijan - Baku","timezone":"Asia\/Baku"},
+{"ctime":"Bosnia and Herzegovina - Sarajevo","timezone":"Europe\/Sarajevo"},
+{"ctime":"Barbados - Barbados","timezone":"America\/Barbados"},
+{"ctime":"Bangladesh - Dhaka","timezone":"Asia\/Dhaka"},
+{"ctime":"Belgium - Brussels","timezone":"Europe\/Brussels"},
+{"ctime":"Burkina Faso - Ouagadougou","timezone":"Africa\/Ouagadougou"},
+{"ctime":"Bulgaria - Sofia","timezone":"Europe\/Sofia"},
+{"ctime":"Bahrain - Bahrain","timezone":"Asia\/Bahrain"},
+{"ctime":"Burundi - Bujumbura","timezone":"Africa\/Bujumbura"},
+{"ctime":"Benin - Porto-Novo","timezone":"Africa\/Porto-Novo"},
+{"ctime":"Saint Barthélemy - St_Barthelemy","timezone":"America\/St_Barthelemy"},
+{"ctime":"Bermuda - Bermuda","timezone":"Atlantic\/Bermuda"},
+{"ctime":"Brunei Darussalam - Brunei","timezone":"Asia\/Brunei"},
+{"ctime":"Bolivia, Plurinational State of - La_Paz","timezone":"America\/La_Paz"},
+{"ctime":"Bonaire, Sint Eustatius and Saba - Kralendijk","timezone":"America\/Kralendijk"},
+{"ctime":"Brazil - Noronha","timezone":"America\/Noronha"},
+{"ctime":"Brazil - Belem","timezone":"America\/Belem"},
+{"ctime":"Brazil - Fortaleza","timezone":"America\/Fortaleza"},
+{"ctime":"Brazil - Recife","timezone":"America\/Recife"},
+{"ctime":"Brazil - Araguaina","timezone":"America\/Araguaina"},
+{"ctime":"Brazil - Maceio","timezone":"America\/Maceio"},
+{"ctime":"Brazil - Bahia","timezone":"America\/Bahia"},
+{"ctime":"Brazil - Sao_Paulo","timezone":"America\/Sao_Paulo"},
+{"ctime":"Brazil - Campo_Grande","timezone":"America\/Campo_Grande"},
+{"ctime":"Brazil - Cuiaba","timezone":"America\/Cuiaba"},
+{"ctime":"Brazil - Santarem","timezone":"America\/Santarem"},
+{"ctime":"Brazil - Porto_Velho","timezone":"America\/Porto_Velho"},
+{"ctime":"Brazil - Boa_Vista","timezone":"America\/Boa_Vista"},
+{"ctime":"Brazil - Manaus","timezone":"America\/Manaus"},
+{"ctime":"Brazil - Eirunepe","timezone":"America\/Eirunepe"},
+{"ctime":"Brazil - Rio_Branco","timezone":"America\/Rio_Branco"},
+{"ctime":"Bahamas - Nassau","timezone":"America\/Nassau"},
+{"ctime":"Bhutan - Thimphu","timezone":"Asia\/Thimphu"},
+{"ctime":"Botswana - Gaborone","timezone":"Africa\/Gaborone"},
+{"ctime":"Belarus - Minsk","timezone":"Europe\/Minsk"},
+{"ctime":"Belize - Belize","timezone":"America\/Belize"},
+{"ctime":"Canada - St_Johns","timezone":"America\/St_Johns"},
+{"ctime":"Canada - Halifax","timezone":"America\/Halifax"},
+{"ctime":"Canada - Glace_Bay","timezone":"America\/Glace_Bay"},
+{"ctime":"Canada - Moncton","timezone":"America\/Moncton"},
+{"ctime":"Canada - Goose_Bay","timezone":"America\/Goose_Bay"},
+{"ctime":"Canada - Blanc-Sablon","timezone":"America\/Blanc-Sablon"},
+{"ctime":"Canada - Toronto","timezone":"America\/Toronto"},
+{"ctime":"Canada - Nipigon","timezone":"America\/Nipigon"},
+{"ctime":"Canada - Thunder_Bay","timezone":"America\/Thunder_Bay"},
+{"ctime":"Canada - Iqaluit","timezone":"America\/Iqaluit"},
+{"ctime":"Canada - Pangnirtung","timezone":"America\/Pangnirtung"},
+{"ctime":"Canada - Atikokan","timezone":"America\/Atikokan"},
+{"ctime":"Canada - Winnipeg","timezone":"America\/Winnipeg"},
+{"ctime":"Canada - Rainy_River","timezone":"America\/Rainy_River"},
+{"ctime":"Canada - Resolute","timezone":"America\/Resolute"},
+{"ctime":"Canada - Rankin_Inlet","timezone":"America\/Rankin_Inlet"},
+{"ctime":"Canada - Regina","timezone":"America\/Regina"},
+{"ctime":"Canada - Swift_Current","timezone":"America\/Swift_Current"},
+{"ctime":"Canada - Edmonton","timezone":"America\/Edmonton"},
+{"ctime":"Canada - Cambridge_Bay","timezone":"America\/Cambridge_Bay"},
+{"ctime":"Canada - Yellowknife","timezone":"America\/Yellowknife"},
+{"ctime":"Canada - Inuvik","timezone":"America\/Inuvik"},
+{"ctime":"Canada - Creston","timezone":"America\/Creston"},
+{"ctime":"Canada - Dawson_Creek","timezone":"America\/Dawson_Creek"},
+{"ctime":"Canada - Fort_Nelson","timezone":"America\/Fort_Nelson"},
+{"ctime":"Canada - Vancouver","timezone":"America\/Vancouver"},
+{"ctime":"Canada - Whitehorse","timezone":"America\/Whitehorse"},
+{"ctime":"Canada - Dawson","timezone":"America\/Dawson"},
+{"ctime":"Cocos (Keeling) Islands - Cocos","timezone":"Indian\/Cocos"},
+{"ctime":"Congo, the Democratic Republic of the - Kinshasa","timezone":"Africa\/Kinshasa"},
+{"ctime":"Congo, the Democratic Republic of the - Lubumbashi","timezone":"Africa\/Lubumbashi"},
+{"ctime":"Central African Republic - Bangui","timezone":"Africa\/Bangui"},
+{"ctime":"Congo - Brazzaville","timezone":"Africa\/Brazzaville"},
+{"ctime":"Switzerland - Zurich","timezone":"Europe\/Zurich"},
+{"ctime":"Côte d'Ivoire - Abidjan","timezone":"Africa\/Abidjan"},
+{"ctime":"Cook Islands - Rarotonga","timezone":"Pacific\/Rarotonga"},
+{"ctime":"Chile - Santiago","timezone":"America\/Santiago"},
+{"ctime":"Chile - Punta_Arenas","timezone":"America\/Punta_Arenas"},
+{"ctime":"Chile - Easter","timezone":"Pacific\/Easter"},
+{"ctime":"Cameroon - Douala","timezone":"Africa\/Douala"},
+{"ctime":"China - Shanghai","timezone":"Asia\/Shanghai"},
+{"ctime":"China - Urumqi","timezone":"Asia\/Urumqi"},
+{"ctime":"Colombia - Bogota","timezone":"America\/Bogota"},
+{"ctime":"Costa Rica - Costa_Rica","timezone":"America\/Costa_Rica"},
+{"ctime":"Cuba - Havana","timezone":"America\/Havana"},
+{"ctime":"Cape Verde - Cape_Verde","timezone":"Atlantic\/Cape_Verde"},
+{"ctime":"Curaçao - Curacao","timezone":"America\/Curacao"},
+{"ctime":"Christmas Island - Christmas","timezone":"Indian\/Christmas"},
+{"ctime":"Cyprus - Nicosia","timezone":"Asia\/Nicosia"},
+{"ctime":"Cyprus - Famagusta","timezone":"Asia\/Famagusta"},
+{"ctime":"Czech Republic - Prague","timezone":"Europe\/Prague"},
+{"ctime":"Germany - Berlin","timezone":"Europe\/Berlin"},
+{"ctime":"Germany - Busingen","timezone":"Europe\/Busingen"},
+{"ctime":"Djibouti - Djibouti","timezone":"Africa\/Djibouti"},
+{"ctime":"Denmark - Copenhagen","timezone":"Europe\/Copenhagen"},
+{"ctime":"Dominica - Dominica","timezone":"America\/Dominica"},
+{"ctime":"Dominican Republic - Santo_Domingo","timezone":"America\/Santo_Domingo"},
+{"ctime":"Algeria - Algiers","timezone":"Africa\/Algiers"},
+{"ctime":"Ecuador - Guayaquil","timezone":"America\/Guayaquil"},
+{"ctime":"Ecuador - Galapagos","timezone":"Pacific\/Galapagos"},
+{"ctime":"Estonia - Tallinn","timezone":"Europe\/Tallinn"},
+{"ctime":"Egypt - Cairo","timezone":"Africa\/Cairo"},
+{"ctime":"Western Sahara - El_Aaiun","timezone":"Africa\/El_Aaiun"},
+{"ctime":"Eritrea - Asmara","timezone":"Africa\/Asmara"},
+{"ctime":"Spain - Madrid","timezone":"Europe\/Madrid"},
+{"ctime":"Spain - Ceuta","timezone":"Africa\/Ceuta"},
+{"ctime":"Spain - Canary","timezone":"Atlantic\/Canary"},
+{"ctime":"Ethiopia - Addis_Ababa","timezone":"Africa\/Addis_Ababa"},
+{"ctime":"Finland - Helsinki","timezone":"Europe\/Helsinki"},
+{"ctime":"Fiji - Fiji","timezone":"Pacific\/Fiji"},
+{"ctime":"Falkland Islands (Malvinas) - Stanley","timezone":"Atlantic\/Stanley"},
+{"ctime":"Micronesia, Federated States of - Chuuk","timezone":"Pacific\/Chuuk"},
+{"ctime":"Micronesia, Federated States of - Pohnpei","timezone":"Pacific\/Pohnpei"},
+{"ctime":"Micronesia, Federated States of - Kosrae","timezone":"Pacific\/Kosrae"},
+{"ctime":"Faroe Islands - Faroe","timezone":"Atlantic\/Faroe"},
+{"ctime":"France - Paris","timezone":"Europe\/Paris"},
+{"ctime":"Gabon - Libreville","timezone":"Africa\/Libreville"},
+{"ctime":"United Kingdom - London","timezone":"Europe\/London"},
+{"ctime":"Grenada - Grenada","timezone":"America\/Grenada"},
+{"ctime":"Georgia - Tbilisi","timezone":"Asia\/Tbilisi"},
+{"ctime":"French Guiana - Cayenne","timezone":"America\/Cayenne"},
+{"ctime":"Guernsey - Guernsey","timezone":"Europe\/Guernsey"},
+{"ctime":"Ghana - Accra","timezone":"Africa\/Accra"},
+{"ctime":"Gibraltar - Gibraltar","timezone":"Europe\/Gibraltar"},
+{"ctime":"Greenland - Godthab","timezone":"America\/Godthab"},
+{"ctime":"Greenland - Danmarkshavn","timezone":"America\/Danmarkshavn"},
+{"ctime":"Greenland - Scoresbysund","timezone":"America\/Scoresbysund"},
+{"ctime":"Greenland - Thule","timezone":"America\/Thule"},
+{"ctime":"Gambia - Banjul","timezone":"Africa\/Banjul"},
+{"ctime":"Guinea - Conakry","timezone":"Africa\/Conakry"},
+{"ctime":"Guadeloupe - Guadeloupe","timezone":"America\/Guadeloupe"},
+{"ctime":"Equatorial Guinea - Malabo","timezone":"Africa\/Malabo"},
+{"ctime":"Greece - Athens","timezone":"Europe\/Athens"},
+{"ctime":"South Georgia and the South Sandwich Islands - South_Georgia","timezone":"Atlantic\/South_Georgia"},
+{"ctime":"Guatemala - Guatemala","timezone":"America\/Guatemala"},
+{"ctime":"Guam - Guam","timezone":"Pacific\/Guam"},
+{"ctime":"Guinea-Bissau - Bissau","timezone":"Africa\/Bissau"},
+{"ctime":"Guyana - Guyana","timezone":"America\/Guyana"},
+{"ctime":"Hong Kong - Hong_Kong","timezone":"Asia\/Hong_Kong"},
+{"ctime":"Honduras - Tegucigalpa","timezone":"America\/Tegucigalpa"},
+{"ctime":"Croatia - Zagreb","timezone":"Europe\/Zagreb"},
+{"ctime":"Haiti - Port-au-Prince","timezone":"America\/Port-au-Prince"},
+{"ctime":"Hungary - Budapest","timezone":"Europe\/Budapest"},
+{"ctime":"Indonesia - Jakarta","timezone":"Asia\/Jakarta"},
+{"ctime":"Indonesia - Pontianak","timezone":"Asia\/Pontianak"},
+{"ctime":"Indonesia - Makassar","timezone":"Asia\/Makassar"},
+{"ctime":"Indonesia - Jayapura","timezone":"Asia\/Jayapura"},
+{"ctime":"Ireland - Dublin","timezone":"Europe\/Dublin"},
+{"ctime":"Israel - Jerusalem","timezone":"Asia\/Jerusalem"},
+{"ctime":"Isle of Man - Isle_of_Man","timezone":"Europe\/Isle_of_Man"},
+{"ctime":"India - Kolkata","timezone":"Asia\/Kolkata"},
+{"ctime":"British Indian Ocean Territory - Chagos","timezone":"Indian\/Chagos"},
+{"ctime":"Iraq - Baghdad","timezone":"Asia\/Baghdad"},
+{"ctime":"Iran, Islamic Republic of - Tehran","timezone":"Asia\/Tehran"},
+{"ctime":"Iceland - Reykjavik","timezone":"Atlantic\/Reykjavik"},
+{"ctime":"Italy - Rome","timezone":"Europe\/Rome"},
+{"ctime":"Jersey - Jersey","timezone":"Europe\/Jersey"},
+{"ctime":"Jamaica - Jamaica","timezone":"America\/Jamaica"},
+{"ctime":"Jordan - Amman","timezone":"Asia\/Amman"},
+{"ctime":"Japan - Tokyo","timezone":"Asia\/Tokyo"},
+{"ctime":"Kenya - Nairobi","timezone":"Africa\/Nairobi"},
+{"ctime":"Kyrgyzstan - Bishkek","timezone":"Asia\/Bishkek"},
+{"ctime":"Cambodia - Phnom_Penh","timezone":"Asia\/Phnom_Penh"},
+{"ctime":"Kiribati - Tarawa","timezone":"Pacific\/Tarawa"},
+{"ctime":"Kiribati - Enderbury","timezone":"Pacific\/Enderbury"},
+{"ctime":"Kiribati - Kiritimati","timezone":"Pacific\/Kiritimati"},
+{"ctime":"Comoros - Comoro","timezone":"Indian\/Comoro"},
+{"ctime":"Saint Kitts and Nevis - St_Kitts","timezone":"America\/St_Kitts"},
+{"ctime":"Korea, Democratic People's Republic of - Pyongyang","timezone":"Asia\/Pyongyang"},
+{"ctime":"Korea, Republic of - Seoul","timezone":"Asia\/Seoul"},
+{"ctime":"Kuwait - Kuwait","timezone":"Asia\/Kuwait"},
+{"ctime":"Cayman Islands - Cayman","timezone":"America\/Cayman"},
+{"ctime":"Kazakhstan - Almaty","timezone":"Asia\/Almaty"},
+{"ctime":"Kazakhstan - Qyzylorda","timezone":"Asia\/Qyzylorda"},
+{"ctime":"Kazakhstan - Qostanay","timezone":"Asia\/Qostanay"},
+{"ctime":"Kazakhstan - Aqtobe","timezone":"Asia\/Aqtobe"},
+{"ctime":"Kazakhstan - Aqtau","timezone":"Asia\/Aqtau"},
+{"ctime":"Kazakhstan - Atyrau","timezone":"Asia\/Atyrau"},
+{"ctime":"Kazakhstan - Oral","timezone":"Asia\/Oral"},
+{"ctime":"Lao People's Democratic Republic - Vientiane","timezone":"Asia\/Vientiane"},
+{"ctime":"Lebanon - Beirut","timezone":"Asia\/Beirut"},
+{"ctime":"Saint Lucia - St_Lucia","timezone":"America\/St_Lucia"},
+{"ctime":"Liechtenstein - Vaduz","timezone":"Europe\/Vaduz"},
+{"ctime":"Sri Lanka - Colombo","timezone":"Asia\/Colombo"},
+{"ctime":"Liberia - Monrovia","timezone":"Africa\/Monrovia"},
+{"ctime":"Lesotho - Maseru","timezone":"Africa\/Maseru"},
+{"ctime":"Lithuania - Vilnius","timezone":"Europe\/Vilnius"},
+{"ctime":"Luxembourg - Luxembourg","timezone":"Europe\/Luxembourg"},
+{"ctime":"Latvia - Riga","timezone":"Europe\/Riga"},
+{"ctime":"Libya - Tripoli","timezone":"Africa\/Tripoli"},
+{"ctime":"Morocco - Casablanca","timezone":"Africa\/Casablanca"},
+{"ctime":"Monaco - Monaco","timezone":"Europe\/Monaco"},
+{"ctime":"Moldova, Republic of - Chisinau","timezone":"Europe\/Chisinau"},
+{"ctime":"Montenegro - Podgorica","timezone":"Europe\/Podgorica"},
+{"ctime":"Saint Martin (French part) - Marigot","timezone":"America\/Marigot"},
+{"ctime":"Madagascar - Antananarivo","timezone":"Indian\/Antananarivo"},
+{"ctime":"Marshall Islands - Majuro","timezone":"Pacific\/Majuro"},
+{"ctime":"Marshall Islands - Kwajalein","timezone":"Pacific\/Kwajalein"},
+{"ctime":"Macedonia, the Former Yugoslav Republic of - Skopje","timezone":"Europe\/Skopje"},
+{"ctime":"Mali - Bamako","timezone":"Africa\/Bamako"},
+{"ctime":"Myanmar - Yangon","timezone":"Asia\/Yangon"},
+{"ctime":"Mongolia - Ulaanbaatar","timezone":"Asia\/Ulaanbaatar"},
+{"ctime":"Mongolia - Hovd","timezone":"Asia\/Hovd"},
+{"ctime":"Mongolia - Choibalsan","timezone":"Asia\/Choibalsan"},
+{"ctime":"Macao - Macau","timezone":"Asia\/Macau"},
+{"ctime":"Northern Mariana Islands - Saipan","timezone":"Pacific\/Saipan"},
+{"ctime":"Martinique - Martinique","timezone":"America\/Martinique"},
+{"ctime":"Mauritania - Nouakchott","timezone":"Africa\/Nouakchott"},
+{"ctime":"Montserrat - Montserrat","timezone":"America\/Montserrat"},
+{"ctime":"Malta - Malta","timezone":"Europe\/Malta"},
+{"ctime":"Mauritius - Mauritius","timezone":"Indian\/Mauritius"},
+{"ctime":"Maldives - Maldives","timezone":"Indian\/Maldives"},
+{"ctime":"Malawi - Blantyre","timezone":"Africa\/Blantyre"},
+{"ctime":"Mexico - Mexico_City","timezone":"America\/Mexico_City"},
+{"ctime":"Mexico - Cancun","timezone":"America\/Cancun"},
+{"ctime":"Mexico - Merida","timezone":"America\/Merida"},
+{"ctime":"Mexico - Monterrey","timezone":"America\/Monterrey"},
+{"ctime":"Mexico - Matamoros","timezone":"America\/Matamoros"},
+{"ctime":"Mexico - Mazatlan","timezone":"America\/Mazatlan"},
+{"ctime":"Mexico - Chihuahua","timezone":"America\/Chihuahua"},
+{"ctime":"Mexico - Ojinaga","timezone":"America\/Ojinaga"},
+{"ctime":"Mexico - Hermosillo","timezone":"America\/Hermosillo"},
+{"ctime":"Mexico - Tijuana","timezone":"America\/Tijuana"},
+{"ctime":"Mexico - Bahia_Banderas","timezone":"America\/Bahia_Banderas"},
+{"ctime":"Malaysia - Kuala_Lumpur","timezone":"Asia\/Kuala_Lumpur"},
+{"ctime":"Malaysia - Kuching","timezone":"Asia\/Kuching"},
+{"ctime":"Mozambique - Maputo","timezone":"Africa\/Maputo"},
+{"ctime":"Namibia - Windhoek","timezone":"Africa\/Windhoek"},
+{"ctime":"New Caledonia - Noumea","timezone":"Pacific\/Noumea"},
+{"ctime":"Niger - Niamey","timezone":"Africa\/Niamey"},
+{"ctime":"Norfolk Island - Norfolk","timezone":"Pacific\/Norfolk"},
+{"ctime":"Nigeria - Lagos","timezone":"Africa\/Lagos"},
+{"ctime":"Nicaragua - Managua","timezone":"America\/Managua"},
+{"ctime":"Netherlands - Amsterdam","timezone":"Europe\/Amsterdam"},
+{"ctime":"Norway - Oslo","timezone":"Europe\/Oslo"},
+{"ctime":"Nepal - Kathmandu","timezone":"Asia\/Kathmandu"},
+{"ctime":"Nauru - Nauru","timezone":"Pacific\/Nauru"},
+{"ctime":"Niue - Niue","timezone":"Pacific\/Niue"},
+{"ctime":"New Zealand - Auckland","timezone":"Pacific\/Auckland"},
+{"ctime":"New Zealand - Chatham","timezone":"Pacific\/Chatham"},
+{"ctime":"Oman - Muscat","timezone":"Asia\/Muscat"},
+{"ctime":"Panama - Panama","timezone":"America\/Panama"},
+{"ctime":"Peru - Lima","timezone":"America\/Lima"},
+{"ctime":"French Polynesia - Tahiti","timezone":"Pacific\/Tahiti"},
+{"ctime":"French Polynesia - Marquesas","timezone":"Pacific\/Marquesas"},
+{"ctime":"French Polynesia - Gambier","timezone":"Pacific\/Gambier"},
+{"ctime":"Papua New Guinea - Port_Moresby","timezone":"Pacific\/Port_Moresby"},
+{"ctime":"Papua New Guinea - Bougainville","timezone":"Pacific\/Bougainville"},
+{"ctime":"Philippines - Manila","timezone":"Asia\/Manila"},
+{"ctime":"Pakistan - Karachi","timezone":"Asia\/Karachi"},
+{"ctime":"Poland - Warsaw","timezone":"Europe\/Warsaw"},
+{"ctime":"Saint Pierre and Miquelon - Miquelon","timezone":"America\/Miquelon"},
+{"ctime":"Pitcairn - Pitcairn","timezone":"Pacific\/Pitcairn"},
+{"ctime":"Puerto Rico - Puerto_Rico","timezone":"America\/Puerto_Rico"},
+{"ctime":"Palestine, State of - Gaza","timezone":"Asia\/Gaza"},
+{"ctime":"Palestine, State of - Hebron","timezone":"Asia\/Hebron"},
+{"ctime":"Portugal - Lisbon","timezone":"Europe\/Lisbon"},
+{"ctime":"Portugal - Madeira","timezone":"Atlantic\/Madeira"},
+{"ctime":"Portugal - Azores","timezone":"Atlantic\/Azores"},
+{"ctime":"Palau - Palau","timezone":"Pacific\/Palau"},
+{"ctime":"Paraguay - Asuncion","timezone":"America\/Asuncion"},
+{"ctime":"Qatar - Qatar","timezone":"Asia\/Qatar"},
+{"ctime":"Réunion - Reunion","timezone":"Indian\/Reunion"},
+{"ctime":"Romania - Bucharest","timezone":"Europe\/Bucharest"},
+{"ctime":"Serbia - Belgrade","timezone":"Europe\/Belgrade"},
+{"ctime":"Russian Federation - Kaliningrad","timezone":"Europe\/Kaliningrad"},
+{"ctime":"Russian Federation - Moscow","timezone":"Europe\/Moscow"},
+{"ctime":"Ukraine - Simferopol","timezone":"Europe\/Simferopol"},
+{"ctime":"Russian Federation - Kirov","timezone":"Europe\/Kirov"},
+{"ctime":"Russian Federation - Astrakhan","timezone":"Europe\/Astrakhan"},
+{"ctime":"Russian Federation - Volgograd","timezone":"Europe\/Volgograd"},
+{"ctime":"Russian Federation - Saratov","timezone":"Europe\/Saratov"},
+{"ctime":"Russian Federation - Ulyanovsk","timezone":"Europe\/Ulyanovsk"},
+{"ctime":"Russian Federation - Samara","timezone":"Europe\/Samara"},
+{"ctime":"Russian Federation - Yekaterinburg","timezone":"Asia\/Yekaterinburg"},
+{"ctime":"Russian Federation - Omsk","timezone":"Asia\/Omsk"},
+{"ctime":"Russian Federation - Novosibirsk","timezone":"Asia\/Novosibirsk"},
+{"ctime":"Russian Federation - Barnaul","timezone":"Asia\/Barnaul"},
+{"ctime":"Russian Federation - Tomsk","timezone":"Asia\/Tomsk"},
+{"ctime":"Russian Federation - Novokuznetsk","timezone":"Asia\/Novokuznetsk"},
+{"ctime":"Russian Federation - Krasnoyarsk","timezone":"Asia\/Krasnoyarsk"},
+{"ctime":"Russian Federation - Irkutsk","timezone":"Asia\/Irkutsk"},
+{"ctime":"Russian Federation - Chita","timezone":"Asia\/Chita"},
+{"ctime":"Russian Federation - Yakutsk","timezone":"Asia\/Yakutsk"},
+{"ctime":"Russian Federation - Khandyga","timezone":"Asia\/Khandyga"},
+{"ctime":"Russian Federation - Vladivostok","timezone":"Asia\/Vladivostok"},
+{"ctime":"Russian Federation - Ust-Nera","timezone":"Asia\/Ust-Nera"},
+{"ctime":"Russian Federation - Magadan","timezone":"Asia\/Magadan"},
+{"ctime":"Russian Federation - Sakhalin","timezone":"Asia\/Sakhalin"},
+{"ctime":"Russian Federation - Srednekolymsk","timezone":"Asia\/Srednekolymsk"},
+{"ctime":"Russian Federation - Kamchatka","timezone":"Asia\/Kamchatka"},
+{"ctime":"Russian Federation - Anadyr","timezone":"Asia\/Anadyr"},
+{"ctime":"Rwanda - Kigali","timezone":"Africa\/Kigali"},
+{"ctime":"Saudi Arabia - Riyadh","timezone":"Asia\/Riyadh"},
+{"ctime":"Solomon Islands - Guadalcanal","timezone":"Pacific\/Guadalcanal"},
+{"ctime":"Seychelles - Mahe","timezone":"Indian\/Mahe"},
+{"ctime":"Sudan - Khartoum","timezone":"Africa\/Khartoum"},
+{"ctime":"Sweden - Stockholm","timezone":"Europe\/Stockholm"},
+{"ctime":"Singapore - Singapore","timezone":"Asia\/Singapore"},
+{"ctime":"Saint Helena, Ascension and Tristan da Cunha - St_Helena","timezone":"Atlantic\/St_Helena"},
+{"ctime":"Slovenia - Ljubljana","timezone":"Europe\/Ljubljana"},
+{"ctime":"Svalbard and Jan Mayen - Longyearbyen","timezone":"Arctic\/Longyearbyen"},
+{"ctime":"Slovakia - Bratislava","timezone":"Europe\/Bratislava"},
+{"ctime":"Sierra Leone - Freetown","timezone":"Africa\/Freetown"},
+{"ctime":"San Marino - San_Marino","timezone":"Europe\/San_Marino"},
+{"ctime":"Senegal - Dakar","timezone":"Africa\/Dakar"},
+{"ctime":"Somalia - Mogadishu","timezone":"Africa\/Mogadishu"},
+{"ctime":"Suriname - Paramaribo","timezone":"America\/Paramaribo"},
+{"ctime":"South Sudan - Juba","timezone":"Africa\/Juba"},
+{"ctime":"Sao Tome and Principe - Sao_Tome","timezone":"Africa\/Sao_Tome"},
+{"ctime":"El Salvador - El_Salvador","timezone":"America\/El_Salvador"},
+{"ctime":"Sint Maarten (Dutch part) - Lower_Princes","timezone":"America\/Lower_Princes"},
+{"ctime":"Syrian Arab Republic - Damascus","timezone":"Asia\/Damascus"},
+{"ctime":"Swaziland - Mbabane","timezone":"Africa\/Mbabane"},
+{"ctime":"Turks and Caicos Islands - Grand_Turk","timezone":"America\/Grand_Turk"},
+{"ctime":"Chad - Ndjamena","timezone":"Africa\/Ndjamena"},
+{"ctime":"French Southern Territories - Kerguelen","timezone":"Indian\/Kerguelen"},
+{"ctime":"Togo - Lome","timezone":"Africa\/Lome"},
+{"ctime":"Thailand - Bangkok","timezone":"Asia\/Bangkok"},
+{"ctime":"Tajikistan - Dushanbe","timezone":"Asia\/Dushanbe"},
+{"ctime":"Tokelau - Fakaofo","timezone":"Pacific\/Fakaofo"},
+{"ctime":"Timor-Leste - Dili","timezone":"Asia\/Dili"},
+{"ctime":"Turkmenistan - Ashgabat","timezone":"Asia\/Ashgabat"},
+{"ctime":"Tunisia - Tunis","timezone":"Africa\/Tunis"},
+{"ctime":"Tonga - Tongatapu","timezone":"Pacific\/Tongatapu"},
+{"ctime":"Turkey - Istanbul","timezone":"Europe\/Istanbul"},
+{"ctime":"Trinidad and Tobago - Port_of_Spain","timezone":"America\/Port_of_Spain"},
+{"ctime":"Tuvalu - Funafuti","timezone":"Pacific\/Funafuti"},
+{"ctime":"Taiwan, Province of China - Taipei","timezone":"Asia\/Taipei"},
+{"ctime":"Tanzania, United Republic of - Dar_es_Salaam","timezone":"Africa\/Dar_es_Salaam"},
+{"ctime":"Ukraine - Kiev","timezone":"Europe\/Kiev"},
+{"ctime":"Ukraine - Uzhgorod","timezone":"Europe\/Uzhgorod"},
+{"ctime":"Ukraine - Zaporozhye","timezone":"Europe\/Zaporozhye"},
+{"ctime":"Uganda - Kampala","timezone":"Africa\/Kampala"},
+{"ctime":"United States Minor Outlying Islands - Midway","timezone":"Pacific\/Midway"},
+{"ctime":"United States Minor Outlying Islands - Wake","timezone":"Pacific\/Wake"},
+{"ctime":"United States - New_York","timezone":"America\/New_York"},
+{"ctime":"United States - Detroit","timezone":"America\/Detroit"},
+{"ctime":"United States - Kentucky","timezone":"America\/Kentucky\/Louisville"},
+{"ctime":"United States - Kentucky","timezone":"America\/Kentucky\/Monticello"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Indianapolis"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Vincennes"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Winamac"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Marengo"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Petersburg"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Vevay"},
+{"ctime":"United States - Chicago","timezone":"America\/Chicago"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Tell_City"},
+{"ctime":"United States - Indiana","timezone":"America\/Indiana\/Knox"},
+{"ctime":"United States - Menominee","timezone":"America\/Menominee"},
+{"ctime":"United States - North_Dakota","timezone":"America\/North_Dakota\/Center"},
+{"ctime":"United States - North_Dakota","timezone":"America\/North_Dakota\/New_Salem"},
+{"ctime":"United States - North_Dakota","timezone":"America\/North_Dakota\/Beulah"},
+{"ctime":"United States - Denver","timezone":"America\/Denver"},
+{"ctime":"United States - Boise","timezone":"America\/Boise"},
+{"ctime":"United States - Phoenix","timezone":"America\/Phoenix"},
+{"ctime":"United States - Los_Angeles","timezone":"America\/Los_Angeles"},
+{"ctime":"United States - Anchorage","timezone":"America\/Anchorage"},
+{"ctime":"United States - Juneau","timezone":"America\/Juneau"},
+{"ctime":"United States - Sitka","timezone":"America\/Sitka"},
+{"ctime":"United States - Metlakatla","timezone":"America\/Metlakatla"},
+{"ctime":"United States - Yakutat","timezone":"America\/Yakutat"},
+{"ctime":"United States - Nome","timezone":"America\/Nome"},
+{"ctime":"United States - Adak","timezone":"America\/Adak"},
+{"ctime":"United States - Honolulu","timezone":"Pacific\/Honolulu"},
+{"ctime":"Uruguay - Montevideo","timezone":"America\/Montevideo"},
+{"ctime":"Uzbekistan - Samarkand","timezone":"Asia\/Samarkand"},
+{"ctime":"Uzbekistan - Tashkent","timezone":"Asia\/Tashkent"},
+{"ctime":"Holy See (Vatican City State) - Vatican","timezone":"Europe\/Vatican"},
+{"ctime":"Saint Vincent and the Grenadines - St_Vincent","timezone":"America\/St_Vincent"},
+{"ctime":"Venezuela, Bolivarian Republic of - Caracas","timezone":"America\/Caracas"},
+{"ctime":"Virgin Islands, British - Tortola","timezone":"America\/Tortola"},
+{"ctime":"Virgin Islands, U.S. - St_Thomas","timezone":"America\/St_Thomas"},
+{"ctime":"Viet Nam - Ho_Chi_Minh","timezone":"Asia\/Ho_Chi_Minh"},
+{"ctime":"Vanuatu - Efate","timezone":"Pacific\/Efate"},
+{"ctime":"Wallis and Futuna - Wallis","timezone":"Pacific\/Wallis"},
+{"ctime":"Samoa - Apia","timezone":"Pacific\/Apia"},
+{"ctime":"Yemen - Aden","timezone":"Asia\/Aden"},
+{"ctime":"Mayotte - Mayotte","timezone":"Indian\/Mayotte"},
+{"ctime":"South Africa - Johannesburg","timezone":"Africa\/Johannesburg"},
+{"ctime":"Zambia - Lusaka","timezone":"Africa\/Lusaka"},
+{"ctime":"Zimbabwe - Harare","timezone":"Africa\/Harare"}
+]
+}
+  ]
+
+</string>
+
+    <string name="Acc_No">A/C No</string>
+    <string name="IFSC_Code">IFSC Code</string>
+    <string name="title_activity_binary_tree">Tree</string>
+    <string name="title_activity_add_binary_tree_user">Add New User\'s</string>
+    <string name="title_activity_sponsor_bonus">Sponsor Bonus</string>
+    <string name="Option_Detail">Optional Startup</string>
+    <string name="Bonus_Detail">Bonus Detail</string>
+    <string name="Pin_Detail">Pin Detail</string>
+    <string name="Pin_No">Pin No</string>
+    <string name="OTP">OTP</string>
+    <string name="Check">Check Username</string>
+    <string name="Share_Pin">Share Pin</string>
+    <string name="Product">Product</string>
+    <string name="My_Price">My Price</string>
+    <string name="link">
+        <u>www.google.com</u>
+    </string>
+
+    <string name="About_Us_Content"><![CDATA[Presenting the unique collection of fireworks from vanitha, A true combination of state-of-art, technology and creativity makes every fireworks a master piece. It gives you joy and colour developed to feel the requirement of modern age with inspiration from tradition. Fireworks is your life time companion in all joyful movements and when you go for Vanitha, you will feel proud of your selection.]]></string>
+    <string name="terms"><![CDATA[ •	\tRequest a quote with us and \n\t\tget the details of our crackers.]]></string>
+    <string name="terms1"><![CDATA[•	\tMinimum Order amount Rs.2000/- \n\t\tfor all orders.]]></string>
+    <string name="terms2"><![CDATA[•\t\tShipping Charges Extra.]]></string>
+    <string name="terms3"><![CDATA[•\t\tThe Prices for all the products \n\t\tincludes GST.]]></string>
+    <string name="terms4"><![CDATA[•\t\tThe Price quoted are \n\t\tF.O.R.Sivakasi.(Free-on-road)]]></string>
+    <string name="terms5"><![CDATA[•\t\tGoods will be dispatched only on \n\t\treceipt of 100% payment \n\t\tin advance.]]></string>
+    <string name="terms6"><![CDATA[•\t\tநான் வாங்கியுள்ள SLIM  \n\t\tPACK CAPSULES - ஐ, நிறுவனம்  \n\t\tகூறிய படி ,96 நாட்களும், \n\t\tகாலையில் S1-FAST CAPSULE,\n\t\tமதியம் S2-FAST CAPSULE, \n\t\tஇரவு S3-FAST CAPSULE என  \n\t\tமூன்று வேளையும் உணவு \n\t\tஉட்கொண்ட பின்பு, தலா \n\t\tஒரு CAPSULE வீதம் \n\t\tதவறாமல் சாப்பிட வேண்டும்\n\t\tஎன்பதனை நான் அறிவேன்.]]></string>
+    <string name="terms7"><![CDATA[•\t\tCash On Delivery not available.]]></string>
+    <string name="terms8"><![CDATA[•\t\tGoods once sold cannot be \n\t\ttaken or exchanged.]]></string>
+    <string name="terms9"><![CDATA[•\t\tமணி பேக் உத்திரவாதம் \n\t\tகோரும் உரிமை, கீழ்க்கண்ட \n\t\tவிதிமுறைகளை முறையாக\n\t\tபின்பற்றுவோர்களுக்கு மட்டும் \n\t\tஉண்டு என்பதனை நான் \n\t\tஅறிவேன்.]]></string>
+    <string name="terms10"><![CDATA[•\t\tDisplay of products as per the \n\t\tbox may vary.]]></string>
+    <string name="terms11"><![CDATA[•\t\tAll rules and regulations subject to \n\t\tSivakasi Jurisdiction.]]></string>
+    <string name="terms12"><![CDATA[•\t\tLorry Receipt number will be send \n\t\tby SMS, E-Mail or Whatsapp.]]></string>
+    <string name="terms13"><![CDATA[•\t\tWorking Hours - 10.00AM to \n\t\t05.30PM.]]></string>
+    <string name="shippo5"><![CDATA[ •\t\t நான் பதிவு செய்துள்ள \n\t\tமேற்கண்ட தகவல்கள் \n\t\tஅனைத்தும் உண்மையானவை. \n\t\tஇது நிறுவனத்தால் ஆய்வு  \n\t\tசெய்யப்படும் என்பதனை நான் \n\t\tஅறிவேன்.]]></string>
+    <string name="shippo6"><![CDATA[ •\t\t காலை, மதியம், இரவு \n\t\t என மூன்று வேளையும் \n\t\tCAPSULE சாப்பிட்ட பின், \n\t\tநிறுவனம் கொடுத்துள்ள \n\t\t7412891199 என்ற மொபைல் \n\t\tஎண்ணிற்க்கு,நான் பதிவு  \n\t\tசெய்துள்ள மொபைல் \n\t\tஎண்ணிலிருந்து மூன்று \n\t\tவேளையும் தவறாது MISSED \n\t\tCALL கொடுத்து நான் \n\t\tCAPSULE சாப்பிட்டதை உறுதி \n\t\tசெய்ய வேண்டும் என்பதனை \n\t\tநன்கு அறிவேன்.]]></string>
+    <string name="shippo7"><![CDATA[ •\t\t நான் SLIM PACK CAPSULES-ஐ \n\t\t 96 நாட்கள்,நிறுவனம் கூறிய \n\t\tநிபந்தனைகளின் படி  \n\t\tதொடர்ந்து, சாப்பிட்ட பின்பும், \n\t\tநிறுவனம் கூறிய உத்திரவாத, \n\t\tஎடை குறைப்பு (5% முதல் \n\t\t 10% வரை) நிகழவில்லை \n\t\tஎனில், நான் நிறுவனத்தின் \n\t\tமுதுநிலை ஆரோக்கிய \n\t\tஆலோசகரை அணுகி மேலும் \n\t\tSLIM PACK CAPSULES-ஐ \n\t\tமுற்றிலும் இலவசமாக \n\t\t நிறுவனத்திடமிருந்து பெற்று, \n\t\tமேற்கூறிய நிபந்தனைகளின் \n\t\tபடி நான் மீண்டும் \n\t\tஒரு 96 நாட்கள் சாப்பிட \n\t\tவேண்டும் என்பதனையும் \n\t\tநன்கு அறிவேன்.]]></string>
+    <string name="shippo8"><![CDATA[•\t\t அதன் பின்பும் நிறுவனம் \n\t\t அளித்த உத்திரவாத எடை \n\t\tகுறைப்பு(5% முதல் 10% வரை) \n\t\tநிகழவில்லை எனில் நான் \n\t\tசெலுத்திய தொகை முழுவதும் \n\t\tநிபந்தனையின்றி எனக்கு \n\t\tதிரும்ப கிடைக்கும் \n\t\tஎன்பதனையும் நன்கு \n\t\tஅறிவேன்.]]></string>
+
+    <string name="shipponew1"><![CDATA[•\t\t என்னிடம் SLIM PACK CAPSULES \n\t\tவாங்கிய நபர் குறித்து,\n\t\tநான் பதிவு செய்துள்ள \n\t\tமேற்கண்ட தகவல்கள், \n\t\tநிறுவனத்தால் ஆய்வு \n\t\tசெய்யப்படும் என்ற செய்தியை \n\t\tஅவரிடம் தெரிவித்து, சரியான\n\t\tவிபரங்களை பெற்று, நான்  \n\t\tஇங்கு பதிவு செய்துள்ளேன்.]]></string>
+    <string name="shipponew2"><![CDATA[•\t\t என்னிடம் வாங்கிய SLIM PACK \n\t\tCAPSULES - ஐ, நிறுவனம் கூறிய \n\t\tபடி, 96 நாட்களும், \n\t\tகாலையில் S1-FAST CAPSULE,\n\t\tமதியம் S2-FAST CAPSULE, \n\t\tஇரவு S3-FAST CAPSULE என \n\t\tமூன்று வேளையும் உணவு \n\t\tஉட்கொண்ட பின்பு, தலா \n\t\tஒரு CAPSULE வீதம் \n\t\tதவறாமல் சாப்பிட வேண்டும் \n\t\tஎன்ற விவரத்தை என்னிடம்\n\t\tSLIM PACK CAPSULES \n\t\tவாங்கிய மேற்படி நபரிடம்,\n\t\tநான் விளக்கமாக \n\t\tநகூறியுள்ளேன்.]]></string>
+    <string name="shipponew3"><![CDATA[•\t\t MONEYBACK உத்திரவாதம் \n\t\tகோரும் உரிமை, கீழ்க்கண்ட \n\t\tவிதிமுறைகளை முறையாக\n\t\tபின்பற்றுவோர்களுக்கு மட்டும் \n\t\tஉண்டு என்ற தகவலை \n\t\tஎன்னிடம் SLIM PACK CAPSULES\n\t\tவாங்கிய மேற்படி நபரிடம்,\n\t\tநான் தெளிவாக கூறியுள்ளேன்.]]></string>
+    <string name="shipponew4"><![CDATA[•\t\t காலை, மதியம், இரவு \n\t\t என மூன்று வேளையும் \n\t\tCAPSULE சாப்பிட்ட பின், \n\t\tநிறுவனம் கொடுத்துள்ள \n\t\t7412891199 என்ற மொபைல் \n\t\tஎண்ணிற்க்கு என்னிடம் SLIM \n\t\tPACK CAPSULES வாங்கிய \n\t\tமொபைல் எண்ணிலிருந்து \n\t\tமூன்று வேளையும் தவறாது \n\t\tMISSED CALL கொடுத்து \n\t\tஅவர் CAPSULE சாப்பிட்டதை \n\t\tஉறுதி செய்ய வேண்டும் \n\t\tஎன்ற தகவலை, என்னிடம்\n\t\tSLIM PACK CAPSULES \n\t\t வாங்கிய, மேற்படி நபரிடம் \n\t\tநான் விளக்கி கூறியுள்ளேன்.]]></string>
+    <string name="shipponew5"><![CDATA[•\t\t என்னிடம் வாங்கிய SLIM \n\t\t PACK CAPSULE-ஐ 96 நாட்கள், \n\t\tநிறுவனம் கூறிய \n\t\tநிபந்தனைகளின் படி  \n\t\tதொடர்ந்து சாப்பிட்ட பின்பும், \n\t\tநிறுவனம் கூறிய உத்திரவாத, \n\t\tஎடை குறைப்பு (5% முதல் 10%  \n\t\tவரை) நிகழவில்லை எனில், \n\t\tஎன்னிடம் SLIM PACK CAPSULES \n\t\tமுதுநிலை ஆரோக்கிய \n\t\tஆலோசகரை அணுகச்செய்து, \n\t\tமேலும் ஒரு SLIM \n\t\tPACK  CAPSULES-ஐ, \n\t\tமுற்றிலும் இலவசமாக  \n\t\tநிறுவனத்திடமிருந்து பெற்று, \n\t\tமேற்கூறிய நிபந்தனைகளின் \n\t\tபடி மீண்டும் ஒரு 96 நாட்கள் \n\t\tசாப்பிட வேண்டி இருக்கும் \n\t\tஎன்ற விபரத்தை, என்னிடம் \n\t\tSLIM PACK CAPSULES வாங்கிய  \n\t\tமேற்படி நபரிடம்,நான் புரியும் படி \n\t\tகூறியுள்ளேன்.]]></string>
+    <string name="shipponew6"><![CDATA[•\t\t அதன் பின்பும் நிறுவனம் \n\t\tஅளித்த உத்திரவாத எடை \n\t\tகுறைப்பு (5% முதல் 10% வரை) \n\t\tநிகழவில்லை எனில் என்னிடம் \n\t\t SLIM PACK CAPSULES \n\t\tவாங்கிய மேற்படி நபர் \n\t\t செலுத்திய தொகை முழுவதும்\n\t\t நிபந்தனையின்றி அவருக்கு \n\t\tதிரும்ப கிடைக்கும் என்ற \n\t\tதகவலை தெரிவித்துள்ளேன்.]]></string>
+    <string name="shipponew9">I Explained all the <u>Terms &amp; Condtions</u> of our V3 Health Cure to the customer.</string>
+
+
+    <string name="profile_desc">Rowan Sebastian Atkinson CBE is an English actor,  comedian and screenwriter</string>
+    <string name="profile_title">Mr Bean</string>
+    <string name="posts">posts</string>
+    <string name="followers">followers</string>
+    <string name="following">following</string>
+    <string name="msg_error_unable_select_profile_pic">Unable to set profile image. Please try again!</string>
+    <string name="lbl_set_profile_photo">Set profile image</string>
+    <string name="lbl_take_camera_picture">Take a picture</string>
+    <string name="lbl_choose_from_gallery">Choose from gallery</string>
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+
+    <!-- font families -->
+    <string name="font_family_light">sans-serif-light</string>
+    <string name="font_family_medium">sans-serif-medium</string>
+    <string name="font_family_regular">sans-serif</string>
+    <string name="font_family_condensed">sans-serif-condensed</string>
+    <string name="font_family_black">sans-serif-black</string>
+    <string name="font_family_thin">sans-serif-thin</string>
+    <string name="dialog_permission_title">Grant Permissions</string>
+    <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="go_to_settings">GOTO SETTINGS</string>
+</resources>
