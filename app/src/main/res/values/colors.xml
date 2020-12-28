@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#9B63F8</color>
+    <color name="theme1">#9b63f8</color>
+    <color name="Darktheme1">#8A46FB</color>
+    <color name="theme2">#DEE841</color>
+    <color name="theme3">#f960c5</color>
+    <color name="dorange">#F92AB3</color>
+    <color name="lgreen">#B285FC</color>
+    <color name="green1">#B285FC</color>
+    <color name="blue">#034830</color>
+    <color name="violet">#7ba7ff</color>
+    <color name="orange">#f960c5</color>
+    <color name="red">#ff1d1d</color>
+    <color name="redss">#2196F3</color>
+    <color name="reds">#719CE6</color>
+    <color name="lred">#FF4646</color>
+    <color name="sky_blue">#05A5EF</color>
+    <color name="sky_blues">#3905A5EF</color>
+    <color name="green">#B285FC</color>
+    <color name="greens">#26A69A</color>
+    <color name="float_transparent">#00000000</color>
+
+    <color name="lightgreen">#E3D8F7</color>
+
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+
+    <color name="nav_headdis">#46399704</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="sub_text">#222222</color>
+    <color name="text2">#333333</color>
+    <color name="text3">#777777</color>
+    <color name="text555">#555555</color>
+    <color name="text666">#555555</color>
+    <color name="f5">#f5f5f5</color>
+    <color name="grey">#30000000</color>
+    <color name="four">#444444</color>
+
+    <color name="normal">#9EA8B4</color>
+
+    <color name="theme">#9b63f8</color>
+    <color name="themes">#009788</color>
+    <color name="xml_back">#F0F0F0</color>
+    <color name="linear_back">#f5f5f5</color>
+    <color name="edit_back">#FFFF</color>
+    <color name="num_color">#222222</color>
+    <color name="text_color">#A0A0A0</color>
+
+    <!--<color name="nav_theme1">#395113</color>
+    <color name="nav_theme2">#849F2A</color>
+    <color name="nav_theme3">#3b843f</color>-->
+
+    <!--<color name="black_20">#50A457</color>
+    <color name="black_45">#50A457</color>
+    <color name="black_60">#60000000</color>
+    <color name="black_40">#40000000</color>-->
+
+    <color name="black_20">#20000000</color>
+    <color name="black_45">#45000000</color>
+    <color name="black_60">#60000000</color>
+    <color name="black_40">#40000000</color>
+    <color name="nav_head">#399704</color>
+
+    <!--<color name="nav_back">#AED057</color>
+    <color name="nav_top">#50A457</color>
+    <color name="nav_head">#47682F</color>
+    <color name="nav_sub">#7F9830</color>
+    <color name="nav_focused">#9ab640</color>-->
+    <color name="eee">#EEE</color>
+
+
+
+    <color name="sample5">#EF597B</color>
+    <color name="sample1">#FF6D31</color>
+    <color name="sample2">#8a7afb</color>
+    <color name="sample3">#FFCB18</color>
+    <color name="sample4">#29A2C6</color>
+    <color name="sample6">#FF0000</color>
+
+
+    <color name="ncolor1">#9b63f8</color>
+    <color name="ncolor2">#8a7afb</color>
+    <color name="ncolor3">#7ba7ff</color>
+    <color name="ncolor4">#f960c5</color>
+    <color name="ncolor5">#809ffc</color>
+    <color name="ncolor6">#d183fd</color>
+    <color name="ncolor7">#ff13a4</color>
+
+    <color name="status_green">#4CA94C</color>
+    <color name="status_red">#d94d4d</color>
+    <color name="status_orange">#FFA500</color>
+    <color name="yellow">#FFF176</color>
+
+    <color name="new_sts">#111F3A</color>
+    <!--    #AED057  top
+
+        #50A457 menu
+
+        #47682F  sub menu
+
+        #7F9830
+
+        #9ab640-->
+
+
+
+
+
+
+
+
+
+
+
+</resources>

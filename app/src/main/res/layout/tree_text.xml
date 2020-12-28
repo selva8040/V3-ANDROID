@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroke_line"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="+"
+            android:gravity="center|center_vertical"
+            android:textSize="12dp"
+
+            android:textColor="@color/orange"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="asdkjasdkladjlkas fdjkfd kdfljkjfdg fkdljglfdjg jlfkdglkdfjg kljdfklgjfd kljkldf"
+        android:textColor="#454545"
+        android:layout_marginLeft="12dp"
+        android:textSize="15dp"
+        android:id="@+id/treename"
+        android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="40dp"
+        android:background="#e5e5e5"/>
+
+
+</LinearLayout>

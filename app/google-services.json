@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "473153764943",
+    "firebase_url": "https://v3onlintv.firebaseio.com",
+    "project_id": "v3onlintv",
+    "storage_bucket": "v3onlintv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473153764943:android:d0d7bc5a7ef2fa26cd343a",
+        "android_client_info": {
+          "package_name": "com.elancier.healthzone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473153764943-cps71gbg5ll9beogbvhiihsb7f254sqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkbPOHgLTzRzYpAWdMwXpF58HTdCsIYIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473153764943-cps71gbg5ll9beogbvhiihsb7f254sqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_tool_bar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:background="#50F89520" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/Typest"
+                android:textColor="@color/text_color"
+                android:textSize="13sp" />
+
+            <FrameLayout
+                android:id="@+id/spin_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/type_spin"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/grey_stroke_bg"
+                    android:enabled="false"
+                    android:padding="1dp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:padding="4dp"
+                    android:src="@mipmap/down_arrow" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/type_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please Select Type"
+                android:textColor="#FF00"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/bank_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/BankName"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/bank_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/grey_bg1"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="#555"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/Branch"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/branch"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/grey_bg1"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="#555"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/Acc_No"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/acc_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/grey_bg1"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="#555"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/IFSC_Code"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/ifsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/grey_bg1"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="#555"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/theme_solid_back"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="@string/Submit"
+                android:textColor="#FFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/quiz_lay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/corner_round_border"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/corner_round_border"
+                android:cropToPadding="false"
+                android:scaleType="fitEnd"
+                android:src="@mipmap/feeedback_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="24dp"
+                    android:background="#000000"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Feedback or Any Queries..."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/poppins_medium" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/fdradio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/product_cat_selected"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="5dp"
+                        android:text="Feedback"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fontFamily="@font/poppins" />
+
+                    <TextView
+                        android:id="@+id/cmpradio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/product_cat_unselected"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="5dp"
+                        android:text="Complaint"
+                        android:textColor="#777777"
+                        android:textSize="16sp"
+                        app:fontFamily="@font/poppins" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/suggradio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/product_cat_unselected"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="5dp"
+                        android:text="Suggestion"
+                        android:textColor="#777777"
+                        android:textSize="16sp"
+                        app:fontFamily="@font/poppins" />
+
+                    <TextView
+                        android:id="@+id/permradio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/product_cat_unselected"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="5dp"
+                        android:text="Permission"
+                        android:textColor="#777777"
+                        android:textSize="16sp"
+                        app:fontFamily="@font/poppins" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/feedspin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/spinnerbg"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <EditText
+                        android:id="@+id/feededit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtback"
+                        android:fontFamily="@font/poppins"
+                        android:hint="Type here..."
+                        android:maxLines="2"
+                        android:padding="16dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_eff"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.elancier.healthzone.CircleImageView
+                            android:id="@+id/imageButton2"
+                            android:layout_width="51dp"
+                            android:layout_height="51dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/round_bk"
+                            android:cropToPadding="false"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_mic_24px" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/check"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp">
+
+                    <CheckBox
+                        android:id="@+id/yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Yes, I accept all terms and conditions and upgrade my user type to Star Premium, Super Premium." />
+
+                    <CheckBox
+                        android:id="@+id/no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="No, wait I shall be requested later" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/product_cat_selected"
+                    android:gravity="center_horizontal|center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

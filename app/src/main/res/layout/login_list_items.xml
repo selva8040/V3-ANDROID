@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/User_Namest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/grey_stroke_bg"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#555"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username does not contain blankspaces*"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/Passwordst"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/grey_stroke_bg"
+            android:inputType="textPassword"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#555"
+            android:textSize="14sp" />
+
+        <!--   <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="minimum 8 characters"
+               android:textColor="@color/text_color"
+               android:textSize="10sp" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/Confirm_Passwordst"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/confirmpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/grey_stroke_bg"
+            android:inputType="textPassword"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#555"
+            android:textSize="14sp" />
+
+        <!-- <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Min 8 characters"
+             android:textColor="@color/text_color"
+             android:textSize="10sp" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

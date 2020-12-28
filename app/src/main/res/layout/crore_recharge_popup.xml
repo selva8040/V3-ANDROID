@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/feeedback_bg"
+    android:clipToPadding="false"
+    android:gravity="center"
+    android:orientation="vertical">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Recharge"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/root_otp_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/otp_edit_box1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="From Date"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otp_edit_box2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="To Date"
+                android:inputType="number|numberDecimal"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/root_otp_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="visible"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/otp_edit_box3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="Select Date"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otp_edit_box4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="To Date"
+                android:inputType="number|numberDecimal"
+                android:textSize="20sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/root_otp_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/otp_edit_box5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="From Date"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otp_edit_box6"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="To Date"
+                android:inputType="number|numberDecimal"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/root_otp_layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/otp_edit_box7"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="From Date"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otp_edit_box8"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="To Date"
+                android:inputType="number|numberDecimal"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/root_otp_layout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/otp_edit_box9"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="From Date"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otp_edit_box10"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="To Date"
+                android:inputType="number|numberDecimal"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/root_otp_layout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/otp_edit_box11"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="From Date"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otp_edit_box12"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/otp_drawab"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="To Date"
+                android:inputType="number|numberDecimal"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:enabled="true"
+            android:padding="8dp"
+            android:text="As per V3 Terms &amp; Conditions I've submitted daily video feedback, monthly reports for the above mentioned period."
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient_drawablered"
+            android:gravity="center"
+            android:text="REQUEST"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView85"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/four"
+            android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="CLOSE"
+                android:textColor="@color/themes"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

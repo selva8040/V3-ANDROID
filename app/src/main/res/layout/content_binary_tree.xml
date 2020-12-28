@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.elancier.healthzone.Common.ZoomableRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:id="@+id/zoomlay"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/searchlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+
+            >
+
+            <EditText
+                android:id="@+id/searchtxt"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:background="@drawable/grey_stroke_bg"
+                android:paddingLeft="16dp"
+                android:paddingRight="60dp"
+                android:hint="Search Username"
+                android:textColorHint="#333"
+                android:singleLine="true"
+                android:textColor="#333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/search_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="1dp"
+                android:background="#eeeeee"
+                android:paddingBottom="9dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="9dp"
+                android:src="@mipmap/grey_search" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#55000000" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/treelay"
+        android:visibility="gone">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/firstlay"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tree_round_corner_bg"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/firstname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="#ffffff"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/firstlcount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:text="LCount : 0"
+                            android:textColor="#f3f3f3"
+                            android:textSize="10dp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/firstrcount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:text="RCount : 0"
+                            android:textColor="#f3f3f3"
+                            android:textSize="10dp"
+                            android:textStyle="italic" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@mipmap/view_icon" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/firstflow"
+                        android:layout_width="315dp"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/first_line"
+                        android:visibility="visible" />
+
+                    <FrameLayout
+                        android:id="@+id/firstline"
+                        android:layout_width="420dp"
+                        android:layout_height="wrap_content">
+
+                        <FrameLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="30dp">
+
+                            <LinearLayout
+                                android:id="@+id/secondlay"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tree_round_corner_bg"
+                                android:gravity="center_horizontal"
+
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/secondname"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"
+                                    android:text="Manikandan G"
+                                    android:textColor="#ffffff"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/secondlcount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:singleLine="true"
+                                    android:text="LCount : 4"
+                                    android:textColor="#f3f3f3"
+                                    android:textSize="10dp"
+                                    android:textStyle="italic" />
+
+                                <TextView
+                                    android:id="@+id/secondrcount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:singleLine="true"
+                                    android:text="RCount : 6"
+                                    android:textColor="#f3f3f3"
+                                    android:textSize="10dp"
+                                    android:textStyle="italic" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@mipmap/view_icon" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/secondemplay"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/tree_round_corner_bg"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="15dp"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/white_user" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="30dp">
+
+                            <LinearLayout
+                                android:id="@+id/thirdlay"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tree_round_corner_bg"
+                                android:gravity="center_horizontal"
+
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/thirdname"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"
+                                    android:text="Manikandan G"
+                                    android:textColor="#ffffff"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/thirdlcount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:singleLine="true"
+                                    android:text="LCount : 4"
+                                    android:textColor="#f3f3f3"
+                                    android:textSize="10dp"
+                                    android:textStyle="italic" />
+
+                                <TextView
+                                    android:id="@+id/thirdrcount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:singleLine="true"
+                                    android:text="RCount : 6"
+                                    android:textColor="#f3f3f3"
+                                    android:textSize="10dp"
+                                    android:textStyle="italic" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@mipmap/view_icon" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/thirdemplay"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/tree_round_corner_bg"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="15dp"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/white_user" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/secondflowlay"
+                        android:layout_width="600dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            >
+                            <LinearLayout
+                                android:id="@+id/secondleftline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/secondleftflow"
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/branch" />
+
+                            <FrameLayout
+                                android:layout_width="260dp"
+                                android:layout_height="wrap_content"
+
+                                >
+
+                                <FrameLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left">
+
+                                    <LinearLayout
+                                        android:id="@+id/fourthlay"
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:id="@+id/fourthname"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:text="Manikandan G"
+                                            android:textColor="#ffffff"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/fourthlcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="LCount : 4"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <TextView
+                                            android:id="@+id/fourthrcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="RCount : 6"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:src="@mipmap/view_icon" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/fourthemplay"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_gravity="left"
+                                        android:layout_marginLeft="40dp"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/white_user" />
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right">
+
+                                    <LinearLayout
+                                        android:id="@+id/fifthlay"
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:id="@+id/fifthname"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:text="Manikandan G"
+                                            android:textColor="#ffffff"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/fifthlcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="LCount : 4"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <TextView
+                                            android:id="@+id/fifthrcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="RCount : 6"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:src="@mipmap/view_icon" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/fifthemplay"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_gravity="right"
+                                        android:layout_marginRight="50dp"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/white_user" />
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                            </FrameLayout>
+                        </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/secondrightline"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/secondrightflow"
+                                android:layout_width="132dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@mipmap/branch" />
+
+                            <FrameLayout
+                                android:layout_width="260dp"
+                                android:layout_height="wrap_content"
+
+                                >
+
+                                <FrameLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left">
+
+                                    <LinearLayout
+                                        android:id="@+id/sixthlay"
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:id="@+id/sixthname"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:text="Manikandan G"
+                                            android:textColor="#ffffff"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/sixthlcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="LCount : 4"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <TextView
+                                            android:id="@+id/sixthrcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="RCount : 6"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:src="@mipmap/view_icon" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/sixthemplay"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_gravity="left"
+                                        android:layout_marginLeft="40dp"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/white_user" />
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right">
+
+                                    <LinearLayout
+                                        android:id="@+id/seventhlay"
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:id="@+id/seventhname"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:text="Manikandan G"
+                                            android:textColor="#ffffff"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/seventhlcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="LCount : 4"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <TextView
+                                            android:id="@+id/seventhrcount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:singleLine="true"
+                                            android:text="RCount : 6"
+                                            android:textColor="#f3f3f3"
+                                            android:textSize="10dp"
+                                            android:textStyle="italic" />
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:src="@mipmap/view_icon" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/seventhemplay"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_gravity="right"
+                                        android:layout_marginRight="50dp"
+                                        android:background="@drawable/tree_round_corner_bg"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:padding="15dp"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/white_user" />
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                            </FrameLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+        </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+</com.elancier.healthzone.Common.ZoomableRelativeLayout>

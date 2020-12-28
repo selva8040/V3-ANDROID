@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.elancier.healthzone.AddTree">
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/Sponsor_Unique_IDst"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/sponsor_unique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Sponsor_Usernamest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/sponsor_uname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:inputType="number"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Sponsor_Namest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/sponsor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:inputType="number"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/mnae_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/User_Namest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/uname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/grey_stroke_bg"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/pcode_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Enter Username"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/mname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Name"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:focusable="false"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/sponer_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Mobilest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:inputType="number"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/sponcer_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Uniquest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/unique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:inputType="number"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Pin_No"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/grey_stroke_bg"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/pin_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Enter pin number"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/store_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Storest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/store"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:inputType="number"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Typest"
+            android:textColor="@color/text_color"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/pin_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:inputType="number"
+            android:enabled="false"
+            android:background="@drawable/grey_bg1"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/menu_bar_bg"
+            android:gravity="center"
+            android:padding="13dp"
+            android:text="@string/Submit"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--  </ScrollView>-->
+
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <include layout="@layout/common_layout" />
+     </LinearLayout>-->
+
+</ScrollView>

@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.elancier.healthzone.SplashScreen">
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@mipmap/pencil"
+        android:orderInCategory="100"
+        android:title="@string/Edit"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+</menu>
