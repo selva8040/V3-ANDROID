@@ -122,20 +122,6 @@ class BankDetails : AppCompatActivity() {
             task.execute()
         }
 
-
-        /*check.setOnClickListener {
-
-            if(utils.loadSign().isEmpty()||utils.loadSign()=="null"){
-                check.isChecked=true
-                startActivity(Intent(this,Termsconditions::class.java))
-            }
-            else{
-                toast("Already Verified")
-                check.isChecked=true
-            }
-        }*/
-
-
         panimg.setOnClickListener {
 
             if(CheckingPermissionIsEnabledOrNot(this)&&(panimage.isEmpty()||panimage=="null")){

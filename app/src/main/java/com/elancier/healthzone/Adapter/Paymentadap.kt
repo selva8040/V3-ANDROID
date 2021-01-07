@@ -50,9 +50,6 @@ class Paymentadap(private val mRecyclerViewItems2: List<Any>, private val contex
                 holder.remark.text = "₹"+" "+item.username
                 holder.amount.text = item.getName()
 
-
-
-
             }
 
             // fall through

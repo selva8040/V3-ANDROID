@@ -310,9 +310,8 @@ public class AutoWithdrawActivity extends MainView {
             }
         });
 
-
-
     }
+
     private class GetInfoTask extends AsyncTask<String, Void, String> {
 
         @Override

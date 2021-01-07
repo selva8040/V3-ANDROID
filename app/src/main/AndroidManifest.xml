@@ -82,12 +82,12 @@
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".Reward_reduce"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar1"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".Monthly_report"
             android:screenOrientation="portrait"

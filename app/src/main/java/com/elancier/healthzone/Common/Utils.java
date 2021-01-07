@@ -232,7 +232,7 @@ public class Utils {
     }
     public String loadnr_uname6() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
-        String data = sharedPreferences.getString("nr_uname6    ", "");
+        String data = sharedPreferences.getString("nr_uname6", "");
         return data;
     }
 
@@ -393,7 +393,7 @@ public class Utils {
     }
     public String loadsr_uname6() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
-        String data = sharedPreferences.getString("sr_uname6    ", "");
+        String data = sharedPreferences.getString("sr_uname6", "");
         return data;
     }
 
@@ -425,7 +425,7 @@ public class Utils {
     }
     public String loadtl_uname6() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
-        String data = sharedPreferences.getString("tl_uname6    ", "");
+        String data = sharedPreferences.getString("tl_uname6", "");
         return data;
     }
 

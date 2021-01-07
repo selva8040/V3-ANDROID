@@ -619,6 +619,18 @@ class Super_saver : AppCompatActivity() {
                             toast("Saved")
                         }
 
+                        if(utils.loadnr_uname1().isNotEmpty()&&
+                            utils.loadnr_uname2().isNotEmpty()&&
+                            utils.loadnr_uname3().isNotEmpty()&&
+                            utils.loadnr_uname4().isNotEmpty()&&
+                            utils.loadnr_uname5().isNotEmpty()&&
+                            utils.loadnr_uname6().isNotEmpty()){
+                            button8.visibility=View.VISIBLE
+                        }
+                        else{
+                            button8.visibility=View.GONE
+
+                        }
                         //state.setSelection(list2.indexOf(statevalue));
                         //Log.e("VALUE STATE", states)
 

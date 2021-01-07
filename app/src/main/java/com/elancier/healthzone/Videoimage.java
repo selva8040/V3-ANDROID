@@ -105,7 +105,7 @@ public class  Videoimage extends AppCompatActivity implements netlisten.NetworkS
 
     RecyclerView recyclerlist;
     LinearLayout linearbody;
-    LinearLayout progress_lay, retry_lay, layoutlay;
+    LinearLayout progress_lay,retry_lay,layoutlay;
     WebView videoView;
     VideoView videoViewfull;
     Button fullsize,previous,play,next;
@@ -122,7 +122,7 @@ public class  Videoimage extends AppCompatActivity implements netlisten.NetworkS
     String cls4="";
     String cls5="";
     String cls6="";
-    String origin_domain="";
+    String origin_domain ="";
     String origin_domain1="http://v3onlinetv.com/v3app/";
     String video_responseval="";
     String cutoffstime="";
