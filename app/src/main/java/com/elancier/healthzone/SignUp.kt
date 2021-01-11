@@ -1247,6 +1247,7 @@ class SignUp : AppCompatActivity() {
         arr.add("Select")
         arr.add("Blue")
         arr.add("Green")
+        arr.add("Brown")
         typeadp = ArrayAdapter(this, R.layout.spinner_item, arr)
         typeadp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         utype.adapter = typeadp
@@ -1625,6 +1626,42 @@ class SignUp : AppCompatActivity() {
                         ColorDrawable(android.graphics.Color.WHITE)
                     )
                     val v = layoutInflater.inflate(R.layout.green_popup, null)
+                    val accept = v.findViewById<View>(R.id.acceptbutt) as Button
+                    val decline = v.findViewById<View>(R.id.decbutt) as Button
+                    val textView44 = v.findViewById<View>(R.id.textView44) as TextView
+                    //val textView40 = v.findViewById<View>(R.id.textView40) as TextView
+                    val tb2 = v.findViewById<View>(R.id.tb2) as TableLayout
+                    //val tb1 = v.findViewById<View>(R.id.tb1) as TableLayout
+
+
+                    textView44.visibility = View.VISIBLE
+                    tb2.visibility = View.VISIBLE
+                    accept.visibility = View.VISIBLE
+                    decline.visibility = View.VISIBLE
+                    dialog1.setContentView(v)
+                    dialog1.setCancelable(false)
+                    dialog1.show()
+
+                    accept.setOnClickListener {
+                        dialog1.dismiss()
+                    }
+                    decline.setOnClickListener {
+                        dialog1.dismiss()
+                        utype.setSelection(0)
+
+                    }
+                }
+
+                else if (utype.getSelectedItemPosition() == 3) {
+                    // Toast.makeText(LiveFillBonus.this, "2", Toast.LENGTH_SHORT).show();
+                    //bank_lay.setVisibility(View.VISIBLE)
+
+                    dialog1 = Dialog(this@SignUp)
+                    dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                    dialog1.getWindow()!!.setBackgroundDrawable(
+                        ColorDrawable(android.graphics.Color.WHITE)
+                    )
+                    val v = layoutInflater.inflate(R.layout.brown_popup, null)
                     val accept = v.findViewById<View>(R.id.acceptbutt) as Button
                     val decline = v.findViewById<View>(R.id.decbutt) as Button
                     val textView44 = v.findViewById<View>(R.id.textView44) as TextView

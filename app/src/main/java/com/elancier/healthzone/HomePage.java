@@ -96,9 +96,7 @@ public class HomePage extends MainView {
     EditText feededit;
     Button submitfeed;
     TextView feedrad,compradio,suggradio,permradio,tittext,tittextstar,noticnt,timedate;
-
     String   newvideo="";
-
     SharedPreferences shp;
     SharedPreferences.Editor edit;
     String popupstatus;
@@ -110,7 +108,6 @@ public class HomePage extends MainView {
     String star="";
     String amountvals="";
     String planvals="";
-
     String gpvvals="";
     String ibvvals="";
     String purchasevals="";
@@ -124,6 +121,7 @@ public class HomePage extends MainView {
     String available_rewardvals="";
     ConstraintLayout constprf;
     String str = "";
+    String reqdate = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -283,7 +281,7 @@ public class HomePage extends MainView {
 
         if(currentapiVersion>24) {
             Date currentTime = Calendar.getInstance().getTime();
-            DateFormat format=new SimpleDateFormat("dd MMM YYYY   HH:mm");
+            DateFormat format=new SimpleDateFormat("dd MMM yyyy   HH:mm");
             String formats=format.format(currentTime);
             timedate.setText(utils.loadName()+"\n"+formats);
         }
@@ -1027,6 +1025,8 @@ public class HomePage extends MainView {
                             }
 
 
+                            reqdate=jobj.getString("regDate");
+
                             if(!jobj.getString("mpin").isEmpty()){
                                 utils.savePreferences("mpin",jobj.getString("mpin").trim());
                             }
@@ -1240,10 +1240,33 @@ public class HomePage extends MainView {
                                 //imageView9.setImageResource(R.mipmap.basepins_img_foreground);
                                 tittext.setText(planvals);
                             }
+                            try{
+                                if(!reqdate.isEmpty()&&reqdate!=null){
+                                    String[] arr=reqdate.split("-");
+                                    if(Integer.parseInt(arr[0])<2021){
+
+                                    }
+                                    else if(Integer.parseInt(arr[0])==2021){
+                                        if(Integer.parseInt(arr[1])<=2&&Integer.parseInt(arr[2])<=16){
+
+                                        }
+                                        else{
+                                            starreq_lay.setVisibility(View.GONE);
+                                            starmonthly_lay.setVisibility(View.GONE);
+                                        }
+                                    }
+                                }
+                            }
+                            catch (Exception e){
+
+
+                            }
                         }
                         catch (Exception e){
 
                         }
+
+
 
             /*amountvals=getIntent().getStringExtra("amount");
             gpvvals=getIntent().getStringExtra("gpv");

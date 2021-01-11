@@ -91,6 +91,7 @@
 
     <color name="status_green">#4CA94C</color>
     <color name="status_red">#d94d4d</color>
+    <color name="brown_red">#A15F5F</color>
     <color name="status_orange">#FFA500</color>
     <color name="yellow">#FFF176</color>
 

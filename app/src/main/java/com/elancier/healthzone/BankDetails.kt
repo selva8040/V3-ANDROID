@@ -295,7 +295,7 @@ class BankDetails : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu:Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_bank, menu)
         return true
@@ -372,7 +372,7 @@ class BankDetails : AppCompatActivity() {
     }
 
     inner class GetInfoTask :
-        AsyncTask<String?, Void?, String?>() {
+        AsyncTask<String?,Void?,String?>() {
         override fun onPreExecute() {
             //progbar.setVisibility(View.VISIBLE);
             Log.i("GetInfoTask", "started")

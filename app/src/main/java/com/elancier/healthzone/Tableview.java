@@ -75,7 +75,7 @@ public class Tableview extends AppCompatActivity
     Dialog progbar,prog;
 
     DatePickerDialog picker;
-    TableLayout tb1,tb2;
+    TableLayout tb1,tb2,tb3;
     String amount="";
     String plan="";
     Date currentTime;
@@ -100,6 +100,7 @@ public class Tableview extends AppCompatActivity
     String vidval="";
     TextView blue;
     TextView green;
+    TextView brown;
     List<JSONObject> jsonobjarr;
 
     String videoresp="";
@@ -121,9 +122,11 @@ public class Tableview extends AppCompatActivity
         tb1=(TableLayout) findViewById(R.id.tb1);
         skip=(TextView) findViewById(R.id.skip);
         tb2=(TableLayout) findViewById(R.id.tb2);
+        tb3=(TableLayout) findViewById(R.id.tb3);
         scr=(ScrollView) findViewById(R.id.scr);
         blue=(TextView) findViewById(R.id.textView40);
         green=(TextView) findViewById(R.id.textView44);
+        brown=(TextView) findViewById(R.id.textView45);
         button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
         /*{"id":"1","name":"Tamil"},
@@ -212,6 +215,19 @@ public class Tableview extends AppCompatActivity
                 tb2.setVisibility(View.VISIBLE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_two));
+                }
+
+
+            }
+            else if(utils.loadtype().equals("2")){
+                tb1.setVisibility(View.GONE);
+                tb2.setVisibility(View.GONE);
+                brown.setVisibility(View.VISIBLE);
+                blue.setVisibility(View.GONE);
+                green.setVisibility(View.GONE);
+                tb3.setVisibility(View.VISIBLE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_brown));
                 }
 
 

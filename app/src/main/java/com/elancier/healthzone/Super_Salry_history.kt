@@ -69,7 +69,7 @@ class Super_Salry_history : AppCompatActivity() {
 
         if (currentapiVersion > 24) {
             val currentTime = Calendar.getInstance().time
-            val format: DateFormat = SimpleDateFormat("dd MMM YYYY   HH:mm")
+            val format: DateFormat = SimpleDateFormat("dd MMM yyyy   HH:mm")
             val formats = format.format(currentTime)
             subhead.setText(utils.loadName()+" "+formats)
         } else {

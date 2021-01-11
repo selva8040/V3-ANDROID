@@ -524,6 +524,261 @@
             </TableRow>
 
         </TableLayout>
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/brown_red"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="BROWN WAY"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TableLayout
+            android:id="@+id/tb3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/brown_red"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="Brown Way  Channel Video Scheduled Time "
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="Rewards &amp; Cut-off"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#e2e2e2"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="05.00 AM to 06:00 AM"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="06:50 AM"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFFFFF"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="06:01 AM to 07:00 AM"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="08:10 AM"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#e2e2e2"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="07:01 AM to 08:01 AM"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="09:30 AM"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFFFFF"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="06:30 PM to 07:30 PM"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="07:20 PM"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#e2e2e2"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="07:31 PM to 08:30 PM"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="08:40 PM"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFFFFF"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="08:31 PM to 09:30 PM"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/shapeline"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="10:00 PM"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+        </TableLayout>
 
         <LinearLayout
             android:id="@+id/layoutlay"
