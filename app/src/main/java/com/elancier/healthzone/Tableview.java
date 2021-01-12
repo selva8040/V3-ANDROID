@@ -102,7 +102,6 @@ public class Tableview extends AppCompatActivity
     TextView green;
     TextView brown;
     List<JSONObject> jsonobjarr;
-
     String videoresp="";
     String origin_domain="";
     String origin_count="";
@@ -135,6 +134,8 @@ public class Tableview extends AppCompatActivity
         {"id":"4","name":"Kannadam"},
         {"id":"5","name":"Telugu"},
         {"id":"6","name":"Hindi"}*/
+
+
 
         if(utils.loadlang().equals("1")){
             FirebaseMessaging.getInstance().subscribeToTopic("Tamil");
@@ -174,11 +175,14 @@ public class Tableview extends AppCompatActivity
 
                                 blue.setText (utils.loadName() + " - " + formats);
                                 green.setText(utils.loadName() + " - " + formats);
+                                brown.setText(utils.loadName() + " - " + formats);
                             }
                             else{
                                 Date currentTimes = Calendar.getInstance().getTime();
                                 blue.setText(utils.loadName()+" - "+currentTimes);
                                 green.setText(utils.loadName()+" - "+currentTimes);
+                                brown.setText(utils.loadName() + " - " + currentTimes);
+
 
                             }
                         }
@@ -309,28 +313,51 @@ public class Tableview extends AppCompatActivity
                 button4.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_videodis, 0);
             }
             int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+            Log.e("Front_Url",utils.front_url());
 
-            if(currentapiVersion>20)
-            {
-                System.out.println("inside21");
-                Intent a = new Intent(Tableview.this, Videoimage.class);
-                a.putExtra("videoresp",videoresp);
-                a.putExtra("orgdomain", origin_domain);
-                a.putExtra("orgcount", origin_count);
-                a.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(a);
-                overridePendingTransition(0, 0);
-                finish();
+            if(!utils.front_url().isEmpty()&&utils.front_url()!=null) {
+                if (currentapiVersion > 20) {
+                    System.out.println("inside21");
+                    Intent a = new Intent(Tableview.this, Front_VideoActivity.class);
+                    a.putExtra("videoresp", videoresp);
+                    a.putExtra("orgdomain", origin_domain);
+                    a.putExtra("orgcount", origin_count);
+                    a.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(a);
+                    overridePendingTransition(0, 0);
+                    finish();
+                } else {
+                    System.out.println("inside20");
+                    Intent a = new Intent(Tableview.this, Front_VideoActivity.class);
+                    //a.putExtra("videoresp", videoresp);
+                    startActivity(a);
+                    finish();
+
+                }
             }
             else{
-                System.out.println("inside20");
-                Intent a = new Intent(Tableview.this, Videoimage.class);
-                //a.putExtra("videoresp", videoresp);
-                startActivity(a);
-                finish();
+                if (currentapiVersion > 20) {
+                    System.out.println("inside21");
+                    Intent a = new Intent(Tableview.this, Videoimage.class);
+                    a.putExtra("videoresp", videoresp);
+                    a.putExtra("orgdomain", origin_domain);
+                    a.putExtra("orgcount", origin_count);
+                    a.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(a);
+                    overridePendingTransition(0, 0);
+                    finish();
+                } else {
+                    System.out.println("inside20");
+                    Intent a = new Intent(Tableview.this, Videoimage.class);
+                    //a.putExtra("videoresp", videoresp);
+                    startActivity(a);
+                    finish();
 
+                }
             }
 
             }

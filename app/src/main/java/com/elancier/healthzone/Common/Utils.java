@@ -122,10 +122,60 @@ public class Utils {
         return data;
     }
 
-        public String loadseenvideo() {
+    public String loadseenvideo() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
         String data = sharedPreferences.getString("seenvideo", "");
         return data;
+    }
+
+    public String front_url(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("front_url", "");
+        return data;
+    }
+
+    public String front_type(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("front_type", "");
+        return data;
+
+    }
+
+    public String front_seconds(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("front_seconds", "");
+        return data;
+    }
+
+    public String front_linkUrl(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("front_linkUrl", "");
+        return data;
+     }
+
+    public String back_url(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("back_url", "");
+        return data;
+    }
+
+    public String back_type(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("back_type", "");
+        return data;
+
+    }
+   public String  back_seconds(){
+       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+       String data = sharedPreferences.getString("back_seconds", "");
+       return data;
+   }
+
+   public String  back_linkUrl(){
+       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+       String data = sharedPreferences.getString("back_linkUrl", "");
+       return data;
+
     }
 
 

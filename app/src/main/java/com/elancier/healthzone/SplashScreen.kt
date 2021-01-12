@@ -4,11 +4,11 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.media.MediaPlayer
-import android.net.Uri
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
@@ -21,11 +21,13 @@ import androidx.appcompat.widget.Toolbar
 import com.crashlytics.android.Crashlytics
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
+import com.elancier.healthzone.Common.CheckNetwork
+import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.google.firebase.messaging.FirebaseMessaging
 import io.fabric.sdk.android.Fabric
 import kotlinx.android.synthetic.main.content_splash_screen.*
-import java.lang.Exception
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 
 class SplashScreen : AppCompatActivity() {
@@ -35,7 +37,7 @@ class SplashScreen : AppCompatActivity() {
     var utils: Utils? = null
     var alarmManager: AlarmManager? = null
     var pendingIntent: PendingIntent? = null
-    override fun onCreate(savedInstanceState:Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Fabric.with(this, Crashlytics())
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -60,7 +62,7 @@ class SplashScreen : AppCompatActivity() {
             try {
                 imageView5!!.setImageResource(R.mipmap.vlite_splash)
             }
-            catch (e:Exception){
+            catch (e: Exception){
                 imageView5!!.setImageResource(R.drawable.tvonlie)
 
             }
@@ -91,39 +93,160 @@ class SplashScreen : AppCompatActivity() {
         FirebaseMessaging.getInstance().subscribeToTopic("v3online")
 
 
+        if (CheckNetwork.isInternetAvailable(this)) {
+            GetInfoTask().execute()
+        }
+        else{
+            navigate()
+        }
+
+
+
         //startAlarm();
-        Handler().postDelayed({ //   Log.i("valuesss",utils.loadName().toString().trim().length()+"    "+utils.loadName());
-            if (utils!!.loadName().toString().trim { it <= ' ' }.length > 0) {
-                val today = SimpleDateFormat("dd/MM/yyyy")
-                    .format(System.currentTimeMillis())
-                val currentapiVersions = Build.VERSION.SDK_INT
-                if (currentapiVersions < 30) {
-                    utils!!.savePreferences("jsonobj", "")
-                }
-                if (today != utils!!.loadcheckdt() || utils!!.loadjsonval().isEmpty()) {
-                    val currentapiVersion = Build.VERSION.SDK_INT
-                    if (currentapiVersion < 30) {
-                        utils!!.savePreferences("jsonobj", "")
-                        val i = Intent(this@SplashScreen, Tableview::class.java)
-                        startActivity(i)
-                    } else {
-                        val i = Intent(this@SplashScreen, Tableview::class.java)
-                        startActivity(i)
+        /*Handler().postDelayed({ //   Log.i("valuesss",utils.loadName().toString().trim().length()+"    "+utils.loadName());
+
+        }, SPLASH_TIME_OUT.toLong())*/
+    }
+
+
+    inner class GetInfoTask :
+        AsyncTask<String?, Void?, String?>() {
+        override fun onPreExecute() {
+            //progbar.setVisibility(View.VISIBLE);
+           /* progbar= ProgressDialog(this@Upload_Image)
+            progbar!!.setMessage("Uploading...")
+            progbar!!.show()*/
+            Log.i("GetInfoTask", "started")
+        }
+
+        override fun doInBackground(vararg params: String?): String? {
+            var result: String? = null
+            val con = Connection()
+            try {
+
+                val json= JSONObject()
+                json.put("uname", utils!!.loadName())
+                result = con.sendHttpPostjson(
+                    "https://www.v3healthzone.com/app/frontAd.php",
+                    json
+                )
+
+
+            } catch (e:Exception) {
+                e.printStackTrace()
+            }
+            return result
+        }
+
+        override fun onPostExecute(resp: String?) {
+            Log.i("tabresp", resp + "")
+            //progbar!!.dismiss()
+            try {
+                if (resp != null) {
+                    val json = JSONObject(resp)
+                    val obj1 = json
+                    if (obj1.getString("Status") == "Success") {
+                        //Toast.makeText(applicationContext, "Uploaded Successfully.", Toast.LENGTH_SHORT).show()
+                        val front=obj1.getJSONArray("front")
+                        val back=obj1.getJSONArray("back")
+                        if(front.length()!=0) {
+                            val frontobj = front.getJSONObject(0)
+                            val front_url=frontobj.getString("url")
+                            val front_type=frontobj.getString("type")
+                            val front_seconds=frontobj.getString("seconds")
+                            val front_linkUrl=frontobj.getString("linkUrl")
+
+                            utils!!.savePreferences("front_url", front_url)
+                            utils!!.savePreferences("front_type", front_type)
+                            utils!!.savePreferences("front_seconds", front_seconds)
+                            utils!!.savePreferences("front_linkUrl", front_linkUrl)
+
+                        }
+                        else{
+                            utils!!.savePreferences("front_url", "")
+                            utils!!.savePreferences("front_type", "")
+                            utils!!.savePreferences("front_seconds", "")
+                            utils!!.savePreferences("front_linkUrl", "")
+                        }
+
+                        if(back.length()!=0) {
+                            val backobj = back.getJSONObject(0)
+                            val back_url=backobj.getString("url")
+                            val back_type=backobj.getString("type")
+                            val back_seconds=backobj.getString("seconds")
+                            val back_linkUrl=backobj.getString("linkUrl")
+
+                            utils!!.savePreferences("back_url", back_url)
+                            utils!!.savePreferences("back_type", back_type)
+                            utils!!.savePreferences("back_seconds", back_seconds)
+                            utils!!.savePreferences("back_linkUrl", back_linkUrl)
+
+                        }
+                        else{
+                            utils!!.savePreferences("back_url", "")
+                            utils!!.savePreferences("back_type", "")
+                            utils!!.savePreferences("back_seconds", "")
+                            utils!!.savePreferences("back_linkUrl", "")
+                        }
+                        navigate()
+
                     }
+                    else{
+                        navigate()
+
+                    }
+                } else {
+                    navigate()
+
+                    //println("errorneet"+e.toString())
+
+                    // Toast.makeText(getApplicationContext(), "Oops! Something went wrong please try again.", Toast.LENGTH_SHORT).show();
+                }
+            } catch (e: Exception) {
+
+                e.printStackTrace()
+                navigate()
+                // Toast.makeText(getApplicationContext(), "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+    fun navigate(){
+        Handler().postDelayed(Runnable {
+
+
+        if (utils!!.loadName().toString().trim { it <= ' ' }.length > 0) {
+            val today = SimpleDateFormat("dd/MM/yyyy")
+                .format(System.currentTimeMillis())
+            val currentapiVersions = Build.VERSION.SDK_INT
+            if (currentapiVersions < 30) {
+                utils!!.savePreferences("jsonobj", "")
+            }
+            if (today != utils!!.loadcheckdt() || utils!!.loadjsonval().isEmpty()) {
+                val currentapiVersion = Build.VERSION.SDK_INT
+                if (currentapiVersion < 30) {
+                    utils!!.savePreferences("jsonobj", "")
+                    val i = Intent(this@SplashScreen, Tableview::class.java)
+                    startActivity(i)
                 } else {
                     val i = Intent(this@SplashScreen, Tableview::class.java)
                     startActivity(i)
                 }
             } else {
-                val i = Intent(this@SplashScreen, Login::class.java)
+                val i = Intent(this@SplashScreen, Tableview::class.java)
                 startActivity(i)
             }
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        } else {
+            val i = Intent(this@SplashScreen, Login::class.java)
+            startActivity(i)
+        }
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
 
 
-            // close this activity
-            finish()
-        }, SPLASH_TIME_OUT.toLong())
+        // close this activity
+        finish()
+        },2000)
     }
 
     private fun startAlarm() {

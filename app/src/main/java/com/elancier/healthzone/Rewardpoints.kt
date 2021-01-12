@@ -45,15 +45,12 @@ class Rewardpoints : AppCompatActivity() {
     var pastVisiblesItems = 0
     var visibleItemCount:Int = 0
     var totalItemCount:Int = 0
-
     var submit=""
-
     var pastVisiblesItems1 = 0
     var visibleItemCount1:Int = 0
     var totalItemCount1:Int = 0
     var start:Int = 0
     var limit:Int = 10
-
     var startsearch:Int = 0
     var limitsearch:Int = 10
     private val mRecyclerListitems: MutableList<Any> = ArrayList()
@@ -61,9 +58,11 @@ class Rewardpoints : AppCompatActivity() {
     private var productItems: MutableList<Rewardpointsbo>? = null
     var itemsAdapter1: RewardpointsAdapter? = null
     private var productItems1: MutableList<Rewardpointsbo>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rewardpoints)
+
         supportActionBar!!.title = "Reward Points"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)

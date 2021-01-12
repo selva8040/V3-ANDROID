@@ -403,6 +403,8 @@
         <activity android:name=".Crore_Salary_FORM"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Crore_Salary_history" />
+        <activity android:name=".Front_VideoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <!--
 <provider
             android:name="android.support.v4.content.FileProvider"

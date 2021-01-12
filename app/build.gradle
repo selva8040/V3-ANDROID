@@ -32,8 +32,8 @@ android {
         applicationId "com.elancier.healthzone"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 47
-        versionName "1.47"
+        versionCode 48
+        versionName "1.48"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
         multiDexEnabled true
@@ -86,6 +86,7 @@ dependencies {
 
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
 
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.android.exoplayer:exoplayer:r2.4.0'

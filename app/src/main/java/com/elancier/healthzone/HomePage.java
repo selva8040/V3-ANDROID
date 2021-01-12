@@ -9,12 +9,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.speech.RecognizerIntent;
 
 import android.text.InputFilter;
@@ -22,11 +24,14 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -44,13 +49,18 @@ import android.widget.Scroller;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.elancier.healthzone.Common.Appconstants;
 import com.elancier.healthzone.Common.Connection;
 import com.elancier.healthzone.Common.Utils;
@@ -122,6 +132,11 @@ public class HomePage extends MainView {
     ConstraintLayout constprf;
     String str = "";
     String reqdate = "";
+    Dialog Adialog;
+    String back_imageurl="";
+    String back_gifurl="";
+    String back_videourl="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -494,8 +509,20 @@ public class HomePage extends MainView {
                     String feedoption="";
                     progbar.show();
 
-                    HomePage.feedback task = new HomePage.feedback();
-                    task.execute(fname, feededit.getText().toString().trim(),str);
+                    try {
+                        if (!utils.back_url().isEmpty() && utils.back_url() != null) {
+                            openad();
+                        } else {
+                            HomePage.feedback task = new HomePage.feedback();
+                            task.execute(fname, feededit.getText().toString().trim(), str);
+                        }
+                    }
+                    catch (Exception e){
+                        HomePage.feedback task = new HomePage.feedback();
+                        task.execute(fname, feededit.getText().toString().trim(), str);
+                    }
+
+
                 }
                 else{
                     submitfeed.setEnabled(true);
@@ -511,6 +538,166 @@ public class HomePage extends MainView {
             }
         });
     }
+
+
+    public void openad(){
+        Adialog=new Dialog(this);
+        Adialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        Adialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        Adialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        View vs = getLayoutInflater().inflate(R.layout.activity_video_ad, null);
+        ImageView wb = vs.findViewById(R.id.wb);
+        VideoView videoView = vs.findViewById(R.id.videoView);
+        CardView card = vs.findViewById(R.id.card);
+        TextView textView2 = vs.findViewById(R.id.textView2);
+
+
+        wb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(utils.back_linkUrl()));
+                    startActivity(browserIntent);
+                }
+                catch(Exception e){
+
+                }
+            }
+        }); {
+
+        }
+
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               try {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(utils.back_linkUrl()));
+                startActivity(browserIntent);
+            }
+            catch(Exception e){
+
+            }
+            }
+        });
+
+
+        try {
+            String frm=utils.back_type();
+            String seconds=utils.back_seconds();
+            Log.e("seconds",seconds);
+
+            if(frm.equals("Image")){
+                back_imageurl = utils.back_url();
+                loadimage(wb,videoView);
+                startTimer(Integer.parseInt(seconds),card,
+                        textView2);
+
+            }
+
+            else if(frm.equals("Gif")){
+                back_gifurl = utils.back_url();
+                loadgif(wb,videoView);
+                startTimer(Integer.parseInt(seconds),card,
+                        textView2);
+
+            }
+
+            else if(frm.equals("Video")){
+                back_videourl = utils.back_url();
+                //wb.visibility= View.INVISIBLE;
+                loadvideo(wb,videoView);
+                startTimer(Integer.parseInt(utils.back_seconds()),card,
+                        textView2);
+
+            }
+            else{
+                int currentapiVersion = Build.VERSION.SDK_INT;
+                HomePage.feedback task = new HomePage.feedback();
+                task.execute(fname, feededit.getText().toString().trim(), str);
+
+            }
+
+            Adialog.setContentView(vs);
+            Adialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+            Adialog.getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            Adialog.getWindow().setBackgroundDrawable(
+                    new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+            int width = (int) (displaymetrics.widthPixels * 1);
+            int height = (int) (displaymetrics.heightPixels * 1);
+            Adialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            Adialog.setCancelable(false);
+            Adialog.show();
+        }
+        catch (Exception e){
+            Log.e("error",e.toString());
+            HomePage.feedback task = new HomePage.feedback();
+            task.execute(fname, feededit.getText().toString().trim(), str);
+        }
+
+    }
+
+    public void startTimer(int mins,CardView card,TextView textView2){
+        new CountDownTimer(mins*1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+               // mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+                card.setVisibility(View.VISIBLE);
+                // }
+                textView2.setText("Ad ends in : " + millisUntilFinished / 1000 + " sec");
+                //here you can have your logic to set text to edittext
+            }
+
+            public void onFinish() {
+                //imageButton.isEnabled=true;
+                card.setEnabled(true);
+                Adialog.dismiss();
+                HomePage.feedback task = new HomePage.feedback();
+                task.execute(fname, feededit.getText().toString().trim(), str);
+            }
+
+        }.start();
+    }
+
+    public void loadvideo(ImageView wb,VideoView videoView){
+        videoView.setVisibility(View.VISIBLE);
+        wb.setVisibility(View.INVISIBLE);
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        ViewGroup.LayoutParams params = videoView.getLayoutParams();
+        //params.width = Integer.parseInt(String.valueOf((300 * metrics.density)));
+        ///params.height = Integer.parseInt(String.valueOf((250 * metrics.density)));
+        //videoView.setLayoutParams(params);
+        videoView.setMediaController(null);
+        videoView.setVideoPath(back_videourl);
+        videoView.start();
+    }
+
+    public void loadgif(ImageView wb,VideoView videoView){
+        videoView.setVisibility(View.INVISIBLE);
+        wb.setVisibility(View.VISIBLE);
+        Glide.with(this)
+                .load(back_gifurl)
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(wb);
+        //wb.loadUrl()
+
+    }
+
+    public void loadimage(ImageView wb,VideoView videoView){
+        videoView.setVisibility(View.INVISIBLE);
+        wb.setVisibility(View.VISIBLE);
+        Glide.with(this)
+                .load(back_imageurl)
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(wb);
+        //wb.loadUrl()
+
+    }
+
+
     public void change_back(){
         if (str.equals("Feedback")){
             selected(feedrad);
@@ -848,13 +1035,18 @@ public class HomePage extends MainView {
         {
             drawerLayout.closeDrawer(Gravity.LEFT);
         }
-        else {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+        else if(Adialog.isShowing()) {
+            Toast.makeText(getApplicationContext(),"Can't skip AD",Toast.LENGTH_SHORT).show();
         }
-    }
+        else
+            {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        }
+
 
 
     @Override
