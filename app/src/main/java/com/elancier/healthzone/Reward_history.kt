@@ -493,7 +493,7 @@ class Reward_history : AppCompatActivity() {
                     val reward: RewardpointsAsync = RewardpointsAsync()
                     reward.execute()
                 }
-            } catch (e: JSONException) {
+            } catch (e:JSONException) {
                 e.printStackTrace()
                 Log.e("E VALUE", e.toString())
                 mRecyclerListitems.addAll(productItems!!)

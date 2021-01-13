@@ -3110,6 +3110,10 @@ class SignUp : AppCompatActivity() {
                 if (intent.extras!!.getString("frm")!="login") {
                     jobj.put("from", "Tree")
                 }
+
+
+
+
                 jobj.put("fname", param[0])
                 jobj.put("lname", param[1])
                 jobj.put("mname", param[2])
@@ -3130,8 +3134,19 @@ class SignUp : AppCompatActivity() {
                 jobj.put("language", param[17])
                 jobj.put("country", param[18])
                 jobj.put("whatsup", param[19])
-                jobj.put("utype", if (arr.get(utype.selectedItemPosition) == "Blue") "0" else "1")
                 jobj.put("image", urlink)
+                if((utype.selectedItemPosition) ==1) {
+                    jobj.put("utype", "0")
+
+                }
+                else if(utype.selectedItemPosition==2){
+                    jobj.put("utype", "1")
+
+                }
+                else if(utype.selectedItemPosition==3){
+                    jobj.put("utype", "2")
+
+                }
                 jobj.put("type", "register")
 
                 if(student_plan.isChecked==true){

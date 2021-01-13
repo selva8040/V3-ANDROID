@@ -1,14 +1,11 @@
 package com.elancier.healthzone
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
-import android.content.pm.PackageInfo
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -23,7 +20,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elancier.healthzone.Adapter.Notificationadap
 import com.elancier.healthzone.Adapter.Paymentadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
@@ -34,14 +30,9 @@ import com.shreyaspatil.easyupipayment.listener.PaymentStatusListener
 import com.shreyaspatil.easyupipayment.model.TransactionDetails
 import com.shreyaspatil.easyupipayment.model.TransactionStatus
 import kotlinx.android.synthetic.main.activity_payment_.*
-import kotlinx.android.synthetic.main.activity_payment_.progressBar
-import kotlinx.android.synthetic.main.activity_payment_.recyclerlist
-import kotlinx.android.synthetic.main.activity_super__salary.*
-import kotlinx.android.synthetic.main.activity_super__salry_history.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -242,7 +233,7 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
                 println("amounttotal"+amounttotal)
             }
 
-            val easyUpiPayment = EasyUpiPayment.Builder(this)
+            val  easyUpiPayment = EasyUpiPayment.Builder(this)
                 .setPayeeVpa(autoCompleteTextView.selectedItem.toString())
                 .setPayeeName("V3 Payment")
                 .setTransactionId("$rand_int1")
@@ -258,9 +249,6 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
         }
 
         }
-
-
-
     }
 
 
@@ -302,7 +290,7 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
             return result
         }
 
-        override fun onPostExecute(resp: String?) {
+        override fun onPostExecute(resp:String?) {
 
 
             try {
@@ -319,6 +307,7 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
                             "Payment successful.",
                             Toast.LENGTH_SHORT
                         ).show()
+
                         startActivity(Intent(this@Payment_Activity, HomePage::class.java))
                     } else {
                         startActivity(Intent(this@Payment_Activity, HomePage::class.java))
@@ -332,8 +321,6 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
                 }
             } catch (e: Exception) {
                 pDialo!!.dismiss()
-
-                // retry.show();
                 e.printStackTrace()
                 startActivity(Intent(this@Payment_Activity, HomePage::class.java))
 
@@ -360,7 +347,6 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
         override fun doInBackground(vararg param: String): String? {
             var result: String? = null
             var yesval: String? = null
-
             val con = Connection()
 
             try {
@@ -408,15 +394,9 @@ class Payment_Activity : AppCompatActivity(), PaymentStatusListener {
 
                         pDialo.dismiss()
 
-
-                        //Toast.makeText(this@Super_Salary, "Mobile Number already exists.", Toast.LENGTH_LONG).show()
-
-
                     }
                 } else {
                     pDialo.dismiss()
-
-                    //Toast.makeText(applicationContext, "Oops! Something went wrong please try again.", Toast.LENGTH_SHORT).show()
 
                 }
             } catch (e: Exception) {

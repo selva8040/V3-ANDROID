@@ -693,7 +693,7 @@
                     android:background="@drawable/shapeline"
                     android:gravity="center"
                     android:padding="3dp"
-                    android:text="07:16 PM to 08:00 PM"
+                    android:text="07:16 AM to 08:00 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
 

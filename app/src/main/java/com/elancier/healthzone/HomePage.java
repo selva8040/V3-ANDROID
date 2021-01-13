@@ -11,30 +11,22 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.RecognizerIntent;
-
-import android.text.InputFilter;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,8 +34,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Scroller;
 import android.widget.Spinner;
@@ -71,14 +61,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import static com.elancier.healthzone.Common.Appconstants.domain;
 
@@ -332,8 +320,13 @@ public class HomePage extends MainView {
         String type = utils.loadtype();
         if (type.equals("0")){
             scroll.setBackgroundResource(R.drawable.top_corner_round_blue);
-        }else {
+        }
+        else if(type.equals("1")) {
             scroll.setBackgroundResource(R.drawable.top_corner_round_green);
+        }
+        else if(type.equals("2")){
+            scroll.setBackgroundResource(R.drawable.top_corner_round_brown);
+
         }
 
         feededit.setScroller(new Scroller(HomePage.this));

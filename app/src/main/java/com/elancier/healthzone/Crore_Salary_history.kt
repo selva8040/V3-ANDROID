@@ -10,14 +10,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.Rewardfeedadap
-import com.elancier.healthzone.Adapter.Rewardhistoryadap
 import com.elancier.healthzone.Adapter.Star_perfadap
-import com.elancier.healthzone.Adapter.Super_salhistoryadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import com.elancier.healthzone.Pojo.salarypo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
@@ -25,13 +21,13 @@ import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.util.*
 
 class Crore_Salary_history : AppCompatActivity() {
     internal lateinit var itemsAdapter: Star_perfadap
     private val mRecyclerListitems = ArrayList<Any>()
     private var productItems: MutableList<salarypo>? = null
-    internal lateinit var mLayoutManager: LinearLayoutManager
+    internal lateinit var mLayoutManager:LinearLayoutManager
     internal lateinit var utils: Utils
 
     override fun onCreate(savedInstanceState: Bundle?) {

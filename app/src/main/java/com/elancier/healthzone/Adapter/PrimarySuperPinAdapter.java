@@ -124,6 +124,16 @@ public class PrimarySuperPinAdapter extends ArrayAdapter<PinBo> {
             holder.img.setImageResource(R.mipmap.basepins_img_foreground);
 
         }
+        else if(items.get(position).gettype().equalsIgnoreCase("Base(N)"))
+        {
+            holder.img.setImageResource(R.mipmap.basen_pic);
+
+        }
+        else if(items.get(position).gettype().equalsIgnoreCase("Student"))
+        {
+            holder.img.setImageResource(R.mipmap.student);
+
+        }
 
 
         if(items.get(position).getPinstatus().equalsIgnoreCase("Activated")){

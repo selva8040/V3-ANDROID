@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content">
@@ -184,7 +182,7 @@
                 android:background="@drawable/shapeline"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="07:16 PM to 08:00 PM"
+                android:text="07:16 AM to 08:00 AM"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
