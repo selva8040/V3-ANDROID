@@ -125,6 +125,10 @@ public class HomePage extends MainView {
     String back_gifurl="";
     String back_videourl="";
 
+    String middle_imageurl="";
+    String middle_gifurl="";
+    String middle_videourl="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -632,6 +636,128 @@ public class HomePage extends MainView {
 
     }
 
+    public void middlead(){
+        Adialog=new Dialog(this);
+        Adialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        Adialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        Adialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        View vs = getLayoutInflater().inflate(R.layout.activity_video_ad, null);
+        ImageView wb = vs.findViewById(R.id.wb);
+        VideoView videoView = vs.findViewById(R.id.videoView);
+        CardView card = vs.findViewById(R.id.card);
+        TextView textView2 = vs.findViewById(R.id.textView2);
+
+
+        wb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(utils.middlelinkUrl()));
+                    startActivity(browserIntent);
+                }
+                catch(Exception e){
+
+                }
+            }
+        }); {
+
+        }
+
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(utils.back_linkUrl()));
+                    startActivity(browserIntent);
+                }
+                catch(Exception e){
+
+                }
+            }
+        });
+
+
+        try {
+            String frm=utils.middle_type();
+            String seconds=utils.middle_seconds();
+            Log.e("seconds",seconds);
+
+            if(frm.equals("Image")){
+                middle_imageurl = utils.middle_url();
+                loadimage(wb,videoView);
+                startTimer_middle(Integer.parseInt(seconds),card,
+                        textView2);
+
+            }
+
+            else if(frm.equals("Gif")){
+                middle_gifurl = utils.middle_url();
+                loadgif(wb,videoView);
+                startTimer_middle(Integer.parseInt(seconds),card,
+                        textView2);
+
+            }
+
+            else if(frm.equals("Video")){
+                middle_videourl = utils.middle_url();
+                //wb.visibility= View.INVISIBLE;
+                loadvideo(wb,videoView);
+                startTimer_middle(Integer.parseInt(utils.middle_seconds()),card,
+                        textView2);
+
+            }
+            else{
+                int currentapiVersion = Build.VERSION.SDK_INT;
+
+                /*HomePage.feedback task = new HomePage.feedback();
+                task.execute(fname, feededit.getText().toString().trim(), str);*/
+
+            }
+
+            Adialog.setContentView(vs);
+            Adialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+            Adialog.getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            Adialog.getWindow().setBackgroundDrawable(
+                    new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+            int width = (int) (displaymetrics.widthPixels * 1);
+            int height = (int) (displaymetrics.heightPixels * 1);
+            Adialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            Adialog.setCancelable(false);
+            Adialog.show();
+        }
+        catch (Exception e){
+            Log.e("error",e.toString());
+            /*HomePage.feedback task = new HomePage.feedback();
+            task.execute(fname, feededit.getText().toString().trim(), str);*/
+        }
+
+    }
+
+    public void startTimer_middle(int mins,CardView card,TextView textView2){
+        new CountDownTimer(mins*1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                // mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+                card.setVisibility(View.VISIBLE);
+                // }
+                textView2.setText("Ad ends in : " + millisUntilFinished / 1000 + " sec");
+                //here you can have your logic to set text to edittext
+            }
+
+            public void onFinish() {
+                //imageButton.isEnabled=true;
+                card.setEnabled(true);
+                Adialog.dismiss();
+                /*HomePage.feedback task = new HomePage.feedback();
+                task.execute(fname, feededit.getText().toString().trim(), str);*/
+            }/**/
+
+        }.start();
+    }
+
     public void startTimer(int mins,CardView card,TextView textView2){
         new CountDownTimer(mins*1000, 1000) {
 
@@ -649,7 +775,7 @@ public class HomePage extends MainView {
                 Adialog.dismiss();
                 HomePage.feedback task = new HomePage.feedback();
                 task.execute(fname, feededit.getText().toString().trim(), str);
-            }
+            }/**/
 
         }.start();
     }
@@ -684,6 +810,43 @@ public class HomePage extends MainView {
         wb.setVisibility(View.VISIBLE);
         Glide.with(this)
                 .load(back_imageurl)
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(wb);
+        //wb.loadUrl()
+
+    }
+
+
+    public void middle_loadvideo(ImageView wb,VideoView videoView){
+        videoView.setVisibility(View.VISIBLE);
+        wb.setVisibility(View.INVISIBLE);
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        ViewGroup.LayoutParams params = videoView.getLayoutParams();
+        //params.width = Integer.parseInt(String.valueOf((300 * metrics.density)));
+        ///params.height = Integer.parseInt(String.valueOf((250 * metrics.density)));
+        //videoView.setLayoutParams(params);
+        videoView.setMediaController(null);
+        videoView.setVideoPath(middle_videourl);
+        videoView.start();
+    }
+
+    public void middle_loadgif(ImageView wb,VideoView videoView){
+        videoView.setVisibility(View.INVISIBLE);
+        wb.setVisibility(View.VISIBLE);
+        Glide.with(this)
+                .load(middle_gifurl)
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(wb);
+        //wb.loadUrl()
+
+    }
+
+    public void middle_loadimage(ImageView wb,VideoView videoView){
+        videoView.setVisibility(View.INVISIBLE);
+        wb.setVisibility(View.VISIBLE);
+        Glide.with(this)
+                .load(middle_imageurl)
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
                 .into(wb);
         //wb.loadUrl()
@@ -1061,8 +1224,6 @@ public class HomePage extends MainView {
         task.execute();
 
 
-
-
     }
 
     public class Videosubmit extends AsyncTask<String, String, String>
@@ -1148,12 +1309,14 @@ public class HomePage extends MainView {
         }
     }
 
-    private class GetInfoTask extends AsyncTask<String, Void, String> {
+    private class GetInfoTask extends AsyncTask<String,Void,String> {
         @Override
         protected void onPreExecute() {
             //progbar.setVisibility(View.VISIBLE);
             //progbar.show();
             //Log.i("GetInfoTask", "started");
+            Adialog=new Dialog(HomePage.this);
+
         }
 
         protected String doInBackground(String... param) {
@@ -1431,13 +1594,15 @@ public class HomePage extends MainView {
                                     if(Integer.parseInt(arr[0])<2021){
 
                                     }
-                                    else if(Integer.parseInt(arr[0])==2021){
-                                        if(Integer.parseInt(arr[1])<=2&&Integer.parseInt(arr[2])<=16){
-
+                                    else if(Integer.parseInt(arr[0])>=2021){
+                                        if(Integer.parseInt(arr[1])>=2){
+                                            if(Integer.parseInt(arr[2])>=16){
+                                                starreq_lay.setVisibility(View.GONE);
+                                                starmonthly_lay.setVisibility(View.GONE);
+                                            }
                                         }
                                         else{
-                                            starreq_lay.setVisibility(View.GONE);
-                                            starmonthly_lay.setVisibility(View.GONE);
+
                                         }
                                     }
                                 }

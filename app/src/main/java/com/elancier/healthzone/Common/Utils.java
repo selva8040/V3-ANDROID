@@ -7,10 +7,6 @@ import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
 import android.telephony.TelephonyManager;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
 public class Utils {
 
     Context _context;
@@ -152,6 +148,32 @@ public class Utils {
         String data = sharedPreferences.getString("front_linkUrl", "");
         return data;
      }
+
+
+    public String middle_url(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("middle_url", "");
+        return data;
+    }
+
+    public String middle_type(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("middle_type", "");
+        return data;
+
+    }
+
+    public String middle_seconds(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("middle_seconds", "");
+        return data;
+    }
+
+    public String middlelinkUrl(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("middle_linkUrl", "");
+        return data;
+    }
 
     public String back_url(){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);

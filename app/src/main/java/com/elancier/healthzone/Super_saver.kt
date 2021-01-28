@@ -15,19 +15,16 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import kotlinx.android.synthetic.main.activity_super__salary.*
 import kotlinx.android.synthetic.main.activity_super__salary.custname
 import kotlinx.android.synthetic.main.activity_super__salary.uname
 import kotlinx.android.synthetic.main.activity_super_saver.*
 import kotlinx.android.synthetic.main.saver_header.*
-import org.json.JSONArray
 import org.json.JSONObject
 
 class Super_saver : AppCompatActivity() {
@@ -104,8 +101,6 @@ class Super_saver : AppCompatActivity() {
         }
 
 
-
-
         save1.setOnClickListener {
             if(uname.text.toString().trim().isNotEmpty()) {
 
@@ -173,8 +168,6 @@ class Super_saver : AppCompatActivity() {
                 user3.setError("Required field")
 
             }
-
-
 
         }
 
@@ -492,8 +485,6 @@ class Super_saver : AppCompatActivity() {
                 }
             }
         }
-
-
 
     }
 
@@ -821,7 +812,6 @@ class Super_saver : AppCompatActivity() {
                 jobj.put("username6",user6.text.toString().trim())
                 //jobj.put("username",custnamew.text.toString().trim())
 
-
                 Log.i("checkInput feedback", Appconstants.startperf + "    " + jobj.toString())
                 result = con.sendHttpPostjson2(Appconstants.startperf, jobj, "")
 
@@ -857,18 +847,8 @@ class Super_saver : AppCompatActivity() {
 
                     }
 
-
-
-
-                    //feededit.setText(null)
-                    //Toast.makeText(this@HomePage, "Thanks for your valuable feedback!.", Toast.LENGTH_LONG).show()
-
-
                 } else {
                     toast("Data not saved.")
-
-                    //Toast.makeText(this@HomePage, "Failed to uplaod feedback.", Toast.LENGTH_LONG).show()
-
 
                 }
 
@@ -876,10 +856,7 @@ class Super_saver : AppCompatActivity() {
                 e.printStackTrace()
                 toast(e.toString())
 
-                //Toast.makeText(applicationContext, "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show()
-
             }
-
 
         }
     }

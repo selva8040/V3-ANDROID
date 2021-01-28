@@ -11,7 +11,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
-
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -25,21 +24,11 @@ import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import kotlinx.android.synthetic.main.activity_daterequest_.*
-import kotlinx.android.synthetic.main.activity_daterequest_.captcha
-import kotlinx.android.synthetic.main.activity_daterequest_.frdt
-import kotlinx.android.synthetic.main.activity_monthly_report.*
-import kotlinx.android.synthetic.main.activity_vip__client_add.*
 import kotlinx.android.synthetic.main.callentry_header.*
-
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
-
-
-
 
 class Daterequest_Activity : AppCompatActivity() {
 
@@ -112,8 +101,6 @@ class Daterequest_Activity : AppCompatActivity() {
         val random1 = Random().nextInt(max - min + 1)
         captcha.setText("$random+$random1 =")
         tot=random+random1
-
-
 
 
 

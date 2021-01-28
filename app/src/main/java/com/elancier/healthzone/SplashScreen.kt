@@ -148,6 +148,7 @@ class SplashScreen : AppCompatActivity() {
                     if (obj1.getString("Status") == "Success") {
                         //Toast.makeText(applicationContext, "Uploaded Successfully.", Toast.LENGTH_SHORT).show()
                         val front=obj1.getJSONArray("front")
+                        val middle=obj1.getJSONArray("middle")
                         val back=obj1.getJSONArray("back")
                         if(front.length()!=0) {
                             val frontobj = front.getJSONObject(0)
@@ -167,6 +168,26 @@ class SplashScreen : AppCompatActivity() {
                             utils!!.savePreferences("front_type", "")
                             utils!!.savePreferences("front_seconds", "")
                             utils!!.savePreferences("front_linkUrl", "")
+                        }
+
+                        if(middle.length()!=0) {
+                            val frontobj = middle.getJSONObject(0)
+                            val front_url=frontobj.getString("url")
+                            val front_type=frontobj.getString("type")
+                            val front_seconds=frontobj.getString("seconds")
+                            val front_linkUrl=frontobj.getString("linkUrl")
+
+                            utils!!.savePreferences("middle_url", front_url)
+                            utils!!.savePreferences("middle_type", front_type)
+                            utils!!.savePreferences("middle_seconds", front_seconds)
+                            utils!!.savePreferences("middle_linkUrl", front_linkUrl)
+
+                        }
+                        else{
+                            utils!!.savePreferences("middle_url", "")
+                            utils!!.savePreferences("middle_type", "")
+                            utils!!.savePreferences("middle_seconds", "")
+                            utils!!.savePreferences("middle_linkUrl", "")
                         }
 
                         if(back.length()!=0) {

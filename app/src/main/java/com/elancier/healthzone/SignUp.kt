@@ -3135,6 +3135,7 @@ class SignUp : AppCompatActivity() {
                 jobj.put("country", param[18])
                 jobj.put("whatsup", param[19])
                 jobj.put("image", urlink)
+
                 if((utype.selectedItemPosition) ==1) {
                     jobj.put("utype", "0")
 
@@ -3151,12 +3152,10 @@ class SignUp : AppCompatActivity() {
 
                 if(student_plan.isChecked==true){
                     jobj.put("student", "1")
-
                 }
                 else if(student_plan.isChecked==false)
                 {
                     jobj.put("student", "0")
-
                 }
                 Log.i("Submit", Appconstants.CORE + "    " + jobj.toString())
                 result = con.sendHttpPostjson2(Appconstants.CORE, jobj, "")
