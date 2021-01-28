@@ -48,7 +48,7 @@ class SplashScreen : AppCompatActivity() {
         /*window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);*/
         setContentView(R.layout.activity_splash_screen)
         val toolbar =
-            findViewById<View>(R.id.toolbar) as Toolbar
+            findViewById<Toolbar>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         supportActionBar!!.hide()
         utils = Utils(applicationContext)

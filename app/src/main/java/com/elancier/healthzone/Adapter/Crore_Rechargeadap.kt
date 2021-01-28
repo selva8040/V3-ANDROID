@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.elancier.healthzone.New_recharge_List
-import com.elancier.healthzone.Point_List
+import com.elancier.healthzone.*
 import com.elancier.healthzone.Pojo.Rewardpointsbo
-import com.elancier.healthzone.R
-import com.elancier.healthzone.Reward_history
 
 class Crore_Rechargeadap(private val mRecyclerViewItems2: List<Any>, private val context: Context, private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -64,10 +61,38 @@ class Crore_Rechargeadap(private val mRecyclerViewItems2: List<Any>, private val
                 holder.remark.setOnClickListener {
 
                     if(holder.remark.text.toString()=="Approved") {
-                        (context as New_recharge_List).clikffed(item.id, item.whomename,item.points,item.type)
+                            try {
+                                (context as New_recharge_List).clikffed(
+                                    item.id,
+                                    item.whomename,
+                                    item.points,
+                                    item.type
+                                )
+                            }catch (e:Exception){
+                                (context as Crorepathi_recharge).clikffed(
+                                    item.id,
+                                    item.whomename,
+                                    item.points,
+                                    item.type
+                                )
+                            }
                     }
                     else if(holder.remark.text.toString()=="Rejected") {
-                        (context as New_recharge_List).clikffed_rej(item.id, item.points,item.points,item.type)
+                            try {
+                                (context as New_recharge_List).clikffed_rej(
+                                    item.id,
+                                    item.points,
+                                    item.points,
+                                    item.type
+                                )
+                            }catch (e:java.lang.Exception){
+                                (context as Crorepathi_recharge).clikffed_rej(
+                                    item.id,
+                                    item.points,
+                                    item.points,
+                                    item.type
+                                )
+                            }
                     }
 
                 }

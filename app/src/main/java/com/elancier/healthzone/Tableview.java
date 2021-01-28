@@ -1269,10 +1269,13 @@ public class Tableview extends AppCompatActivity
                             resp = "false";
                             respupdate = "false";
 
-                        } else {
+                        } else if (versionCode < Number){
                             resp = "true";
                             respupdate = "true";
 
+                        }else {
+                            resp = "false";
+                            respupdate = "false";
                         }
 
                         progbar.dismiss();

@@ -49,9 +49,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="105dp"
+                            android:id="@+id/frmbnk"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="From Bank"
+                            android:text="From Bank  "
                             android:textColor="#666666"
                             android:textSize="15dp" />
 
@@ -78,9 +79,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="105dp"
+                            android:id="@+id/rchamnt"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="Tid"
+                            android:text="Tid  "
                             android:textColor="#666666"
                             android:textSize="15dp" />
 

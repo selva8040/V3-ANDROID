@@ -762,6 +762,10 @@ class New_recharge_List : AppCompatActivity() {
             )
             val v = layoutInflater.inflate(R.layout.fill_point_dialog, null)
 
+            val frmbnk = v.findViewById<View>(R.id.frmbnk) as TextView
+            val rchamnt = v.findViewById<View>(R.id.rchamnt) as TextView
+            frmbnk.setText("Recharge Amount  ")
+            rchamnt.setText("Point Amount  ")
             val nofeed = v.findViewById<View>(R.id.frombank) as TextView
             val feed = v.findViewById<View>(R.id.tid) as TextView
             val feedvt =
