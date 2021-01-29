@@ -10,11 +10,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.*
+import com.elancier.healthzone.Adapter.Super_business_perfadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import com.elancier.healthzone.Pojo.salarypo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
@@ -22,7 +21,7 @@ import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.util.*
 
 class Super_business_Man_history : AppCompatActivity() {
     internal lateinit var itemsAdapter: Super_business_perfadap
@@ -31,7 +30,7 @@ class Super_business_Man_history : AppCompatActivity() {
     internal lateinit var mLayoutManager: LinearLayoutManager
     internal lateinit var utils: Utils
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_super__perf_history)
         utils = Utils(applicationContext)

@@ -89,6 +89,11 @@ public class PrimarySuperPinAdapter extends ArrayAdapter<PinBo> {
             holder.img.setImageResource(R.mipmap.premiumicon);
 
         }
+        else if(items.get(position).gettype().equalsIgnoreCase("Star Premium"))
+        {
+            holder.img.setImageResource(R.mipmap.starpremiumnew);
+
+        }
         else if(items.get(position).gettype().equalsIgnoreCase("Super Premium"))
         {
             holder.img.setImageResource(R.mipmap.superpremiumnew);
@@ -132,6 +137,11 @@ public class PrimarySuperPinAdapter extends ArrayAdapter<PinBo> {
         else if(items.get(position).gettype().equalsIgnoreCase("Student"))
         {
             holder.img.setImageResource(R.mipmap.student);
+
+        }
+        else if(items.get(position).gettype().equalsIgnoreCase("Welcome Plan"))
+        {
+            holder.img.setImageResource(R.mipmap.welcomeimg);
 
         }
 

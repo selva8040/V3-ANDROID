@@ -2,25 +2,20 @@ package com.elancier.healthzone;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-
-import android.os.Environment;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -57,17 +52,13 @@ import com.elancier.healthzone.Common.GifImageView;
 import com.elancier.healthzone.Common.Helper;
 import com.elancier.healthzone.Common.Utils;
 import com.elancier.healthzone.Pojo.MenuItemBo;
-import com.elancier.healthzone.Pojo.ReportsPojo;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
 /**
@@ -87,13 +78,14 @@ public class MainView extends AppCompatActivity {
             support_layred,supports_lay,support_history,support_reduce,bank_history,plan_history,recharge_history
             ,request_child_lay,normalreq_lay,starreq_lay,superreq_lay,reward_wallet,
             monthly_child_lay,normalmonthly_lay,starmonthly_lay,supermonthly_lay,
-            coupon_child_lay,coup_monthly_lay,coupmonthly_lay,cr_child_layred,cr_terms,
-            cr_wallet,cr_redeem,cr_prbox,cr_rech2,crore_lay,
+            coupon_child_lay,coup_monthly_lay,coupmonthly_lay,cr_child_layred,welc_child_layred,cr_terms,
+            cr_wallet,cr_redeem,cr_prbox,cr_rech2,crore_lay,welcome_terms,welcome_wallet,
+            welcome_redeem,welcome_prbox,
             benefit_layred,grivplan_history,benefit_lay,benefit_history,benefit_reduce,benefitplan_history;
 
     FrameLayout wallet,sales_point_lay,terms_frame,rechargewallet1,cmds_frame,pin_frame_service,cmdg_frame,rechargewallet,redeemwallet,
                 benefit_frame,onlinepay,support_frame,saver_frame,compframe,admin_frame,v3pinlay,online_lay,welcome_report,rewardred_lay,
-                datereq,supersalry_frame,cr_frame,monthreport,logout_frame,vip_frame,pin_frame,commission_frame,tree_frame,coupon_frame,reports_frame;
+                datereq,supersalry_frame,cr_frame,welc_frame,monthreport,logout_frame,vip_frame,pin_frame,commission_frame,tree_frame,coupon_frame,reports_frame;
 
     ImageView profile_img,autofill_img,  laterbut,tree_img, reports_img,more_arrow,binary_tree_arrow,binary_sponsor_arrow,binary_pair_arrow,binary_point_arrow;
 
@@ -295,16 +287,23 @@ public class MainView extends AppCompatActivity {
         benefit_frame=(FrameLayout) findViewById(R.id.benefit_frame);
         crore_lay=(LinearLayout) findViewById(R.id.crore_lay);
         cr_child_layred=findViewById(R.id.cr_child_layred);
+        welc_child_layred=findViewById(R.id.welcome_child_layred);
         cr_terms=findViewById(R.id.cr_terms);
+        welcome_terms=findViewById(R.id.welcome_terms);
         cr_rech2=findViewById(R.id.cr_rech2);
         cr_wallet=findViewById(R.id.cr_wallet);
+        welcome_wallet=findViewById(R.id.welc_wallet);
         cr_redeem=findViewById(R.id.cr_redeem);
+        welcome_redeem=findViewById(R.id.welc_redeem);
         cr_prbox=findViewById(R.id.cr_prbox);
+        welcome_prbox=findViewById(R.id.welc_prbox);
         cr_frame=findViewById(R.id.cr_frame);
+        welc_frame=findViewById(R.id.welcome_frame);
         cr_superbuis=findViewById(R.id.cr_superbuis);
         cr_superlead=findViewById(R.id.cr_superlead);
         cr_rech=findViewById(R.id.cr_rech);
         cr_super=findViewById(R.id.cr_super);
+
         cr_prbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -565,6 +564,21 @@ public class MainView extends AppCompatActivity {
                 else{
                     //utils.savePreferences("crframe","0");
                     collapse(cr_child_layred);
+                }
+
+            }
+        });
+
+        welc_frame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(welc_child_layred.getVisibility()==View.GONE){
+                    // utils.savePreferences("crframe","1");
+                    expand(welc_child_layred);
+                }
+                else{
+                    //utils.savePreferences("crframe","0");
+                    collapse(welc_child_layred);
                 }
 
             }

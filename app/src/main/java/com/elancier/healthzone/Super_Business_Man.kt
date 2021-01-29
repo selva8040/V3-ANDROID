@@ -15,7 +15,6 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -23,7 +22,6 @@ import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import kotlinx.android.synthetic.main.activity_business_man.*
-import kotlinx.android.synthetic.main.activity_super__salary.*
 import kotlinx.android.synthetic.main.activity_super__salary.custname
 import kotlinx.android.synthetic.main.activity_super__salary.uname
 import kotlinx.android.synthetic.main.activity_super_saver.*
@@ -39,7 +37,6 @@ import kotlinx.android.synthetic.main.activity_super_saver.user4
 import kotlinx.android.synthetic.main.activity_super_saver.user5
 import kotlinx.android.synthetic.main.activity_super_saver.user6
 import kotlinx.android.synthetic.main.saver_header.*
-import org.json.JSONArray
 import org.json.JSONObject
 
 class Super_Business_Man : AppCompatActivity() {
@@ -642,12 +639,6 @@ class Super_Business_Man : AppCompatActivity() {
 
     }
     override fun onBackPressed() {
-/*        utils.savePreferences("gd_uname1",uname.text.toString().trim())
-        utils.savePreferences("gd_uname2",custname.text.toString().trim())
-        utils.savePreferences("gd_uname3",user3.text.toString().trim())
-        utils.savePreferences("gd_uname4",user4.text.toString().trim())
-        utils.savePreferences("gd_uname5",user5.text.toString().trim())
-        utils.savePreferences("gd_uname6",user6.text.toString().trim())*/
         finish()
     }
 
@@ -677,16 +668,9 @@ class Super_Business_Man : AppCompatActivity() {
                 jobj.put("type", "Check")
                 jobj.put("uname",param[0])
                 jobj.put("login",unamevalue)
-                //jobj.put("fdate",uname.text.toString().trim())
 
                 Log.i("check Input", Appconstants.superbusiness + "    " + jobj.toString())
                 result = con.sendHttpPostjson2(Appconstants.superbusiness, jobj, "")
-
-                /*JSONObject json = new JSONObject();
-			json.put("mobile",param[0]);
-			json.put("otp", param[1]);
-			result=con.sendHttpPostjson2(, json, "");*/
-
 
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -718,8 +702,8 @@ class Super_Business_Man : AppCompatActivity() {
                             utils.savePreferences("bm_uname",utils.loadName())
                             utils.savePreferences("clearversion","false")
                             toast("Saved")
-
                         }
+
                         else if(curentxt=="custname"){
                             //  custname.setText("")
                             utils.savePreferences("bm_uname2",custname.text.toString().trim())
@@ -789,14 +773,6 @@ class Super_Business_Man : AppCompatActivity() {
                             button8.visibility=View.VISIBLE
                         }
 
-                        //state.setSelection(list2.indexOf(statevalue));
-                        //Log.e("VALUE STATE", states)
-
-                        //JSONObject jarr = obj1.getJSONObject("Response");
-
-
-                        //nominee_name.requestFocus();
-                        // checkval=0;
                     } else {
 
                         pDialo.dismiss()
@@ -907,37 +883,38 @@ class Super_Business_Man : AppCompatActivity() {
                 Log.e("VALUE STATE", e.toString())
                 pDialo.dismiss()
                 toast("Enter a valid username")
+
                 if(curentxt=="uname"){
                     uname.setText("")
                     click=""
-
                 }
+
                 else if(curentxt=="custname"){
                     custname.setText("")
                     click=""
-
                 }
+
                 else if(curentxt=="user3"){
                     user3.setText("")
                     click=""
-
                 }
+
                 else if(curentxt=="user4"){
                     user4.setText("")
                     click=""
-
                 }
+
                 else if(curentxt=="user5"){
                     user5.setText("")
                     click=""
-
                 }
+
                 else if(curentxt=="user6"){
                     user6.setText("")
                     click=""
 
-
                 }
+
                 else if(curentxt=="user7"){
                     user7.setText("")
                     click=""
@@ -1025,9 +1002,7 @@ class Super_Business_Man : AppCompatActivity() {
             }
             catch (e:java.lang.Exception){
                 Log.i("tabresp", resp!! + "")
-
             }
-
 
             try {
                 if (resp != null) {
@@ -1044,26 +1019,15 @@ class Super_Business_Man : AppCompatActivity() {
                         finish()
                     }
 
-
-
-
-                    //feededit.setText(null)
-                    //Toast.makeText(this@HomePage, "Thanks for your valuable feedback!.", Toast.LENGTH_LONG).show()
-
-
                 } else {
                     toast("Data not saved.")
                     finish()
-                    //Toast.makeText(this@HomePage, "Failed to uplaod feedback.", Toast.LENGTH_LONG).show()
-
 
                 }
 
             } catch (e: Exception) {
                 e.printStackTrace()
                 toast(e.toString())
-
-                //Toast.makeText(applicationContext, "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show()
 
             }
 

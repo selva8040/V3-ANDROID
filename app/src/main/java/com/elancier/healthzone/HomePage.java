@@ -1583,6 +1583,12 @@ public class HomePage extends MainView {
                                 tittext.setText(planvals);
 
                             }
+                            /*else if(planvals.equals("Welcome Plan")){
+                                imageView9.setVisibility(View.VISIBLE);
+                                imageView9.setImageResource(R.mipmap.welcomeimg);
+                                tittext.setText(planvals);
+
+                            }*/
                             else{
                                 imageView9.setVisibility(View.INVISIBLE);
                                 //imageView9.setImageResource(R.mipmap.basepins_img_foreground);
@@ -1631,6 +1637,10 @@ public class HomePage extends MainView {
             totalrewardvals=getIntent().getStringExtra("totalreward");
             available_rewardvals=getIntent().getStringExtra("available_reward");*/
 
+                        if(planvals.equals("Welcome Plan")){
+                            welc_frame.setVisibility(View.VISIBLE);
+                            welc_child_layred.setVisibility(View.VISIBLE);
+                        }
 
                     try {
                         amount.setText(amountvals);

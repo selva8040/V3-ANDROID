@@ -21,7 +21,10 @@ import android.util.AttributeSet
 import android.util.Base64
 import android.util.Log
 import android.view.*
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -31,7 +34,6 @@ import com.elancier.healthzone.Common.CommonFunctions
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_payment_.*
 import kotlinx.android.synthetic.main.activity_termsconditions.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -575,7 +577,7 @@ class Termsconditions : AppCompatActivity() {
 
                         }
 
-                        if(sign.isEmpty()||sign=="null"){
+                        if((sign.isEmpty()||sign=="null")&&utils.loadplan().equals("Welcome Plan")){
                             button11.visibility=View.VISIBLE
                             button11.setText(terms)
                             textView79.visibility=View.VISIBLE
