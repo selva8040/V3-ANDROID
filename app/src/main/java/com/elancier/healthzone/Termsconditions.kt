@@ -527,6 +527,10 @@ class Termsconditions : AppCompatActivity() {
                 if(crore=="crore"){
                     jobj.put("type","Base Pin")
                 }
+                else if(crore=="welcome"){
+                    jobj.put("type","Welcome Plan")
+
+                }
                 else{
                     jobj.put("type", "")
                 }
@@ -577,7 +581,7 @@ class Termsconditions : AppCompatActivity() {
 
                         }
 
-                        if((sign.isEmpty()||sign=="null")&&utils.loadplan().equals("Welcome Plan")){
+                        if((sign.isEmpty()||sign=="null")&&utils.loadplan().equals("Welcome Pin")){
                             button11.visibility=View.VISIBLE
                             button11.setText(terms)
                             textView79.visibility=View.VISIBLE
@@ -631,6 +635,11 @@ class Termsconditions : AppCompatActivity() {
 
                 if(crore=="crore"){
                     jobj.put("types", "Crorepati")
+                    jobj.put("pinno", crorepin)
+
+                }
+                else if(crore=="welcome"){
+                    jobj.put("types", "Welcome")
                     jobj.put("pinno", crorepin)
 
                 }

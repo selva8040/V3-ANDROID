@@ -100,13 +100,13 @@ public class OptionTree extends AppCompatActivity {
 
         progress_lay = (LinearLayout) findViewById(R.id.progress_lay);
         cardView7 = (CardView) findViewById(R.id.cardView7);
-
         retry_lay = (LinearLayout) findViewById(R.id.retry_lay);
         paging_lay = (LinearLayout) findViewById(R.id.paging_lay);
         nodata = (TextView) findViewById(R.id.nodata);
         retry = (TextView) findViewById(R.id.retry);
         listView = (ListView) findViewById(R.id.listView);
         uname1=(TextView) findViewById(R.id.uname1);
+
         uname2= (TextView) findViewById(R.id.uname2);
         uname = (TextView) findViewById(R.id.uname);
         desiglay = (LinearLayout) findViewById(R.id.linearLayout8);
@@ -390,6 +390,8 @@ public class OptionTree extends AppCompatActivity {
                                 pojo.setProduct(jsonObject2.getString("color").trim().equalsIgnoreCase("null") ? "" : jsonObject2.getString("color"));
                                 pojo.setMrp(jsonObject2.getString("super1").trim().equalsIgnoreCase("null") ? "None" : jsonObject2.getString("super1"));
                                 pojo.setQty(jsonObject2.getString("super2").trim().equalsIgnoreCase("null") ? "None" : jsonObject2.getString("super2"));
+                                pojo.setDoj(jsonObject2.getString("welcome").trim().equalsIgnoreCase("null") ? "None" : jsonObject2.getString("welcome"));
+                                pojo.setUnique(jsonObject2.getString("welcome_up").trim().equalsIgnoreCase("null") ? "None" : jsonObject2.getString("welcome_up"));
 
                                 // pojo.setUnique(jsonObject2.getString("unique").trim().equalsIgnoreCase("null") ? "" : jsonObject2.getString("unique"));
                                 //pojo.setSub_users(jsonObject2.getString("child_count").trim().equalsIgnoreCase("null") ? "" : jsonObject2.getString("child_count"));
@@ -419,7 +421,6 @@ public class OptionTree extends AppCompatActivity {
 
                 } else {
                     retry_lay.setVisibility(View.VISIBLE);
-
                     Toast.makeText(getApplicationContext(), "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show();
                 }
 

@@ -312,6 +312,14 @@ public class MainView extends AppCompatActivity {
             }
         });
 
+        welcome_prbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainView.this,PROM_BOX_history.class));
+
+            }
+        });
+
         cr_rech.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -673,6 +681,13 @@ public class MainView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainView.this, New_wallet_List.class).putExtra("from","crore"));
+            }
+        });
+
+        welcome_redeem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainView.this, New_wallet_List.class).putExtra("from","welcome"));
             }
         });
 
@@ -1162,6 +1177,16 @@ public class MainView extends AppCompatActivity {
 
                 Intent k=new Intent(MainView.this,Termsconditions.class);
                 k.putExtra("term","crore");
+                startActivity(k);
+            }
+        });
+
+        welcome_terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent k=new Intent(MainView.this,Termsconditions.class);
+                k.putExtra("term","welcome");
                 startActivity(k);
             }
         });
@@ -2320,7 +2345,13 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-
+        welcome_wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lay.closeDrawers();
+                startActivity(new Intent(MainView.this,Wallet.class).putExtra("from","welcome"));
+            }
+        });
 
 
         pin_frame.setOnClickListener(new View.OnClickListener() {

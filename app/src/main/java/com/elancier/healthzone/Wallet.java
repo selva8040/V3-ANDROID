@@ -99,6 +99,12 @@ public class Wallet extends MainView {
 
 
                 }
+                else if(crore.equals("welcome")){
+                    jobj.put("type", "Welcome Pin");
+                    jobj.put("uname",utils.loadName());
+
+
+                }
                 else{
                     jobj.put("type", "");
                     jobj.put("uname",utils.loadId());

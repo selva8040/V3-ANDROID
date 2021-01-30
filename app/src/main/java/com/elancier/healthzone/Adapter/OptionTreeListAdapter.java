@@ -2,14 +2,14 @@ package com.elancier.healthzone.Adapter;
 
 import android.content.Context;
 import android.os.Build;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.elancier.healthzone.Pojo.AutofillPojo;
@@ -68,6 +68,12 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.super_desig2 = (TextView) convertView.findViewById(R.id.super_desig2);
         holder.cons= (ConstraintLayout) convertView.findViewById(R.id.cons);
         holder.linearLayout = (TextView) convertView.findViewById(R.id.textView84);
+        holder.welc_desig=(TextView) convertView.findViewById(R.id.welc_desig);
+        holder.verify=(Button) convertView.findViewById(R.id.button15);
+        holder.welccard=(CardView) convertView.findViewById(R.id.cardView10welc);
+
+
+
        /* holder.tds = (TextView) convertView.findViewById(R.id.tds);
         holder.netamt = (TextView) convertView.findViewById(R.id.netamt);*/
 
@@ -114,6 +120,24 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
 
         }
 
+
+        if(items.get(position).getSub_users().equals("Welcome Pin")){
+            holder.welccard.setVisibility(View.VISIBLE);
+
+            if(items.get(position).getUnique().equals("0")) {
+
+                holder.verify.setVisibility(View.VISIBLE);
+            }
+            else{
+                holder.verify.setVisibility(View.GONE);
+            }
+        }
+        else{
+            holder.welccard.setVisibility(View.GONE);
+            holder.verify.setVisibility(View.GONE);
+
+        }
+
         /*int color_arr[] = {R.color.ncolor1, R.color.ncolor2, R.color.ncolor3, R.color.ncolor4, R.color.ncolor5,
                 R.color.ncolor6, R.color.ncolor7, R.color.sample1, R.color.sample2, R.color.sample3, R.color.sample4,
                 R.color.status_green, R.color.status_red, R.color.lgreen};
@@ -127,10 +151,12 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.unique.setText(items.get(position).getUname());
         holder.name.setText(items.get(position).getName());
         holder.uname.setText(items.get(position).getSub_users());
-
         holder.desig.setText(items.get(position).getMobile());
         holder.super_desig1.setText(items.get(position).getMrp());
         holder.super_desig2.setText(items.get(position).getQty());
+        holder.welc_desig.setText(items.get(position).getQty());
+
+
 
         /*holder.tds.setText(items.get(position).getTds());
         holder.netamt.setText(items.get(position).getNetamt());*/
@@ -151,5 +177,9 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         public ConstraintLayout cons;
         public TextView linearLayout;
         public TextView netamt;
+        public TextView welc_desig;
+        public Button verify;
+        public CardView welccard;
+
     }
 }

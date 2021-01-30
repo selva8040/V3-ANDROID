@@ -40,8 +40,8 @@ import kotlinx.android.synthetic.main.saver_header.*
 import org.json.JSONObject
 
 class Super_Business_Man : AppCompatActivity() {
-    internal var progbar: Dialog?=null;
-    lateinit var pDialo : ProgressDialog
+    internal var progbar : Dialog?=null;
+    lateinit var pDialo  : ProgressDialog
     var unamevalue="";
     internal lateinit var utils: Utils
     internal lateinit var shp: SharedPreferences

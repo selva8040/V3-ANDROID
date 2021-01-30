@@ -1637,7 +1637,7 @@ public class HomePage extends MainView {
             totalrewardvals=getIntent().getStringExtra("totalreward");
             available_rewardvals=getIntent().getStringExtra("available_reward");*/
 
-                        if(planvals.equals("Welcome Plan")){
+                        if(planvals.equals("Welcome Pin")){
                             welc_frame.setVisibility(View.VISIBLE);
                             welc_child_layred.setVisibility(View.VISIBLE);
                         }

@@ -64,7 +64,6 @@ class Super_business_Man_history : AppCompatActivity() {
                 //shuffle()
                onResume()
                 swipeToRefresh.setRefreshing(false)
-
             }
         })
     }

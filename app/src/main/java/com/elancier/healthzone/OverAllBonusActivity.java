@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -183,7 +182,6 @@ public class OverAllBonusActivity extends MainView {
 
                     @Override
                     public void onClick(View view) {
-
                         picker.dismiss();
                     }
                 });

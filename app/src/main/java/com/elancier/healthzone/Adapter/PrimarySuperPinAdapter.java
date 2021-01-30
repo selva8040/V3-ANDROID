@@ -139,7 +139,13 @@ public class PrimarySuperPinAdapter extends ArrayAdapter<PinBo> {
             holder.img.setImageResource(R.mipmap.student);
 
         }
-        else if(items.get(position).gettype().equalsIgnoreCase("Welcome Plan"))
+
+        else if(items.get(position).gettype().equalsIgnoreCase("Welcome Pin"))
+        {
+            holder.img.setImageResource(R.mipmap.welcome);
+
+        }
+        else if(items.get(position).gettype().equalsIgnoreCase("Welcomes Pin"))
         {
             holder.img.setImageResource(R.mipmap.welcomeimg);
 
