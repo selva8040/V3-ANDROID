@@ -1,6 +1,5 @@
 package com.elancier.healthzone;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -16,16 +15,10 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
@@ -39,24 +32,19 @@ import com.elancier.healthzone.Common.CheckNetwork;
 import com.elancier.healthzone.Common.Connection;
 import com.elancier.healthzone.Common.Utils;
 import com.elancier.healthzone.Pojo.ReportsPojo;
-import com.elancier.healthzone.R;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-
-import static android.view.Gravity.*;
 import static com.elancier.healthzone.Common.Appconstants.domain;
 
 public class Tableview extends AppCompatActivity
@@ -2687,6 +2675,8 @@ public class Tableview extends AppCompatActivity
             }
         }
     }
+
+
 
     public class Videosubmit extends AsyncTask<String, String, String>
     {

@@ -746,6 +746,45 @@ class Reward_history : AppCompatActivity() {
             }
         } catch (e: FileNotFoundException) {
             Log.e("GREC", e.message, e)
+            val directory = File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+                    .toString() + File.separator + "V3 Online TV/V3 reward images"
+            )
+            Log.e("directory", directory.exists().toString())//sk
+            if (!directory.exists()) {
+                directory.mkdirs()
+                Log.e("directorymk", directory.mkdir().toString())//sk
+            }
+            val imagePath = File(
+                directory.absolutePath + "/" + time2 + utils!!.loadName() + ".png"
+            )
+            Log.e("imagePath", imagePath.path)//sk
+            /*val imagePath = File(
+                Environment.getExternalStorageDirectory().absoluteFile
+                    .toString() + "/V3 Online TV/V3 reward images/" + time2 + utils!!.loadName() + ".png"
+            )*/
+            val fos: FileOutputStream
+            try {
+                fos = FileOutputStream(imagePath)
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+                Log.e("Screenshot", "saved successfully")
+                fos.flush()
+                fos.close()
+                button.text = "DOWNLOADED"
+                tt.visibility = View.VISIBLE
+                tt.text =
+                    "Downloaded Path : " + "storage/V3 Online TV/V3 reward images/" + time2 + utils!!.loadName() + ".png"
+                save()
+                button.setOnClickListener {
+                    if (button.text.toString() == "Open") {
+                        openScreenshot(imagePath)
+                    }
+                }
+            }
+            catch (e:Exception){
+
+            }
+
         } catch (e: IOException) {
             Log.e("GREC", e.message, e)
         }

@@ -1583,12 +1583,12 @@ public class HomePage extends MainView {
                                 tittext.setText(planvals);
 
                             }
-                            /*else if(planvals.equals("Welcome Plan")){
+                            else if(planvals.equals("Welcome Pin")){
                                 imageView9.setVisibility(View.VISIBLE);
-                                imageView9.setImageResource(R.mipmap.welcomeimg);
+                                imageView9.setImageResource(R.mipmap.welcome);
                                 tittext.setText(planvals);
 
-                            }*/
+                            }
                             else{
                                 imageView9.setVisibility(View.INVISIBLE);
                                 //imageView9.setImageResource(R.mipmap.basepins_img_foreground);

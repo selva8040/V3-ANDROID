@@ -19,7 +19,6 @@ import android.util.Base64
 import android.util.Log
 import android.view.*
 import android.widget.*
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -111,7 +110,7 @@ class BankDetails : AppCompatActivity() {
         retry!!.setCancelable(false)
         //startprogress()
 
-            GetInfoTask().execute()
+        GetInfoTask().execute()
                 //stateload().execute()
 
         retrybut!!.setOnClickListener {
@@ -448,8 +447,8 @@ class BankDetails : AppCompatActivity() {
 
                             }
 
-
                         }
+
                         if(bankimage.isNotEmpty()){
                            // Picasso.with(this@BankDetails).load(panimage).placeholder(R.mipmap.loading).into(panimg)
                             Picasso.with(this@BankDetails).load(bankimage).placeholder(R.mipmap.loading).into(bankimg)
@@ -460,8 +459,6 @@ class BankDetails : AppCompatActivity() {
                             else{
 
                             }
-
-
 
                         }
 
@@ -721,7 +718,6 @@ class BankDetails : AppCompatActivity() {
 
             }
 
-
         }
     }
 
@@ -737,14 +733,7 @@ class BankDetails : AppCompatActivity() {
                         picturePath = getImgPath(selectedImage)
                         fi = File(picturePath!!)
 
-                        // user_img.setImageURI(selectedImage);
-                        // Picasso.with(MyInfo.this).load(picturePath).placeholder(R.mipmap.userplaceholder).into(user_img);
                         val yourSelectedImage = CommonFunctions.decodeFile1(picturePath, 400, 200)
-
-                        //Log.i("original path1", picturePath + "")
-
-                        //removeimg.setVisibility(View.VISIBLE);
-                        // addimgbut.setVisibility(View.GONE);
 
                         Log.i(
                             "pathsizeeeeee",
@@ -797,7 +786,6 @@ class BankDetails : AppCompatActivity() {
                         //getBase64FromPath(path);
                         if (path != null) {
                             val f = File(path!!)
-
                             selectedImageUri = Uri.fromFile(f)
 
                         }
@@ -808,11 +796,8 @@ class BankDetails : AppCompatActivity() {
                         val stream = ByteArrayOutputStream()
                         thumbnail!!.compress(Bitmap.CompressFormat.JPEG, 70, stream)
                         byteArray = stream.toByteArray()
-
                         imagecode = Base64.encodeToString(byteArray, Base64.DEFAULT)
-
                         saveImage(thumbnail)
-
                         //imglin.visibility = View.VISIBLE
                         panimg.setImageBitmap(thumbnail)
                         //upload.setText("Retake")
@@ -899,14 +884,8 @@ class BankDetails : AppCompatActivity() {
                         //upload.setText("Retake")
                     }
 
-
-
-
                 }
             }
-
-
-
 
         }
         catch (e:Exception){

@@ -203,6 +203,7 @@ public class Appconstants {
     // public static String STARTUP_TREE = domain+"startup_tree.php";
 
     public static String STARTUP_TREE = domain + "tree.php";
+    public static String STARTUP_TREE_PIN = domain + "pin.php";
     public static String VIP_CLIENT = domain + "vip_client.php";
     public static String VIPCLIENT = domain + "vipclient.php";
     public static String UPI = domain + "upi.php";
@@ -213,6 +214,7 @@ public class Appconstants {
     public static String superbusiness = domain + "super_business_man.php";
     public static String super_team_leader = domain + "super_team_leader.php";
     public static String promo_box = domain + "promotion.php";
+    public static String welcome_promo_box = domain + "wel_promotion.php";
     public static String pinboard = domain + "pin_service.php";
     public static String silver = domain + "cdm_silver.php";
     public static String point_request = domain + "point_request.php";

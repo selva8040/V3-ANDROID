@@ -11,19 +11,19 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.*
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Pointsadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
-import kotlinx.android.synthetic.main.activity_vip__client_add.*
 import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -43,12 +43,31 @@ class New_wallet_List : AppCompatActivity() {
     var update:Dialog? = null
     var tot=0F
     var crore=""
+    var from=""
+
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_point__list)
         utils = Utils(applicationContext)
 
-        supportActionBar!!.title = "Redeem Wallet"
+        try{
+            val from=intent.extras
+            crore=from!!.getString("from").toString()
+
+        }
+        catch (e:Exception){
+
+        }
+
+        if(crore=="welcome"){
+            supportActionBar!!.title = "Welcome Redeem Wallet"
+
+        }
+        else{
+            supportActionBar!!.title = "Redeem Wallet"
+
+        }
+
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         mLayoutManager = LinearLayoutManager(this)
@@ -68,14 +87,7 @@ class New_wallet_List : AppCompatActivity() {
         recyclerlist.adapter = itemsAdapter
 
 
-        try{
-            val from=intent.extras
-            crore=from!!.getString("from").toString()
 
-        }
-        catch (e:Exception){
-
-        }
 
         //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
 
@@ -100,7 +112,7 @@ class New_wallet_List : AppCompatActivity() {
             }
         }
 
-        if (!utils.loadbasewallet().isEmpty()&&crore=="crore") {
+        if (!utils.loadbasewallet().isEmpty()&&(crore=="crore"||crore=="welcome")) {
             val point =
                 utils.loadbasewallet().toString().split("\\.".toRegex(), 2).toTypedArray()[0]
             println("point$point")
@@ -134,6 +146,10 @@ class New_wallet_List : AppCompatActivity() {
                     startActivity(Intent(this@New_wallet_List, New_wallet_List::class.java).putExtra("from","crore"))
                     swipeToRefresh.setRefreshing(false)
                 }
+                else if(crore=="welcome"){
+                    startActivity(Intent(this@New_wallet_List, New_wallet_List::class.java).putExtra("from","welcome"))
+                    swipeToRefresh.setRefreshing(false)
+                }
             }
         })
 
@@ -152,7 +168,7 @@ class New_wallet_List : AppCompatActivity() {
                  otp_edit_box1 = vs.findViewById<View>(R.id.otp_edit_box1) as EditText
                 otp_edit_box2 = vs.findViewById<View>(R.id.otp_edit_box2) as EditText
 
-                if(crore=="crore"){
+                if(crore=="crore"||crore=="welcome"){
                     otp_edit_box1!!.setText(utils.loadbasewallet())
 
                 }
@@ -169,8 +185,6 @@ class New_wallet_List : AppCompatActivity() {
 
                     override fun afterTextChanged(s: Editable) {
 
-
-
                     }
 
                     override fun beforeTextChanged(s: CharSequence, start: Int,
@@ -179,7 +193,6 @@ class New_wallet_List : AppCompatActivity() {
 
                     override fun onTextChanged(s: CharSequence, start: Int,
                                                before: Int, count: Int) {
-
 
                     }
                 })
@@ -247,16 +260,18 @@ class New_wallet_List : AppCompatActivity() {
         }
 
     }
-    inner class RewardpointsAsync : AsyncTask<String, String, String>() {
-        override fun onPreExecute() {
+    inner class RewardpointsAsync:AsyncTask<String, String, String>() {
+        override fun onPreExecute()
+        {
 
             progress_lay.setVisibility(View.VISIBLE)
             recyclerlist.visibility = View.GONE
             loadprogress()
+
         }
 
-        override fun doInBackground(vararg strings: String): String? {
-            var result: String? = null
+        override fun doInBackground(vararg strings:String): String? {
+            var result:String? = null
             val con = Connection()
 
             try {
@@ -265,6 +280,10 @@ class New_wallet_List : AppCompatActivity() {
                 jobj.put("type", "List")
                 if(crore=="crore"){
                     jobj.put("types", "Base Pin")
+
+                }
+                else if(crore=="welcome"){
+                    jobj.put("types", "Welcome Pin")
 
                 }
                 else{
@@ -281,7 +300,7 @@ class New_wallet_List : AppCompatActivity() {
             return result
         }
 
-        override fun onPostExecute(resp: String?) {
+        override fun onPostExecute(resp:String?) {
             try {
                 //Log.e("rewardresp", resp)
             } catch (e: Exception) {
@@ -341,7 +360,6 @@ class New_wallet_List : AppCompatActivity() {
                     }
                     else{
                         progbar!!.dismiss()
-
                         nodata.visibility=View.VISIBLE
                         recyclerlist.visibility=View.GONE
                     }
@@ -399,6 +417,10 @@ class New_wallet_List : AppCompatActivity() {
                 jobj.put("type", "Add")
                 if(crore=="crore"){
                     jobj.put("types", "Base Pin")
+
+                }
+                else if(crore=="welcome"){
+                    jobj.put("types", "Welcome Pin")
 
                 }
                 else{

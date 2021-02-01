@@ -107,7 +107,7 @@ class Termsconditions : AppCompatActivity() {
 
         button13.setOnClickListener {
 
-            if(crore=="crore"){
+            if(crore=="crore"||crore=="welcome"){
                 Pincheck().execute()
             }
 
@@ -291,7 +291,7 @@ class Termsconditions : AppCompatActivity() {
             Log.i("LoginTask", "started")
         }
 
-        override fun doInBackground(vararg param: String): String? {
+        override fun doInBackground(vararg param: String):String? {
             var result: String = ""
             val config = HashMap<Any, Any>();
             config.put("cloud_name", cloud_name);
@@ -351,7 +351,14 @@ class Termsconditions : AppCompatActivity() {
                 val jobj = JSONObject()
                 crorepin=otptext.text.toString().trim()
                 jobj.put("pin", otptext.text.toString().trim())
-                jobj.put("type", "pincheck")
+                if(crore=="welcome"){
+                    jobj.put("type", "welpincheck")
+
+                }
+                else{
+                    jobj.put("type", "pincheck")
+
+                }
                 jobj.put("uname", utils.loadName())
 
                 Log.i(
@@ -562,8 +569,14 @@ class Termsconditions : AppCompatActivity() {
                         val sign=jarr.getString("sign")
 
                         val signdt=jarr.getString("sign_date")
-                        val pin=jarr.getString("pin")
-                        val profile_verify=jarr.getString("profile_verify")
+                        var pin=""
+                        try {
+                             pin = jarr.getString("pin")
+                        }
+                        catch (e:Exception){
+
+                        }
+                        //val profile_verify=jarr.getString("profile_verify")
 
                         if(signdt.isEmpty()||signdt=="null") {
                             textView78.visibility=View.GONE
@@ -581,7 +594,8 @@ class Termsconditions : AppCompatActivity() {
 
                         }
 
-                        if((sign.isEmpty()||sign=="null")&&utils.loadplan().equals("Welcome Pin")){
+                        Log.e("view_plan",utils.loadplan())
+                        if((sign=="null"||sign.isNullOrEmpty())&&utils.loadplan().equals("Welcome Pin")){
                             button11.visibility=View.VISIBLE
                             button11.setText(terms)
                             textView79.visibility=View.VISIBLE

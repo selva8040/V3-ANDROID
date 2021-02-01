@@ -10,11 +10,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.*
+import com.elancier.healthzone.Adapter.PRBOX_perfadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import com.elancier.healthzone.Pojo.salarypo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
@@ -22,7 +21,7 @@ import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.util.*
 
 class PROM_BOX_history : AppCompatActivity() {
     internal lateinit var itemsAdapter: PRBOX_perfadap
@@ -30,13 +29,30 @@ class PROM_BOX_history : AppCompatActivity() {
     private var productItems: MutableList<salarypo>? = null
     internal lateinit var mLayoutManager: LinearLayoutManager
     internal lateinit var utils: Utils
+    var from=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_super__perf_history)
         utils = Utils(applicationContext)
 
-        supportActionBar!!.title = "Promotion Request"
+
+        try{
+            from= intent.extras!!.getString("from").toString()
+        }
+        catch(e:Exception){
+
+        }
+
+        if(from=="welcome"){
+            supportActionBar!!.title = "Welcome Promotion Request"
+
+        }
+        else{
+            supportActionBar!!.title = "Promotion Request"
+
+        }
+
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         mLayoutManager = LinearLayoutManager(this)
@@ -53,7 +69,7 @@ class PROM_BOX_history : AppCompatActivity() {
         recyclerlist.adapter = itemsAdapter
 
         addsalary.setOnClickListener{
-            val k= Intent(this@PROM_BOX_history,Prom_BOX_FORM::class.java)
+            val k= Intent(this@PROM_BOX_history,Prom_BOX_FORM::class.java).putExtra("from",from)
             startActivity(k)
             finish()
 
@@ -93,8 +109,16 @@ class PROM_BOX_history : AppCompatActivity() {
                 jobj.put("type", "list")
 
 
-                Log.i("rewardinput", Appconstants.promo_box + "    " + jobj.toString())
-                result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")
+                if(from=="welcome"){
+                    Log.i("rewardinput", Appconstants.welcome_promo_box + "    " + jobj.toString())
+                    result = con.sendHttpPostjson2(Appconstants.welcome_promo_box, jobj, "")
+                }
+                else
+                {
+                    Log.i("rewardinput", Appconstants.promo_box + "    " + jobj.toString())
+                    result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")
+                }
+
             } catch (e: Exception) {
                 e.printStackTrace()
             }

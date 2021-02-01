@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.elancier.healthzone.OptionTree;
 import com.elancier.healthzone.Pojo.AutofillPojo;
 import com.elancier.healthzone.R;
 
@@ -138,6 +139,13 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
 
         }
 
+        holder.verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((OptionTree)context).openpin(items.get(position).getUname());
+            }
+        });
+
         /*int color_arr[] = {R.color.ncolor1, R.color.ncolor2, R.color.ncolor3, R.color.ncolor4, R.color.ncolor5,
                 R.color.ncolor6, R.color.ncolor7, R.color.sample1, R.color.sample2, R.color.sample3, R.color.sample4,
                 R.color.status_green, R.color.status_red, R.color.lgreen};
@@ -154,7 +162,7 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.desig.setText(items.get(position).getMobile());
         holder.super_desig1.setText(items.get(position).getMrp());
         holder.super_desig2.setText(items.get(position).getQty());
-        holder.welc_desig.setText(items.get(position).getQty());
+        holder.welc_desig.setText(items.get(position).getDoj());
 
 
 

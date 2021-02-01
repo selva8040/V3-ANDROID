@@ -186,7 +186,9 @@ public class PrimarySuperPinAdapter extends ArrayAdapter<PinBo> {
                         ((PrimeSuperPinActivity) context).addPin(items.get(position).getPinno());
                     }
 
-                }else {
+                }
+
+                else {
                     Toast.makeText(context, "Pin already activated", Toast.LENGTH_SHORT).show();
                 }
 

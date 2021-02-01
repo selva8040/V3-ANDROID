@@ -1,9 +1,11 @@
 package com.elancier.healthzone
 
+import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
@@ -18,6 +20,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.crashlytics.android.Crashlytics
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -37,6 +41,9 @@ class SplashScreen : AppCompatActivity() {
     var utils: Utils? = null
     var alarmManager: AlarmManager? = null
     var pendingIntent: PendingIntent? = null
+    val RequestPermissionCode = 7
+    var timeout=0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Fabric.with(this, Crashlytics())
@@ -52,6 +59,20 @@ class SplashScreen : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.hide()
         utils = Utils(applicationContext)
+
+
+        if(Build.VERSION.SDK_INT>29) {
+            timeout=3000
+            if (CheckingPermissionIsEnabledOrNot(this)) {
+
+            } else {
+                RequestMultiplePermission(this)
+            }
+        }
+        else{
+            timeout=2000
+
+        }
 
 
         logo = findViewById<View>(R.id.imageView4) as ImageView
@@ -108,6 +129,15 @@ class SplashScreen : AppCompatActivity() {
         }, SPLASH_TIME_OUT.toLong())*/
     }
 
+    fun CheckingPermissionIsEnabledOrNot(context: Activity):Boolean {
+        val ACCESS_NETWORK_STATEt = ContextCompat.checkSelfPermission(
+            context,
+            android.Manifest.permission.READ_PHONE_STATE
+        )
+
+        return ACCESS_NETWORK_STATEt == PackageManager.PERMISSION_GRANTED
+
+    }
 
     inner class GetInfoTask :
         AsyncTask<String?, Void?, String?>() {
@@ -132,7 +162,7 @@ class SplashScreen : AppCompatActivity() {
                 )
 
 
-            } catch (e:Exception) {
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
             return result
@@ -237,37 +267,37 @@ class SplashScreen : AppCompatActivity() {
         Handler().postDelayed(Runnable {
 
 
-        if (utils!!.loadName().toString().trim { it <= ' ' }.length > 0) {
-            val today = SimpleDateFormat("dd/MM/yyyy")
-                .format(System.currentTimeMillis())
-            val currentapiVersions = Build.VERSION.SDK_INT
-            if (currentapiVersions < 30) {
-                utils!!.savePreferences("jsonobj", "")
-            }
-            if (today != utils!!.loadcheckdt() || utils!!.loadjsonval().isEmpty()) {
-                val currentapiVersion = Build.VERSION.SDK_INT
-                if (currentapiVersion < 30) {
+            if (utils!!.loadName().toString().trim { it <= ' ' }.length > 0) {
+                val today = SimpleDateFormat("dd/MM/yyyy")
+                    .format(System.currentTimeMillis())
+                val currentapiVersions = Build.VERSION.SDK_INT
+                if (currentapiVersions < 30) {
                     utils!!.savePreferences("jsonobj", "")
-                    val i = Intent(this@SplashScreen, Tableview::class.java)
-                    startActivity(i)
+                }
+                if (today != utils!!.loadcheckdt() || utils!!.loadjsonval().isEmpty()) {
+                    val currentapiVersion = Build.VERSION.SDK_INT
+                    if (currentapiVersion < 30) {
+                        utils!!.savePreferences("jsonobj", "")
+                        val i = Intent(this@SplashScreen, Tableview::class.java)
+                        startActivity(i)
+                    } else {
+                        val i = Intent(this@SplashScreen, Tableview::class.java)
+                        startActivity(i)
+                    }
                 } else {
                     val i = Intent(this@SplashScreen, Tableview::class.java)
                     startActivity(i)
                 }
             } else {
-                val i = Intent(this@SplashScreen, Tableview::class.java)
+                val i = Intent(this@SplashScreen, Login::class.java)
                 startActivity(i)
             }
-        } else {
-            val i = Intent(this@SplashScreen, Login::class.java)
-            startActivity(i)
-        }
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
 
 
-        // close this activity
-        finish()
-        },2000)
+            // close this activity
+            finish()
+        }, timeout.toLong())
     }
 
     private fun startAlarm() {
@@ -305,6 +335,16 @@ class SplashScreen : AppCompatActivity() {
         intent.addCategory(Intent.CATEGORY_HOME)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
+    }
+
+    private fun RequestMultiplePermission(context: Activity) {
+        ActivityCompat.requestPermissions(
+            context, arrayOf<String>(
+
+                android.Manifest.permission.READ_PHONE_STATE
+            ), RequestPermissionCode
+        )
+
     }
 
     companion object {

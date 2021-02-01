@@ -315,7 +315,7 @@ public class MainView extends AppCompatActivity {
         welcome_prbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainView.this,PROM_BOX_history.class));
+                startActivity(new Intent(MainView.this,PROM_BOX_history.class).putExtra("from","welcome"));
 
             }
         });
@@ -520,15 +520,14 @@ public class MainView extends AppCompatActivity {
                     download.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (checkPermission()) {
 
+                            if (checkPermission()) {
                                 Random inte=new Random();
                                 int num=inte.nextInt(1000);
                                 downloadManager = (DownloadManager) getApplicationContext().getSystemService(Context.DOWNLOAD_SERVICE);
                                 Uri uri = Uri.parse(croreben);
                                 DownloadManager.Request request = new DownloadManager.Request(uri).setDestinationInExternalPublicDir("/V3 Online TV/Benefits", "Crorepathi Benefits"+String.valueOf(num)+".jpg");
                                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
                                 Long reference = downloadManager.enqueue(request);
                                 // . write your main code to execute, It will execute if the permission is already given.
 

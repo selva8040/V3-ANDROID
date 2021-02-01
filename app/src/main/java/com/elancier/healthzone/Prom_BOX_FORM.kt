@@ -16,19 +16,16 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import kotlinx.android.synthetic.main.activity_super__salary.*
 import kotlinx.android.synthetic.main.activity_super__salary.custname
 import kotlinx.android.synthetic.main.activity_super__salary.uname
 import kotlinx.android.synthetic.main.activity_super_saver.*
 import kotlinx.android.synthetic.main.saver_header.*
-import org.json.JSONArray
 import org.json.JSONObject
 
 class Prom_BOX_FORM : AppCompatActivity() {
@@ -40,11 +37,31 @@ class Prom_BOX_FORM : AppCompatActivity() {
     private var fromDatePickerDialog: DatePickerDialog? = null
     var click=""
     var curentxt="";
+    var from="";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prom_box)
         utils = Utils(applicationContext)
-        head.setText("Promotion Box")
+
+        try{
+            from= intent.extras!!.getString("from").toString()
+
+        }
+        catch (e:Exception){
+
+        }
+
+
+        if(from=="welcome")
+        {
+            head.setText("Welcome Promotion Box")
+
+        }
+        else{
+            head.setText("Promotion Box")
+
+        }
+
         shp = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
         unamevalue= utils.loadName()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -525,8 +542,17 @@ class Prom_BOX_FORM : AppCompatActivity() {
                 jobj.put("login",unamevalue)
                 //jobj.put("fdate",uname.text.toString().trim())
 
-                Log.i("check Input", Appconstants.promo_box + "    " + jobj.toString())
-                result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")
+
+                if(from=="welcome"){
+                    Log.i("check Input", Appconstants.welcome_promo_box + "    " + jobj.toString())
+                    result = con.sendHttpPostjson2(Appconstants.welcome_promo_box, jobj, "")
+                }
+                else{
+                    Log.i("check Input", Appconstants.promo_box + "    " + jobj.toString())
+                    result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")
+                }
+
+
 
                 /*JSONObject json = new JSONObject();
 			json.put("mobile",param[0]);
@@ -784,10 +810,17 @@ class Prom_BOX_FORM : AppCompatActivity() {
                 jobj.put("username5",user5.text.toString().trim())
                 jobj.put("username6",user6.text.toString().trim())*/
                 //jobj.put("username",custnamew.text.toString().trim())
+                if(from=="welcome"){
+                    Log.i("check Input", Appconstants.welcome_promo_box + "    " + jobj.toString())
+                    result = con.sendHttpPostjson2(Appconstants.welcome_promo_box, jobj, "")
+                }
+                else{
+                    Log.i("check Input", Appconstants.promo_box + "    " + jobj.toString())
+                    result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")
+                }
 
-
-                Log.i("checkInput feedback", Appconstants.promo_box + "    " + jobj.toString())
-                result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")
+                /*Log.i("checkInput feedback", Appconstants.promo_box + "    " + jobj.toString())
+                result = con.sendHttpPostjson2(Appconstants.promo_box, jobj, "")*/
 
             } catch (e: Exception) {
                 e.printStackTrace()
