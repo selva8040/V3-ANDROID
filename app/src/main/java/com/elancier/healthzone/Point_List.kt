@@ -9,17 +9,17 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.Pointsadap
 import com.elancier.healthzone.Adapter.Pointsadap_dup
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
 import kotlinx.android.synthetic.main.common_layout.*
@@ -55,15 +55,10 @@ class Point_List : AppCompatActivity() {
             Pointsadap_dup.OnItemClickListener {
             override fun OnItemClick(view: View, position: Int, viewType: Int) {
                 val item = mRecyclerListitems[position] as Rewardpointsbo
-                // Log.e("clickresp", "value")
 
-                //clikffed();
             }
         })
         recyclerlist.adapter = itemsAdapter
-
-        //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
-
 
         if (!utils.available_reward().isEmpty()) {
             val point =
@@ -123,8 +118,6 @@ class Point_List : AppCompatActivity() {
                 update!!.setContentView(vs)
                 update!!.setCancelable(true)
                 update!!.show()
-
-
 
                 // content.setText("You are using an older version of Online Tv ( version "+versionname+" ). Update now to get the latest features.");
                 updatebut.setOnClickListener { // clickupdate="true";

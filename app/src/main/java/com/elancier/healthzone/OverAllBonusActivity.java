@@ -102,6 +102,7 @@ public class OverAllBonusActivity extends MainView {
         retry.setContentView(v);
         retry.setCancelable(false);
         startprogress();
+
         GetInfoTask task=new GetInfoTask();
         task.execute(fromdate,todate);
 
@@ -163,7 +164,6 @@ public class OverAllBonusActivity extends MainView {
                     scrollValue = false;
             }
         });
-
 
 
         from_date.setOnClickListener(new View.OnClickListener() {

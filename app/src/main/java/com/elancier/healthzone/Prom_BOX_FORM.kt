@@ -577,15 +577,7 @@ class Prom_BOX_FORM : AppCompatActivity() {
                     //val obj1 = json.getJSONObject(0)
                     if (json.getString("Status") == "Success") {
                         val jarr = json.getString("Response")
-                        //val states = jarr.getString("from")
-                        //val statesid = jarr.getString("to")
-                        // uname.setText(states)
-                        //custname.setText(statesid)
                         pDialo.dismiss()
-
-
-
-
                         if(curentxt=="uname"){
                             // uname.setText("")
                             //click=""
@@ -747,22 +739,6 @@ class Prom_BOX_FORM : AppCompatActivity() {
                     click=""
 
                 }
-               /* else if(curentxt=="user4"){
-                    user4.setText("")
-                    click=""
-
-                }
-                else if(curentxt=="user5"){
-                    user5.setText("")
-                    click=""
-
-                }
-                else if(curentxt=="user6"){
-                    user6.setText("")
-                    click=""
-
-
-                }*/
 
                 e.printStackTrace()
                 Toast.makeText(applicationContext, "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show()

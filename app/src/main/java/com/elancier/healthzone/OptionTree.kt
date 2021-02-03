@@ -16,6 +16,7 @@ import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.elancier.healthzone.Pojo.AutofillPojo
+import kotlinx.android.synthetic.main.activity_option_tree.*
 import org.json.JSONArray
 import org.json.JSONObject
 import java.util.*
@@ -42,6 +43,7 @@ class OptionTree : AppCompatActivity() {
     var search: TextView? = null
     var uname1: TextView? = null
     var uname2: TextView? = null
+    var welc_uname2: TextView? = null
     var adapter: OptionTreeListAdapter? = null
     var listView: ListView? = null
     var Spon_Unique = ""
@@ -79,6 +81,10 @@ class OptionTree : AppCompatActivity() {
             task.execute(Uname)
         }
         onclick()
+
+        if(utils!!.loadplan().equals("Welcome Pin")){
+            welc_linearLayout82.visibility=View.VISIBLE
+        }
     }
 
     private fun inits() {
@@ -91,6 +97,7 @@ class OptionTree : AppCompatActivity() {
         listView = findViewById<View>(R.id.listView) as ListView
         uname1 = findViewById<View>(R.id.uname1) as TextView
         uname2 = findViewById<View>(R.id.uname2) as TextView
+        welc_uname2 = findViewById<View>(R.id.welc_uname2) as TextView
         uname = findViewById<View>(R.id.uname) as TextView
         desiglay = findViewById<View>(R.id.linearLayout8) as LinearLayout
         sub_user = findViewById<View>(R.id.sub_users) as TextView
@@ -356,6 +363,14 @@ class OptionTree : AppCompatActivity() {
                         }
                         uname1!!.text = jsonObject1.getString("super1")
                         uname2!!.text = jsonObject1.getString("super2")
+
+                        try {
+                            welc_uname2!!.text = jsonObject1.getString("welcome")
+                        }
+                        catch (e:Exception){
+
+                        }
+
                         sub_user!!.text = if (jsonObject1.getString("plan").trim { it <= ' ' }
                                 .equals(
                                     "null",
