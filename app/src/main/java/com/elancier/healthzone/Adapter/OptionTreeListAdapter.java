@@ -118,26 +118,25 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
                 holder.cons.setBackground(context.getResources().getDrawable(R.drawable.gradient_background_five));
 
             }
-
         }
 
+        if(items.get(position).getUnique().equals("0")) {
+            holder.verify.setVisibility(View.VISIBLE);
 
-        if(items.get(position).getSub_users().equals("Welcome Pin")){
+        }
+        else{
+            holder.verify.setVisibility(View.GONE);
+        }
+
+     /*   if(items.get(position).getSub_users().equals("Welcome Pin")){
             holder.welccard.setVisibility(View.VISIBLE);
 
-            if(items.get(position).getUnique().equals("0")) {
-
-                holder.verify.setVisibility(View.VISIBLE);
-            }
-            else{
-                holder.verify.setVisibility(View.GONE);
-            }
         }
         else{
             holder.welccard.setVisibility(View.GONE);
             holder.verify.setVisibility(View.GONE);
 
-        }
+        }*/
 
         holder.verify.setOnClickListener(new View.OnClickListener() {
             @Override

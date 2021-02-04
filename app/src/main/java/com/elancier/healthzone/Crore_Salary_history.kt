@@ -53,12 +53,12 @@ class Crore_Salary_history : AppCompatActivity() {
 
         //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
 
-
         addsalary.setOnClickListener{
             val k= Intent(this@Crore_Salary_history,Crore_Salary_FORM::class.java)
             startActivity(k)
 
         }
+
         swipeToRefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
                 //shuffle()
@@ -142,10 +142,7 @@ class Crore_Salary_history : AppCompatActivity() {
                             val feedback_absent = JO.getString("dtime")
                             //val feedback_absents=JO.getString("dtime")
 
-
                             try {
-
-
                                 productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", "",
                                         "",
                                         "",
@@ -173,9 +170,7 @@ class Crore_Salary_history : AppCompatActivity() {
                                         "",
                                         "", "", "", "", "", "","",""))
 
-
                             }
-
 
                         }
                         nodata.visibility=View.GONE

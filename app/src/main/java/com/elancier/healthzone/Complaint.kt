@@ -1,30 +1,21 @@
 package com.elancier.healthzone
 
 import android.app.ProgressDialog
-import android.os.Build
-import android.os.Bundle
-import android.view.View
-import com.elancier.healthzone.Common.Utils
-import kotlinx.android.synthetic.main.activity_complaint.*
-import java.lang.Exception
-import android.widget.Toast
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
-import java.io.File
-
 import android.graphics.Bitmap
-import android.os.Environment
-import android.os.Environment.getExternalStorageDirectory
-import android.os.Handler
-import java.io.FileOutputStream
-import java.util.*
-import io.fabric.sdk.android.services.settings.IconRequest.build
-import android.os.StrictMode
+import android.net.Uri
+import android.os.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.elancier.healthzone.Common.Utils
+import kotlinx.android.synthetic.main.activity_complaint.*
+import java.io.File
+import java.io.FileOutputStream
+import java.util.*
 
 
 class Complaint : AppCompatActivity() {
@@ -33,7 +24,7 @@ class Complaint : AppCompatActivity() {
     val RequestPermissionCode = 7
     lateinit var pDialo : ProgressDialog
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_complaint)
         utils = Utils(applicationContext)

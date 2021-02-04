@@ -5,7 +5,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
@@ -68,7 +67,6 @@ public class BonusReports extends MainView {
     String fromdate="",todate="";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +94,7 @@ public class BonusReports extends MainView {
         retry.setContentView(v);
         retry.setCancelable(false);
         startprogress();
-        GetInfoTask task=new GetInfoTask();
+        GetInfoTask task = new GetInfoTask();
         task.execute(fromdate,todate);
 
         retrybut.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +116,6 @@ public class BonusReports extends MainView {
                 if (scrollValue && scrollNeed && (data.size()>0)) {
                     scrollNeed = false;
                     listView.setPadding(0,0,0,px);
-
 
                     if(from_date.getText().toString().trim().length()>0&&to_date.getText().toString().trim().length()>0){
                         loadlay.setVisibility(View.VISIBLE);
@@ -304,6 +301,7 @@ public class BonusReports extends MainView {
                     startprogress();
                     nodata.setVisibility(View.GONE);
                     dateval=dateval+1;
+
                     GetInfoTask task=new GetInfoTask();
                     task.execute(fromdate,todate);
 
@@ -336,8 +334,6 @@ public class BonusReports extends MainView {
                 jobj.put("limit",limit+"");
                 jobj.put("sdate",param[0]);
                 jobj.put("edate",param[1]);
-
-
 
                // Log.i("check Input", Appconstants.GET_MY_BONUS_REPORTS+"    "+jobj.toString());
                 result = con.sendHttpPostjson2(Appconstants.GET_MY_BONUS_REPORTS,jobj,"");
@@ -422,9 +418,7 @@ public class BonusReports extends MainView {
 
                 }
 
-
             }
-
 
         }
     }

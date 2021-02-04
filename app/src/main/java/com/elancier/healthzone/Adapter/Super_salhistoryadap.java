@@ -3,7 +3,6 @@ package com.elancier.healthzone.Adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +16,8 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.elancier.healthzone.Common.Utils;
-import com.elancier.healthzone.Pojo.Rewardpointsbo;
-import com.elancier.healthzone.Pojo.salarypo;
+import com.elancier.healthzone.Pojo.salarypo_app;
 import com.elancier.healthzone.R;
-import com.elancier.healthzone.Reward_history;
 import com.elancier.healthzone.Super_Salry_history;
 
 import java.util.List;
@@ -67,7 +64,7 @@ public class Super_salhistoryadap extends RecyclerView.Adapter<RecyclerView.View
                 // fall through
             default:
                 Super_salhistoryadap.ItemViewHolder itemViewHolder = (Super_salhistoryadap.ItemViewHolder) holder;
-                final salarypo item = (salarypo) mRecyclerViewItems2.get(position);
+                final salarypo_app item = (salarypo_app) mRecyclerViewItems2.get(position);
 
                 //((Rewardhistoryadap.ItemViewHolder) holder).username.setText(item.getUsername());
 //                ((Rewardhistoryadap.ItemViewHolder) holder).date.setText(item.getDate());

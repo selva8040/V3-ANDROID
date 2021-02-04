@@ -237,8 +237,6 @@ class Termsconditions : AppCompatActivity() {
             }
         }
 
-
-
         button11.setOnClickListener {
             textView72.visibility=View.VISIBLE
             progressBar5.visibility=View.INVISIBLE
@@ -309,7 +307,6 @@ class Termsconditions : AppCompatActivity() {
                 }
 
                 finish()
-
 
             } catch (e: IOException) {
                 e.printStackTrace();
@@ -595,7 +592,8 @@ class Termsconditions : AppCompatActivity() {
                         }
 
                         Log.e("view_plan",utils.loadplan())
-                        if((sign=="null"||sign.isNullOrEmpty())&&utils.loadplan().equals("Welcome Pin")){
+
+                        if((sign=="null"||sign.isNullOrEmpty())){
                             button11.visibility=View.VISIBLE
                             button11.setText(terms)
                             textView79.visibility=View.VISIBLE
@@ -612,7 +610,9 @@ class Termsconditions : AppCompatActivity() {
                 } else {
                     progbar!!.dismiss()
                 }
-            } catch (e: Exception) {
+            }
+
+            catch(e:Exception) {
                 progbar!!.dismiss()
                 e.printStackTrace()
                 Log.e("Errterms",e.toString())

@@ -1,6 +1,6 @@
 package com.elancier.healthzone.Pojo;
 
-public class salarypo
+public class salarypo_app
 {
     String id, fdate,reward,
     tdate,
@@ -26,12 +26,13 @@ public class salarypo
     tid,
     adate,
     reject,
+    rejectmob,
     status,count;
 
-    public salarypo(String id,String fdate,String tdate,String played,String viewed,String view_duplicate,String not_seen,String feedback_below4,String feedback_above3,String feedback_not,String permission_below4,
-                    String permission_above3,String splayed,String sviewed,String sview_duplicate,String snot_seen,String sfeedback_below4,String sfeedback_above3,
-                    String sfeedback_not,String spermission_below4,String spermission_above3,String frombank,String tid,String adate,
-                    String reject,String status,String count,String reward) {
+    public salarypo_app(String id, String fdate, String tdate, String played, String viewed, String view_duplicate, String not_seen, String feedback_below4, String feedback_above3, String feedback_not, String permission_below4,
+                        String permission_above3, String splayed, String sviewed, String sview_duplicate, String snot_seen, String sfeedback_below4, String sfeedback_above3,
+                        String sfeedback_not, String spermission_below4, String spermission_above3, String frombank, String tid, String adate,
+                        String reject,String rejectmob, String status, String count, String reward) {
 
         this.fdate=fdate;
         this.id=id;
@@ -58,6 +59,7 @@ public class salarypo
          this.tid=tid;
         this.adate=adate;
         this.reject=reject;
+        this.rejectmob=rejectmob;
         this.status=status;
         this.count=count;
         this.reward=reward;
@@ -80,10 +82,11 @@ public class salarypo
     public String gettid() {return tid;}
     public String getadate() {return adate;}
     public String getreject() {return reject;}
+    public String getRejectmob() {return rejectmob;}
     public String getCount() {return count;}
 
 
-                public String getstatus() {
+    public String getstatus() {
                     return status;
                 }
     public String getplayed() {

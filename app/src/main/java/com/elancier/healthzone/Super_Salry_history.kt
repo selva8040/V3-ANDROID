@@ -8,8 +8,6 @@ import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.Button
@@ -22,7 +20,7 @@ import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.elancier.healthzone.Pojo.Rewardpointsbo
-import com.elancier.healthzone.Pojo.salarypo
+import com.elancier.healthzone.Pojo.salarypo_app
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
 import kotlinx.android.synthetic.main.common_layout.*
 import kotlinx.android.synthetic.main.supersalary_list_header.*
@@ -37,7 +35,7 @@ class Super_Salry_history : AppCompatActivity() {
     internal lateinit var itemsAdapter: Super_salhistoryadap
     private val mRecyclerListitems = ArrayList<Any>()
     private val statusarr = ArrayList<String>()
-    private var productItems: MutableList<salarypo>? = null
+    private var productItems: MutableList<salarypo_app>? = null
     internal lateinit var mLayoutManager: LinearLayoutManager
     internal lateinit var utils: Utils
     var intenttype="";
@@ -211,7 +209,8 @@ class Super_Salry_history : AppCompatActivity() {
                         val frombank=JO.getString("frombank");
                         val tid=JO.getString("tid");
                         val adate=JO.getString("adate");
-                        val reject=JO.getString("reject");
+                        val reject=JO.getString("rejectedName");
+                        val rejectmob=JO.getString("rejectedMobile");
                         val status=JO.getString("status");
                         val count=JO.getString("count");
                         val reward=JO.getString("reward");
@@ -219,14 +218,9 @@ class Super_Salry_history : AppCompatActivity() {
                         //String whomename = jobject.getString("whomename");
                         //String points = jobject.getString("points");
 
-
-
-
                         try {
-
-
                             productItems!!.add(
-                                salarypo(
+                                salarypo_app(
                                     i.toString(),
                                     frmdate,
                                     todate,
@@ -252,6 +246,7 @@ class Super_Salry_history : AppCompatActivity() {
                                     tid,
                                     adate,
                                     reject,
+                                    rejectmob,
                                     status,
                                     count,
                                     reward
@@ -262,7 +257,7 @@ class Super_Salry_history : AppCompatActivity() {
                         } catch (e: Exception) {
                             //Log.e("rewardrespnw", e.toString())
                             productItems!!.add(
-                                salarypo(
+                                salarypo_app(
                                     i.toString(),
                                     frmdate,
                                     todate,
@@ -288,6 +283,7 @@ class Super_Salry_history : AppCompatActivity() {
                                     tid,
                                     adate,
                                     reject,
+                                    rejectmob,
                                     status,
                                     count,
                                     reward
@@ -345,11 +341,14 @@ class Super_Salry_history : AppCompatActivity() {
 
             if(productItems!!.get(pos.toInt()).getstatus().equals("2")){
                 textView15.setText("Reject")
-                textView56.setText("Reject : " + productItems!!.get(pos.toInt()).getreject())
+                textView56.setText("Rejected By : " + productItems!!.get(pos.toInt()).getreject())
                 textView56.setTextColor(resources.getColor(R.color.red))
-                textView58.visibility=View.INVISIBLE
+                textView58.visibility=View.VISIBLE
+                textView56.setTextColor(resources.getColor(R.color.red))
+                textView58.setText("Mobile No : " + productItems!!.get(pos.toInt()).getRejectmob())
                 nofeed.visibility=View.INVISIBLE
             }
+
             else if(productItems!!.get(pos.toInt()).getstatus().equals("1")){
                 textView15.setText("Approved")
                 textView58.visibility=View.VISIBLE
@@ -360,10 +359,6 @@ class Super_Salry_history : AppCompatActivity() {
                 textView58.setText("Transaction Id : " + productItems!!.get(pos.toInt()).gettid())
                 nofeed.setText("Approved date      : " + productItems!!.get(pos.toInt()).getadate())
             }
-
-
-
-            ///titlename.setText("New Version 1."+Number);
 
             laterbut.setOnClickListener {
                 update.dismiss()
