@@ -44,6 +44,7 @@ class New_wallet_List : AppCompatActivity() {
     var tot=0F
     var crore=""
     var from=""
+    var welwallet=""
 
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
@@ -168,8 +169,12 @@ class New_wallet_List : AppCompatActivity() {
                  otp_edit_box1 = vs.findViewById<View>(R.id.otp_edit_box1) as EditText
                 otp_edit_box2 = vs.findViewById<View>(R.id.otp_edit_box2) as EditText
 
-                if(crore=="crore"||crore=="welcome"){
+                if(crore=="crore"){
                     otp_edit_box1!!.setText(utils.loadbasewallet())
+
+                }
+                else if(crore=="welcome"){
+                    otp_edit_box1!!.setText(welwallet)
 
                 }
                 else{
@@ -322,6 +327,7 @@ class New_wallet_List : AppCompatActivity() {
                     if(obj.getJSONObject(0).getString("Status").equals("Success")) {
                         val wallet=obj.getJSONObject(0).getString("wallet");
                         val base_wallet=obj.getJSONObject(0).getString("base_wallet");
+                        welwallet=obj.getJSONObject(0).getString("wel_wallet");
                         utils.savePreferences("wallet",wallet)
                         utils.savePreferences("base_wallet",base_wallet)
 

@@ -218,12 +218,13 @@ class OptionTree : AppCompatActivity() {
                 ColorDrawable(Color.WHITE)
             )
             val vs = layoutInflater.inflate(R.layout.welcome_pin_popup, null)
-            val updatebut =
-                vs.findViewById<View>(R.id.textView81) as TextView
+            val updatebut = vs.findViewById<View>(R.id.textView81) as TextView
+
+            val close = vs.findViewById<View>(R.id.textView82) as TextView
+
             val pintext=vs.findViewById<View>(R.id.otp_edit_box1) as EditText
 
             updatebut.setOnClickListener {
-
                 if(pintext.text.toString().isNotEmpty()) {
                     update!!.dismiss()
                     Checkpin().execute(pintext.text.toString().trim(),name)
@@ -232,6 +233,10 @@ class OptionTree : AppCompatActivity() {
                     pintext.setError("Required field*")
                 }
 
+            }
+
+            close.setOnClickListener {
+                update!!.dismiss()
             }
 
 

@@ -27,12 +27,12 @@ public class salarypo_app
     adate,
     reject,
     rejectmob,
-    status,count;
+    status,count,reason;
 
     public salarypo_app(String id, String fdate, String tdate, String played, String viewed, String view_duplicate, String not_seen, String feedback_below4, String feedback_above3, String feedback_not, String permission_below4,
                         String permission_above3, String splayed, String sviewed, String sview_duplicate, String snot_seen, String sfeedback_below4, String sfeedback_above3,
                         String sfeedback_not, String spermission_below4, String spermission_above3, String frombank, String tid, String adate,
-                        String reject,String rejectmob, String status, String count, String reward) {
+                        String reject,String rejectmob, String status, String count, String reward,String reason) {
 
         this.fdate=fdate;
         this.id=id;
@@ -63,6 +63,7 @@ public class salarypo_app
         this.status=status;
         this.count=count;
         this.reward=reward;
+        this.reason=reason;
 
     }
 
@@ -76,6 +77,9 @@ public class salarypo_app
 
     public String getReward() {
         return reward;
+    }
+    public String getReason() {
+        return reason;
     }
 
     public String getfrombank() {return frombank;}

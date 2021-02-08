@@ -21,7 +21,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Enter Your Pin : "
+            android:text="Enter Base  / Base (N) Pin: "
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -86,17 +86,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/textView81"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:padding="8dp"
                 android:text="SUBMIT"
+                android:textColor="@color/themes"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="CLOSE"
                 android:textColor="@color/themes"
                 android:textSize="18sp"
                 android:textStyle="bold" />

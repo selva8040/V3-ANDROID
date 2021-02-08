@@ -214,6 +214,7 @@ class Super_Salry_history : AppCompatActivity() {
                         val status=JO.getString("status");
                         val count=JO.getString("count");
                         val reward=JO.getString("reward");
+                        val reason=JO.getString("reject");
                         statusarr.add(status)
                         //String whomename = jobject.getString("whomename");
                         //String points = jobject.getString("points");
@@ -249,7 +250,7 @@ class Super_Salry_history : AppCompatActivity() {
                                     rejectmob,
                                     status,
                                     count,
-                                    reward
+                                    reward,reason
                                 )
                             )
 
@@ -286,7 +287,7 @@ class Super_Salry_history : AppCompatActivity() {
                                     rejectmob,
                                     status,
                                     count,
-                                    reward
+                                    reward,reason
                                 )
                             )
 
@@ -346,7 +347,10 @@ class Super_Salry_history : AppCompatActivity() {
                 textView58.visibility=View.VISIBLE
                 textView56.setTextColor(resources.getColor(R.color.red))
                 textView58.setText("Mobile No : " + productItems!!.get(pos.toInt()).getRejectmob())
-                nofeed.visibility=View.INVISIBLE
+                nofeed.setTextColor(resources.getColor(R.color.red))
+
+                nofeed.setText("Reason : " + productItems!!.get(pos.toInt()).reason)
+
             }
 
             else if(productItems!!.get(pos.toInt()).getstatus().equals("1")){

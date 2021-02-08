@@ -244,6 +244,10 @@ class Termsconditions : AppCompatActivity() {
                 textView72.setText("")
                 otptext.setHint("Enter Your Pin")
             }
+            else if(crore=="welcome"){
+                otptext.setHint("Enter Welcome (S) Pin")
+
+            }
             else{
                 textView72.setText("")
                 otptext.setHint("Enter Your V3 Pin")
