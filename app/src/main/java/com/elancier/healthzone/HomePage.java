@@ -1603,8 +1603,8 @@ public class HomePage extends MainView {
                                     else if(Integer.parseInt(arr[0])>=2021){
                                         if(Integer.parseInt(arr[1])>=2){
                                             if(Integer.parseInt(arr[2])>=16){
-                                                starreq_lay.setVisibility(View.GONE);
-                                                starmonthly_lay.setVisibility(View.GONE);
+                                                //starreq_lay.setVisibility(View.GONE);
+                                                //starmonthly_lay.setVisibility(View.GONE);
                                             }
                                         }
                                         else{

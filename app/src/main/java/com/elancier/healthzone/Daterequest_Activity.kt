@@ -71,7 +71,7 @@ class Daterequest_Activity : AppCompatActivity() {
         task.execute("")
 
         if(intenttype=="normal") {
-            head!!.text = "Recharge/Coupon/Mobile"
+            head!!.text = "Quaterly Benifit"
             //submit.visibility=View.VISIBLE
             //button2.visibility=View.VISIBLE
             checkBox.visibility=View.VISIBLE

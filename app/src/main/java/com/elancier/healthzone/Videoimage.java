@@ -1648,6 +1648,16 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                                             unamtext.setText(utils.loadName() + "...." + "\n" + formatss);
 
                                         }
+                                        else  {
+                                            try {
+                                                unamtext.setText(utils.loadName() + "...." + "\n" + formatss);
+                                            }
+                                            catch (Exception e){
+                                                unamtext.setText(utils.loadName());
+
+                                            }
+
+                                        }
 
                                     } else {
                                         Date currentTimes = Calendar.getInstance().getTime();
@@ -1662,6 +1672,16 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
                                         } else if (origin_count.equals("4")) {
                                             unamtext.setText(utils.loadName() + "...." + "\n" + currentTimes);
+
+                                        }
+                                         else  {
+                                            try {
+                                                unamtext.setText(utils.loadName() + "...." + "\n" + currentTimes);
+                                            }
+                                            catch (Exception e){
+                                                unamtext.setText(utils.loadName());
+
+                                            }
 
                                         }
 
@@ -1685,6 +1705,16 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                                             unamtext.setText(utils.loadName() + "...." + "\n" + formatss);
 
                                         }
+                                         else  {
+                                            try {
+                                                unamtext.setText(utils.loadName() + "...." + "\n" + formatss);
+                                            }
+                                            catch (Exception e){
+                                                unamtext.setText(utils.loadName());
+
+                                            }
+
+                                        }
 
 
                                     } else {
@@ -1701,6 +1731,16 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
                                         } else if (origin_count.equals("4")) {
                                             unamtext.setText(utils.loadName() + "...." + "\n" + currentTimes);
+
+                                        }
+                                         else  {
+                                            try {
+                                                unamtext.setText(utils.loadName() + "...." + "\n" + currentTimes);
+                                            }
+                                            catch (Exception e){
+                                                unamtext.setText(utils.loadName());
+
+                                            }
 
                                         }
 
@@ -2807,6 +2847,10 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
         } else if (lang.equals("6")) {
             contlan = contlan6;
             contlan_end = contlang66;
+        }
+        else{
+            contlan = contlan2;
+            contlan_end = contlang22;
         }
 
         countDownTimer = new CountDownTimer(noOfMinutes, 1000) {

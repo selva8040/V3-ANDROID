@@ -139,7 +139,7 @@ class New_wallet_List : AppCompatActivity() {
                 //shuffle()
                 finish()
 
-                if(crore!="crore") {
+                if(crore!="crore"&&crore!="welcome") {
                     startActivity(Intent(this@New_wallet_List, New_wallet_List::class.java))
                     swipeToRefresh.setRefreshing(false)
                 }

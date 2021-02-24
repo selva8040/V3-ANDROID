@@ -112,8 +112,11 @@ class OptionTree : AppCompatActivity() {
     }
 
     private fun onclick() {
+        //Log.e("clicks",data!!.size.toString());
+
         listView!!.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
+                Log.e("click",data!!.size.toString());
                 if (data!!.size > 0) {
                     Uname = data!![position].uname
                     supportActionBar!!.setTitle(Uname)
@@ -491,6 +494,17 @@ class OptionTree : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+    }
+    fun onloadwelcome(pos:Int){
+        if (data!!.size > 0) {
+            Uname = data!![pos].uname
+            supportActionBar!!.setTitle(Uname)
+            Log.i("UNAME", Uname)
+            progress_lay!!.visibility = View.VISIBLE
+            data = ArrayList()
+            val task: GetinfoTask = GetinfoTask()
+            task.execute(Uname)
         }
     }
 }

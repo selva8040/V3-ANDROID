@@ -22,7 +22,6 @@ import com.elancier.healthzone.Common.CheckNetwork
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.elancier.healthzone.Pojo.Rewardpointsbo
-import kotlinx.android.synthetic.main.activity_reward_history.*
 import kotlinx.android.synthetic.main.activity_reward_history.swipeToRefresh
 import kotlinx.android.synthetic.main.activity_rewardpoints.*
 import org.json.JSONArray
@@ -209,8 +208,8 @@ class Rewardpoints : AppCompatActivity() {
             else{
                 progressBar7.visibility=View.VISIBLE
                 recyclerlist1!!.visibility=View.INVISIBLE
-
                 loading=false
+
             }
 
         }

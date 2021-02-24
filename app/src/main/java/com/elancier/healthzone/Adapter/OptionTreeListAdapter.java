@@ -72,6 +72,7 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.welc_desig=(TextView) convertView.findViewById(R.id.welc_desig);
         holder.verify=(Button) convertView.findViewById(R.id.button15);
         holder.welccard=(CardView) convertView.findViewById(R.id.cardView10welc);
+        holder.cards=(CardView) convertView.findViewById(R.id.card);
 
 
 
@@ -138,6 +139,16 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
 
         }
 
+
+        holder.cards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(items.get(position).getSub_users().equals("Welcome Pin")) {
+                    ((OptionTree) context).onloadwelcome(position);
+                }
+            }
+        });
+
         holder.verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -187,6 +198,7 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         public TextView welc_desig;
         public Button verify;
         public CardView welccard;
+        public CardView cards;
 
     }
 }
