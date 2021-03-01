@@ -2699,7 +2699,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:padding="16dp"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -2716,7 +2716,8 @@
                                 android:layout_weight="1"
                                 android:text="1st Recharge"
                                 android:textColor="@color/num_color"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
@@ -2727,7 +2728,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:padding="16dp"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -2744,7 +2745,8 @@
                                 android:layout_weight="1"
                                 android:text="2nd Recharge"
                                 android:textColor="@color/num_color"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 

@@ -4435,8 +4435,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                     result = con.sendHttpPostjson2(origin_domain1 + Appconstants.VIDEOSUBMIT5raw, jobj, "");
 
                 } else if (Build.VERSION.SDK_INT >= 29) {
-                    Log.i("Videossubmitinput", origin_domain + Appconstants.VIDEOSUBMIT5raw + "    " + jobj.toString() + "");
-                    result = con.sendHttpPostjson2(origin_domain + Appconstants.VIDEOSUBMIT5raw, jobj, "");
+                    Log.i("Videossubmitinput", origin_domain1 + Appconstants.VIDEOSUBMIT5raw + "    " + jobj.toString() + "");
+                    result = con.sendHttpPostjson2(origin_domain1 + Appconstants.VIDEOSUBMIT5raw, jobj, "");
 
                 }
 
