@@ -45,6 +45,7 @@ class New_wallet_List : AppCompatActivity() {
     var crore=""
     var from=""
     var welwallet=""
+    var statusarr=ArrayList<String>()
 
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,10 +102,12 @@ class New_wallet_List : AppCompatActivity() {
                 if (!point.isEmpty()) {
                     val d = point.replace(",".toRegex(), "").toInt()
                     tot=d.toFloat()
+                    println("tot$tot")
+
                     if (d >= 500) {
-                        addsalary.setVisibility(View.VISIBLE)
+                        //addsalary.setVisibility(View.VISIBLE)
                     } else {
-                        addsalary.setVisibility(View.GONE)
+                        //addsalary.setVisibility(View.GONE)
                     }
                 }
             }
@@ -116,15 +119,17 @@ class New_wallet_List : AppCompatActivity() {
         if (!utils.loadbasewallet().isEmpty()&&(crore=="crore"||crore=="welcome")) {
             val point =
                 utils.loadbasewallet().toString().split("\\.".toRegex(), 2).toTypedArray()[0]
-            println("point$point")
+           // println("point$utils.loadbasewallet()")
             try {
                 if (!point.isEmpty()) {
                     val d = point.replace(",".toRegex(), "").toInt()
                     tot=d.toFloat()
+                    println("total$tot")
+
                     if (d >= 500) {
-                        addsalary.setVisibility(View.VISIBLE)
+                       // addsalary.setVisibility(View.VISIBLE)
                     } else {
-                        addsalary.setVisibility(View.GONE)
+                       // addsalary.setVisibility(View.GONE)
                     }
                 }
             }
@@ -165,20 +170,22 @@ class New_wallet_List : AppCompatActivity() {
                 val updatebut =
                     vs.findViewById<View>(R.id.textView81) as TextView
                 // laterbut=(ImageView) vs.findViewById(R.id.img);
-                //TextView titlename=(TextView) vs.findViewById(R.id.titlename);
+                val titlename=vs.findViewById<TextView>(R.id.textView80);
                  otp_edit_box1 = vs.findViewById<View>(R.id.otp_edit_box1) as EditText
                 otp_edit_box2 = vs.findViewById<View>(R.id.otp_edit_box2) as EditText
 
                 if(crore=="crore"){
                     otp_edit_box1!!.setText(utils.loadbasewallet())
-
+                    titlename.setText("Your Base Wallet Balance")
                 }
                 else if(crore=="welcome"){
                     otp_edit_box1!!.setText(welwallet)
+                    titlename.setText("Your Welcome Pin Wallet Balance")
 
                 }
                 else{
                     otp_edit_box1!!.setText(utils.loadWallet())
+                    titlename.setText("Your Wallet Balance")
 
                 }
 
@@ -344,13 +351,7 @@ class New_wallet_List : AppCompatActivity() {
                             val feedback_absents=JO.getString("request")
                             val reason=JO.getString("reason")
 
-                            if(todate=="0"){
-                                addsalary.visibility=View.GONE
-                            }
-                            else{
-                                addsalary.visibility=View.VISIBLE
-
-                            }
+                            statusarr.add(todate)
 
                             try {
                                 productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid ,feedback_absents, reason, ""))
@@ -358,6 +359,15 @@ class New_wallet_List : AppCompatActivity() {
                                 productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid , feedback_absents, reason, ""))
                             }
                         }
+
+                        if(statusarr.contains("0")){
+                            addsalary.visibility=View.GONE
+                        }
+                        else{
+                            addsalary.visibility=View.VISIBLE
+
+                        }
+
                         nodata.visibility=View.GONE
                         recyclerlist.visibility=View.VISIBLE
                         mRecyclerListitems.clear()

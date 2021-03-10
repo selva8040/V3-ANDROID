@@ -20,6 +20,7 @@ import android.speech.RecognizerIntent;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.ActionMode;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -338,7 +339,35 @@ public class HomePage extends MainView {
         feededit.setVerticalScrollBarEnabled(true);
         feededit.setMovementMethod(new ScrollingMovementMethod());
 
+        View.OnLongClickListener mOnLongClickListener = new View.OnLongClickListener() {
 
+            @Override
+            public boolean onLongClick(View v) {
+                // prevent context menu from being popped up, so that user
+                // cannot copy/paste from/into any EditText fields.
+                return true;
+            }
+        };
+
+        feededit.setCustomSelectionActionModeCallback(new ActionMode.Callback() {
+
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            public void onDestroyActionMode(ActionMode mode) {
+            }
+
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
+        });
+
+        feededit.cancelLongPress();
 
 
         speak.setOnClickListener(new View.OnClickListener() {
@@ -1875,6 +1904,7 @@ public class HomePage extends MainView {
     private static boolean isCharAllowed(char c) {
         return Character.isLetterOrDigit(c) || Character.isSpaceChar(c);
     }
+
 
     public void failurepopup() {
         final Dialog open = new Dialog(HomePage.this);

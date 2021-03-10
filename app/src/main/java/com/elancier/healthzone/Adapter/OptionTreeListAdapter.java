@@ -143,9 +143,12 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.cards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(items.get(position).getSub_users().equals("Welcome Pin")) {
+              //  if(items.get(position).getSub_users().equals("Welcome Pin")) {
                     ((OptionTree) context).onloadwelcome(position);
-                }
+                /*}
+                else{
+
+                }*/
             }
         });
 

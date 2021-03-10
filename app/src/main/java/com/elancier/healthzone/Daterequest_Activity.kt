@@ -71,7 +71,7 @@ class Daterequest_Activity : AppCompatActivity() {
         task.execute("")
 
         if(intenttype=="normal") {
-            head!!.text = "Quaterly Benifit"
+            head!!.text = "Quarterly Benefit"
             //submit.visibility=View.VISIBLE
             //button2.visibility=View.VISIBLE
             checkBox.visibility=View.VISIBLE
