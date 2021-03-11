@@ -337,8 +337,9 @@ public class HomePage extends MainView {
         feededit.setScroller(new Scroller(HomePage.this));
         feededit.setMaxLines(2);
         feededit.setVerticalScrollBarEnabled(true);
+        feededit.setLongClickable(false);
         feededit.setMovementMethod(new ScrollingMovementMethod());
-
+        feededit.setTextIsSelectable(false);
         View.OnLongClickListener mOnLongClickListener = new View.OnLongClickListener() {
 
             @Override
@@ -348,6 +349,14 @@ public class HomePage extends MainView {
                 return true;
             }
         };
+
+        feededit.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            public boolean onLongClick(View v)
+            {
+                return true;
+            }
+        });
 
         feededit.setCustomSelectionActionModeCallback(new ActionMode.Callback() {
 

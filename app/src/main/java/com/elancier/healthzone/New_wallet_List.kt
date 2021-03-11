@@ -55,6 +55,7 @@ class New_wallet_List : AppCompatActivity() {
         try{
             val from=intent.extras
             crore=from!!.getString("from").toString()
+            println("crore"+crore)
 
         }
         catch (e:Exception){
@@ -175,7 +176,28 @@ class New_wallet_List : AppCompatActivity() {
                 otp_edit_box2 = vs.findViewById<View>(R.id.otp_edit_box2) as EditText
 
                 if(crore=="crore"){
-                    otp_edit_box1!!.setText(utils.loadbasewallet())
+                    otp_edit_box1!!.setText(tot.toString())
+                    if (!utils.loadbasewallet().isEmpty()&&(crore=="crore"||crore=="welcome")) {
+                        val point =
+                            utils.loadbasewallet().toString().split("\\.".toRegex(), 2).toTypedArray()[0]
+                        // println("point$utils.loadbasewallet()")
+                        try {
+                            if (!point.isEmpty()) {
+                                val d = point.replace(",".toRegex(), "").toInt()
+                                tot=d.toFloat()
+                                println("total$tot")
+
+                                if (d >= 500) {
+                                    // addsalary.setVisibility(View.VISIBLE)
+                                } else {
+                                    // addsalary.setVisibility(View.GONE)
+                                }
+                            }
+                        }
+                        catch (e:Exception){
+
+                        }
+                    }
                     titlename.setText("Your Base Wallet Balance")
                 }
                 else if(crore=="welcome"){
@@ -184,7 +206,7 @@ class New_wallet_List : AppCompatActivity() {
 
                 }
                 else{
-                    otp_edit_box1!!.setText(utils.loadWallet())
+                    otp_edit_box1!!.setText(tot.toString())
                     titlename.setText("Your Wallet Balance")
 
                 }
