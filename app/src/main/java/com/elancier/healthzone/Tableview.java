@@ -202,7 +202,9 @@ public class Tableview extends AppCompatActivity
                 tb2.setVisibility(View.GONE);
                 green.setVisibility(View.GONE);
                 blue.setVisibility(View.VISIBLE);
-
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_three));
+                }
 
             }
             else if(utils.loadtype().equals("1")){
@@ -213,7 +215,7 @@ public class Tableview extends AppCompatActivity
                 blue.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_green));
                 headertable.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_green));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    //scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_two));
+                    scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_two));
                 }
 
 
@@ -228,7 +230,7 @@ public class Tableview extends AppCompatActivity
                 blue.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_brown));
                 headertable.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_brown));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    //scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_brown));
+                    scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_brown));
                 }
 
 

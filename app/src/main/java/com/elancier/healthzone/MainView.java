@@ -99,7 +99,7 @@ public class MainView extends AppCompatActivity {
     boolean more_check = false;
     DrawerLayout drawerLayout;
     CircleImageView pimg;
-    CircleImageView pimg2;
+    ImageView pimg2;
     Dialog progbar,prog;
     Utils utils;
     TextView chngpass,version,download;
@@ -224,7 +224,7 @@ public class MainView extends AppCompatActivity {
         logout_lay = (LinearLayout) findViewById(R.id.logout);
         utils = new Utils(getApplicationContext());
         pimg = (CircleImageView) findViewById(R.id.pimg);
-        pimg2 = (CircleImageView) findViewById(R.id.pimg2);
+        pimg2 = (ImageView) findViewById(R.id.pimg2);
         saleslay=(LinearLayout)findViewById(R.id.sales_lay);
         purchaselay=(LinearLayout)findViewById(R.id.purchase_lay);
         binary_tree_lay=(LinearLayout)findViewById(R.id.binarytree_header);
@@ -442,11 +442,11 @@ public class MainView extends AppCompatActivity {
         }
 
         if (utils.loadImage().toString().trim().length() > 0) {
-            Picasso.with(context).load(utils.loadImage()).placeholder(R.mipmap.male).resize(200, 200).into(pimg);
-            Picasso.with(context).load(utils.loadImage()).placeholder(R.mipmap.male).into(pimg2);
+            Picasso.with(context).load(utils.loadImage()).placeholder(R.mipmap.v3).resize(200, 200).into(pimg);
+           // Picasso.with(context).load(R.mipmap.v3).placeholder(R.mipmap.v3).into(pimg2);
         } else {
             Picasso.with(context).load(R.mipmap.male).into(pimg);
-            Picasso.with(context).load(R.mipmap.male).into(pimg2);
+            //Picasso.with(context).load(R.mipmap.v3).into(pimg2);
 
         }
         binary_tree_list=new ArrayList<MenuItemBo>();

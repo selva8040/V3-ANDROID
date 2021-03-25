@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scr"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/scr"><!--android:background="@drawable/gradient_background_three"-->
+    android:layout_height="match_parent"><!--android:background="@drawable/gradient_background_three"-->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:background="@color/white"
         android:orientation="vertical">
 
         <!--#6200EE-->
+
         <TextView
             android:id="@+id/textView40"
             android:layout_width="match_parent"
@@ -35,7 +36,7 @@
             <TableRow
                 android:id="@+id/headertable"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:background="@color/sky_blue"
                 android:weightSum="1">
                 <!--android:background="@color/design_default_color_primary"-->
@@ -47,7 +48,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="8dp"
+                    android:padding="10dp"
                     android:text="Blue Way  Channel Video Scheduled Time "
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
@@ -72,7 +73,7 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:background="#e2e2e2"
                 android:weightSum="1">
 
@@ -83,7 +84,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="05.01 AM to 07.45 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -116,7 +117,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="07.46 AM to 10.30 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -149,7 +150,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="10.31 AM to 01.15 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -182,7 +183,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="01.16 PM to 04.00 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -215,7 +216,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="04.01 PM to 06.45 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -248,7 +249,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="06.46 PM to 09.30 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -304,7 +305,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="8dp"
                     android:text="Green Way  Channel Video Scheduled Time "
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
@@ -339,7 +340,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="05.01 AM to 06:20 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -372,7 +373,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="06:21 AM to 07:40 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -405,7 +406,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="07:41 AM to 09:00 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -438,7 +439,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="05:31 PM to 06:50 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -471,7 +472,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="06:51 PM to 08:10 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -504,7 +505,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="08:11 PM to 09:30 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -525,6 +526,7 @@
             </TableRow>
 
         </TableLayout>
+
         <TextView
             android:id="@+id/textView45"
             android:layout_width="match_parent"
@@ -559,7 +561,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="8dp"
                     android:text="Brown Way  Channel Video Scheduled Time "
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
@@ -594,7 +596,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="05.00 AM to 05:45 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -627,7 +629,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="05:46 AM to 06:30 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -660,7 +662,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="06:31 AM to 07:15 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -693,7 +695,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="07:16 AM to 08:00 AM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -726,7 +728,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="08:00 PM to 08:45 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />
@@ -759,7 +761,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/shapeline"
                     android:gravity="center"
-                    android:padding="3dp"
+                    android:padding="10dp"
                     android:text="08:46 PM to 09:30 PM"
                     android:textColor="#000"
                     android:textSize="15sp" />

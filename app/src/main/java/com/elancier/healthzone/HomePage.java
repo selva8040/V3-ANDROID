@@ -1441,10 +1441,10 @@ public class HomePage extends MainView {
                             try {
                                 if (utils.loadImage().toString().trim().length() > 0) {
                                     Picasso.with(HomePage.this).load(utils.loadImage()).placeholder(R.mipmap.male).resize(200, 200).into(pimg);
-                                    Picasso.with(HomePage.this).load(utils.loadImage()).placeholder(R.mipmap.male).into(pimg2);
+                                    //Picasso.with(HomePage.this).load(R.mipmap.v3).placeholder(R.mipmap.v3).into(pimg2);
                                 } else {
                                     Picasso.with(HomePage.this).load(R.mipmap.male).into(pimg);
-                                    Picasso.with(HomePage.this).load(R.mipmap.male).into(pimg2);
+                                    //Picasso.with(HomePage.this).load(R.mipmap.v3).into(pimg2);
                                 }
                             }
                             catch (Exception e){
