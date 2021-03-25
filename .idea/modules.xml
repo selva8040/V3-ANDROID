@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HealthZone_30_may.iml" filepath="$PROJECT_DIR$/.idea/modules/HealthZone_30_may.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SplashAnim/HealthZone_30_may.SplashAnim.iml" filepath="$PROJECT_DIR$/.idea/modules/SplashAnim/HealthZone_30_may.SplashAnim.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HealthZone_30_may.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HealthZone_30_may.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/V3_Online_TV_28_DEC_2020.iml" filepath="$PROJECT_DIR$/.idea/modules/V3_Online_TV_28_DEC_2020.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SplashAnim/V3_Online_TV_28_DEC_2020.SplashAnim.iml" filepath="$PROJECT_DIR$/.idea/modules/SplashAnim/V3_Online_TV_28_DEC_2020.SplashAnim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/V3_Online_TV_28_DEC_2020.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/V3_Online_TV_28_DEC_2020.app.iml" />
     </modules>
   </component>
 </project>

@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.PRBOX_perfadap
@@ -40,7 +41,7 @@ class PROM_BOX_history : AppCompatActivity() {
         try{
             from= intent.extras!!.getString("from").toString()
         }
-        catch(e:Exception){
+        catch (e: Exception){
 
         }
 
@@ -55,21 +56,30 @@ class PROM_BOX_history : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
         productItems = ArrayList()
 
-        itemsAdapter = PRBOX_perfadap(mRecyclerListitems, this, PRBOX_perfadap.OnItemClickListener { view, position, viewType ->
-            val item = mRecyclerListitems[position] as Rewardpointsbo
-            Log.e("clickresp", "value")
+        itemsAdapter = PRBOX_perfadap(
+            mRecyclerListitems,
+            this,
+            PRBOX_perfadap.OnItemClickListener { view, position, viewType ->
+                val item = mRecyclerListitems[position] as Rewardpointsbo
+                Log.e("clickresp", "value")
 
-            //clikffed();
-        })
+                //clikffed();
+            })
         recyclerlist.adapter = itemsAdapter
 
         addsalary.setOnClickListener{
-            val k= Intent(this@PROM_BOX_history,Prom_BOX_FORM::class.java).putExtra("from",from)
+            val k= Intent(this@PROM_BOX_history, Prom_BOX_FORM::class.java).putExtra("from", from)
             startActivity(k)
             finish()
 
@@ -167,14 +177,25 @@ class PROM_BOX_history : AppCompatActivity() {
                             }
                             else if(whome=="2"||whome=="1"){
                                 addsalary.visibility=View.VISIBLE
-                                utils.savePreferences("pb_uname1","")
-                                utils.savePreferences("pb_uname2","")
-                                utils.savePreferences("pb_uname3","")
-                                utils.savePreferences("pb_uname","")
+                                utils.savePreferences("pb_uname1", "")
+                                utils.savePreferences("pb_uname2", "")
+                                utils.savePreferences("pb_uname3", "")
+                                utils.savePreferences("pb_uname", "")
                             }
 
                             try {
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, adtime, "",
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
+                                        adtime,
                                         "",
                                         "",
                                         "",
@@ -184,11 +205,32 @@ class PROM_BOX_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
                             } catch (e: Exception) {
                                 //Log.e("rewardrespnw", e.toString())
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, adtime , "",
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
+                                        adtime,
                                         "",
                                         "",
                                         "",
@@ -198,7 +240,17 @@ class PROM_BOX_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
                             }
                         }
                         nodata.visibility=View.GONE

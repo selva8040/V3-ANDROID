@@ -10,7 +10,9 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import com.elancier.healthzone.Adapter.OptionTreeListAdapter
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
@@ -60,11 +62,14 @@ class OptionTree : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_option_tree)
+        val toolbar2 = findViewById<Toolbar>(R.id.toolbar2)
+        setSupportActionBar(toolbar2)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+
         // getSupportActionBar().setHomeAsUpIndicator(R.mipmap.menu);
-        val d = resources.getDrawable(R.drawable.menu_bar_bg_red)
-        supportActionBar!!.setBackgroundDrawable(d)
+        /*val d = resources.getDrawable(R.drawable.menu_bar_bg_red)
+        supportActionBar!!.setBackgroundDrawable(d)*/
         utils = Utils(applicationContext)
         // Uname = getIntent().getExtras().getString("name");
         // Unique = getIntent().getExtras().getString("name");
@@ -201,7 +206,7 @@ class OptionTree : AppCompatActivity() {
         }
     }
 
-    fun openpin(name:String) {
+    fun openpin(name: String) {
         try {
             update = Dialog(this)
             update!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -218,7 +223,7 @@ class OptionTree : AppCompatActivity() {
             updatebut.setOnClickListener {
                 if(pintext.text.toString().isNotEmpty()) {
                     update!!.dismiss()
-                    Checkpin().execute(pintext.text.toString().trim(),name)
+                    Checkpin().execute(pintext.text.toString().trim(), name)
                 }
                 else{
                     pintext.setError("Required field*")
@@ -282,9 +287,9 @@ class OptionTree : AppCompatActivity() {
         }
     }
 
-    fun toast(msg:String){
-        val toast=Toast.makeText(applicationContext,msg,Toast.LENGTH_SHORT)
-        toast.setGravity(Gravity.CENTER,0,0)
+    fun toast(msg: String){
+        val toast=Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.CENTER, 0, 0)
         toast.show()
     }
 
@@ -363,7 +368,7 @@ class OptionTree : AppCompatActivity() {
                         try {
                             welc_uname2!!.text = jsonObject1.getString("welcome")
                         }
-                        catch (e:Exception){
+                        catch (e: Exception){
 
                         }
 
@@ -484,7 +489,7 @@ class OptionTree : AppCompatActivity() {
             }
         }
     }
-    fun onloadwelcome(pos:Int){
+    fun onloadwelcome(pos: Int){
         if (data!!.size > 0) {
             Uname = data!![pos].uname
             supportActionBar!!.setTitle(Uname)

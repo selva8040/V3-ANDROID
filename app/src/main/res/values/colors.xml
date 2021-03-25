@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="newc">#c53364</color>
+    <color name="newco">#622774</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#9B63F8</color>
@@ -41,7 +43,8 @@
 
     <color name="normal">#9EA8B4</color>
 
-    <color name="theme">#9b63f8</color>
+    <!--<color name="theme">#9b63f8</color>-->
+    <color name="theme">#622774</color>
     <color name="themes">#009788</color>
     <color name="xml_back">#F0F0F0</color>
     <color name="linear_back">#f5f5f5</color>
@@ -96,6 +99,8 @@
     <color name="yellow">#FFF176</color>
 
     <color name="new_sts">#111F3A</color>
+    <color name="light_green">#C408F155</color>
+    <color name="light_brown">#DC7D65</color>
     <!--    #AED057  top
 
         #50A457 menu

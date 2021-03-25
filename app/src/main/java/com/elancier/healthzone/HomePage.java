@@ -75,7 +75,7 @@ public class HomePage extends MainView {
 
     DrawerLayout drawerLayout;
     LinearLayout drawer_layout,home_header;
-    TextView uname;
+    TextView uname,uname2,mobile2;
     TextView amount;
     TextView purchase, todayreward, totalreward,available_reward;
     TextView sales;
@@ -141,8 +141,16 @@ public class HomePage extends MainView {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         //Drawable d = getResources().getDrawable(R.drawable.menu_bar_bg);
         //getSupportActionBar().setBackgroundDrawable(d);
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.new_sts));
+        //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        //}
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(Color.parseColor("#622774"));
+        }
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window = context.window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = context.resources.getColor(color)
         }*/
         CircleImageView speak = findViewById(R.id.imageButton2);
         shp = this.getSharedPreferences("UserInfo", MODE_PRIVATE);
@@ -285,7 +293,7 @@ public class HomePage extends MainView {
         }
 
 
-        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+        int currentapiVersion = Build.VERSION.SDK_INT;
 
         if(currentapiVersion>24) {
             Date currentTime = Calendar.getInstance().getTime();
@@ -310,7 +318,7 @@ public class HomePage extends MainView {
         retry = new Dialog(this);
         retry.requestWindowFeature(Window.FEATURE_NO_TITLE);
         retry.getWindow().setBackgroundDrawable(
-                new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                new ColorDrawable(Color.TRANSPARENT));
         View v = getLayoutInflater().inflate(R.layout.retrylay, null);
         retrybut = v.findViewById(R.id.retry);
         retry.setContentView(v);
@@ -320,17 +328,23 @@ public class HomePage extends MainView {
 
 
         uname.setText(utils.loadFname() + " " + utils.loadLname());
+        uname2.setText(""+utils.loadName());
+        mobile2.setText("" + utils.loadmob());
 
         ScrollView scroll = findViewById(R.id.scroll);
+        //LinearLayout scroll2 = findViewById(R.id.scroll2);
         String type = utils.loadtype();
         if (type.equals("0")){
             scroll.setBackgroundResource(R.drawable.top_corner_round_blue);
+            //scroll2.setBackgroundResource(R.drawable.top_corner_round_blue);
         }
         else if(type.equals("1")) {
             scroll.setBackgroundResource(R.drawable.top_corner_round_green);
+            //scroll2.setBackgroundResource(R.drawable.top_corner_round_green);
         }
         else if(type.equals("2")){
             scroll.setBackgroundResource(R.drawable.top_corner_round_brown);
+            //.setBackgroundResource(R.drawable.top_corner_round_brown);
 
         }
 
@@ -548,12 +562,12 @@ public class HomePage extends MainView {
                         if (!utils.back_url().isEmpty() && utils.back_url() != null) {
                             openad();
                         } else {
-                            HomePage.feedback task = new HomePage.feedback();
+                            feedback task = new feedback();
                             task.execute(fname, feededit.getText().toString().trim(), str);
                         }
                     }
                     catch (Exception e){
-                        HomePage.feedback task = new HomePage.feedback();
+                        feedback task = new feedback();
                         task.execute(fname, feededit.getText().toString().trim(), str);
                     }
 
@@ -937,6 +951,8 @@ public class HomePage extends MainView {
         home_header = findViewById(R.id.home_header);
         setclick(drawer_layout,drawerLayout,HomePage.this);
         uname = findViewById(R.id.name);
+        uname2 = findViewById(R.id.uname2);
+        mobile2 = findViewById(R.id.mobile2);
         ibv = findViewById(R.id.ipv);
         gpv = findViewById(R.id.gpv);
         amount = findViewById(R.id.amt);
@@ -1425,8 +1441,10 @@ public class HomePage extends MainView {
                             try {
                                 if (utils.loadImage().toString().trim().length() > 0) {
                                     Picasso.with(HomePage.this).load(utils.loadImage()).placeholder(R.mipmap.male).resize(200, 200).into(pimg);
+                                    Picasso.with(HomePage.this).load(utils.loadImage()).placeholder(R.mipmap.male).into(pimg2);
                                 } else {
                                     Picasso.with(HomePage.this).load(R.mipmap.male).into(pimg);
+                                    Picasso.with(HomePage.this).load(R.mipmap.male).into(pimg2);
                                 }
                             }
                             catch (Exception e){

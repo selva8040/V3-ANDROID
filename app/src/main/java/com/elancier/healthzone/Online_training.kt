@@ -92,7 +92,7 @@ class Online_training : AppCompatActivity() {
         setContentView(R.layout.activity_online_training)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.theme));
+            //getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.newco));
         }
         utils = Utils(applicationContext)
 

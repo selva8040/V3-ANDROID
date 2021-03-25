@@ -13,14 +13,13 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Pointsadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
 import kotlinx.android.synthetic.main.activity_vip__client_add.*
@@ -50,6 +49,12 @@ class New_wallet_List_Dup : AppCompatActivity() {
         supportActionBar!!.title = "Redeem Wallet"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
@@ -57,7 +62,7 @@ class New_wallet_List_Dup : AppCompatActivity() {
 
         itemsAdapter = Pointsadap(mRecyclerListitems, this, object :
             Pointsadap.OnItemClickListener {
-            override fun OnItemClick(view: View, position: Int, viewType:Int) {
+            override fun OnItemClick(view: View, position: Int, viewType: Int) {
                 val item = mRecyclerListitems[position] as Rewardpointsbo
                 // Log.e("clickresp", "value")
 
@@ -84,7 +89,7 @@ class New_wallet_List_Dup : AppCompatActivity() {
                     }
                 }
             }
-            catch (e:Exception){
+            catch (e: Exception){
 
             }
         }
@@ -94,7 +99,7 @@ class New_wallet_List_Dup : AppCompatActivity() {
             override fun onRefresh() {
                 //shuffle()
                 finish()
-                startActivity(Intent(this@New_wallet_List_Dup,New_wallet_List_Dup::class.java))
+                startActivity(Intent(this@New_wallet_List_Dup, New_wallet_List_Dup::class.java))
                 swipeToRefresh.setRefreshing(false)
             }
         })
@@ -123,15 +128,18 @@ class New_wallet_List_Dup : AppCompatActivity() {
                     override fun afterTextChanged(s: Editable) {
 
 
-
                     }
 
-                    override fun beforeTextChanged(s: CharSequence, start: Int,
-                                                   count: Int, after: Int) {
+                    override fun beforeTextChanged(
+                        s: CharSequence, start: Int,
+                        count: Int, after: Int
+                    ) {
                     }
 
-                    override fun onTextChanged(s: CharSequence, start: Int,
-                                               before: Int, count: Int) {
+                    override fun onTextChanged(
+                        s: CharSequence, start: Int,
+                        before: Int, count: Int
+                    ) {
 
 
                     }
@@ -142,48 +150,45 @@ class New_wallet_List_Dup : AppCompatActivity() {
                     Log.e("click", "cli")
 
 
-                    if (!otp_edit_box1!!.getText().toString().isEmpty()&&
+                    if (!otp_edit_box1!!.getText().toString().isEmpty() &&
                         otp_edit_box2!!.getText().toString().isNotEmpty()
                     ) {
 
-                            if(otp_edit_box2!!.text.toString().toFloat()<500||otp_edit_box2!!.text.toString().toInt()>=tot){
+                        if (otp_edit_box2!!.text.toString()
+                                .toFloat() < 500 || otp_edit_box2!!.text.toString().toInt() >= tot
+                        ) {
 
-                                if(otp_edit_box2!!.text.toString().toFloat()<500) {
-                                    otp_edit_box2!!.setText(null)
+                            if (otp_edit_box2!!.text.toString().toFloat() < 500) {
+                                otp_edit_box2!!.setText(null)
 
-                                    toast("Amount should be greater than 500")
-                                }
-                                else if(otp_edit_box2!!.text.toString().toFloat()>=tot){
-                                    otp_edit_box2!!.setText(null)
+                                toast("Amount should be greater than 500")
+                            } else if (otp_edit_box2!!.text.toString().toFloat() >= tot) {
+                                otp_edit_box2!!.setText(null)
 
-                                    toast("Could not request full amount from wallet\n Wallet will remain ₹1 atleast.")
+                                toast("Could not request full amount from wallet\n Wallet will remain ₹1 atleast.")
 
-                                }
                             }
-                            else{
+                        } else {
 
-                                if(otp_edit_box2!!.text.toString().toInt()<tot) {
+                            if (otp_edit_box2!!.text.toString().toInt() < tot) {
 
-                                    if(BuildConfig.VERSION_CODE>=43) {
-                                        val task = ChangepinTask()
-                                        task.execute()
-                                        button14.isEnabled = false
-                                    }
-                                    else{
-                                        toast("Please update the latest version of V3 Online TV.")
+                                if (BuildConfig.VERSION_CODE >= 43) {
+                                    val task = ChangepinTask()
+                                    task.execute()
+                                    button14.isEnabled = false
+                                } else {
+                                    toast("Please update the latest version of V3 Online TV.")
 
-                                    }
                                 }
-                                else{
-                                    toast("Enter lesser amount")
-                                    otp_edit_box2!!.setText(null)
-                                }
+                            } else {
+                                toast("Enter lesser amount")
+                                otp_edit_box2!!.setText(null)
                             }
-
+                        }
 
 
                     } else {
-                            toast("Please fill above fields")
+                        toast("Please fill above fields")
                     }
                 })
                 update!!.setContentView(vs)
@@ -266,9 +271,35 @@ class New_wallet_List_Dup : AppCompatActivity() {
                             }
 
                             try {
-                                productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid ,feedback_absents, reason, ""))
+                                productItems!!.add(
+                                    Rewardpointsbo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        feedback_absent,
+                                        frombank,
+                                        vdtime,
+                                        tid,
+                                        feedback_absents,
+                                        reason,
+                                        ""
+                                    )
+                                )
                             } catch (e: Exception) {
-                                productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid , feedback_absents, reason, ""))
+                                productItems!!.add(
+                                    Rewardpointsbo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        feedback_absent,
+                                        frombank,
+                                        vdtime,
+                                        tid,
+                                        feedback_absents,
+                                        reason,
+                                        ""
+                                    )
+                                )
                             }
                         }
                         nodata.visibility=View.GONE
@@ -390,7 +421,7 @@ class New_wallet_List_Dup : AppCompatActivity() {
     }
 
 
-    fun clikffed(pos: String, time: String,time1:String ,time2:String) {
+    fun clikffed(pos: String, time: String, time1: String, time2: String) {
         try {
             val update = Dialog(this@New_wallet_List_Dup)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -420,7 +451,7 @@ class New_wallet_List_Dup : AppCompatActivity() {
         }
     }
 
-    fun clikffed_rej(pos: String, time: String,time1:String ,time2:String) {
+    fun clikffed_rej(pos: String, time: String, time1: String, time2: String) {
         try {
             val update = Dialog(this@New_wallet_List_Dup)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)

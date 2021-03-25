@@ -78,6 +78,12 @@ class Termsconditions : AppCompatActivity() {
         supportActionBar!!.title = "V3 Online TV"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         utils = Utils(this)
        //actionBar.setTitle("Terms and conditions")
 
@@ -96,11 +102,11 @@ class Termsconditions : AppCompatActivity() {
         try{
             var frm=intent.extras
             crore=frm!!.getString("term").toString();
-            println("term"+crore)
+            println("term" + crore)
 
         }
-        catch (e:Exception){
-            println("err"+e.toString())
+        catch (e: Exception){
+            println("err" + e.toString())
 
         }
 
@@ -270,9 +276,9 @@ class Termsconditions : AppCompatActivity() {
 
     }
 
-    fun toast(msg:String){
-        val toast=Toast.makeText(applicationContext,msg,Toast.LENGTH_SHORT)
-        toast.setGravity(Gravity.CENTER,0,0)
+    fun toast(msg: String){
+        val toast=Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.CENTER, 0, 0)
         toast.show()
     }
 
@@ -301,10 +307,13 @@ class Termsconditions : AppCompatActivity() {
             config.put("api_secret", api_secret);
             val cloudinary = Cloudinary(config);
             try {
-                val fi = cloudinary.uploader().upload("data:image/png;base64"+","+imagecode, HashMap<Any, Any>());
+                val fi = cloudinary.uploader().upload(
+                    "data:image/png;base64" + "," + imagecode,
+                    HashMap<Any, Any>()
+                );
                 val k = fi.get("url")
                 Log.e("fival", k.toString());
-                utils.savePreferences("sign",k.toString())
+                utils.savePreferences("sign", k.toString())
 
                 runOnUiThread{
                     pDialo.dismiss()
@@ -314,7 +323,7 @@ class Termsconditions : AppCompatActivity() {
 
             } catch (e: IOException) {
                 e.printStackTrace();
-                Log.e("except",e.toString())
+                Log.e("except", e.toString())
             }
 
             return result
@@ -494,7 +503,11 @@ class Termsconditions : AppCompatActivity() {
                                 }
 
                             } else {
-                                Toast.makeText(applicationContext, "You're offline", Toast.LENGTH_LONG)
+                                Toast.makeText(
+                                    applicationContext,
+                                    "You're offline",
+                                    Toast.LENGTH_LONG
+                                )
                                     .show()
                             }
                             //Toast.makeText(applicationContext, "Successfully Saved", Toast.LENGTH_SHORT).show()
@@ -509,7 +522,7 @@ class Termsconditions : AppCompatActivity() {
                 else{
                     toast("Something went wrong")
                 }
-            } catch (e:Exception) {
+            } catch (e: Exception) {
                 toast("Something went wrong")
             }
         }
@@ -530,13 +543,13 @@ class Termsconditions : AppCompatActivity() {
                 val jobj = JSONObject()
 
                 jobj.put("uname", utils.loadName())
-                Log.e("pinName",utils.pinName().toString())
+                Log.e("pinName", utils.pinName().toString())
 
                 if(crore=="crore"){
-                    jobj.put("type","Base Pin")
+                    jobj.put("type", "Base Pin")
                 }
                 else if(crore=="welcome"){
-                    jobj.put("type","Welcome Plan")
+                    jobj.put("type", "Welcome Plan")
 
                 }
                 else{
@@ -566,7 +579,13 @@ class Termsconditions : AppCompatActivity() {
                         val terms=jarr.getString("terms")
                         val terms1=jarr.getString("terms1")
 
-                        textView70.setText(Html.fromHtml("<p style=\"color:red\">"+terms1+"\n\n"+jarr.getString("text")))
+                        textView70.setText(
+                            Html.fromHtml(
+                                "<p style=\"color:red\">" + terms1 + "\n\n" + jarr.getString(
+                                    "text"
+                                )
+                            )
+                        )
                         val sign=jarr.getString("sign")
 
                         val signdt=jarr.getString("sign_date")
@@ -574,7 +593,7 @@ class Termsconditions : AppCompatActivity() {
                         try {
                              pin = jarr.getString("pin")
                         }
-                        catch (e:Exception){
+                        catch (e: Exception){
 
                         }
                         //val profile_verify=jarr.getString("profile_verify")
@@ -586,7 +605,7 @@ class Termsconditions : AppCompatActivity() {
                             textView78.visibility=View.VISIBLE
 
                             if(crore=="crore") {
-                                textView78.setText("Uploaded on : " + signdt+"\n"+"Your Pin \t\t\t: "+pin)
+                                textView78.setText("Uploaded on : " + signdt + "\n" + "Your Pin \t\t\t: " + pin)
                             }
                             else{
 
@@ -595,7 +614,7 @@ class Termsconditions : AppCompatActivity() {
 
                         }
 
-                        Log.e("view_plan",utils.loadplan())
+                        Log.e("view_plan", utils.loadplan())
 
                         if((sign=="null"||sign.isNullOrEmpty())){
                             button11.visibility=View.VISIBLE
@@ -607,7 +626,9 @@ class Termsconditions : AppCompatActivity() {
                             button11.visibility=View.INVISIBLE
                             textView79.visibility=View.INVISIBLE
                             imageView23.visibility=View.VISIBLE
-                            Picasso.with(this@Termsconditions).load(sign).placeholder(R.mipmap.loading).into(imageView23)
+                            Picasso.with(this@Termsconditions).load(sign).placeholder(R.mipmap.loading).into(
+                                imageView23
+                            )
 
                         }
                     }
@@ -616,10 +637,10 @@ class Termsconditions : AppCompatActivity() {
                 }
             }
 
-            catch(e:Exception) {
+            catch (e: Exception) {
                 progbar!!.dismiss()
                 e.printStackTrace()
-                Log.e("Errterms",e.toString())
+                Log.e("Errterms", e.toString())
                 // Toast.makeText(getApplicationContext(), "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show();
             }
         }
@@ -642,7 +663,7 @@ class Termsconditions : AppCompatActivity() {
             Log.i("UpdateInfoTask", "started")
         }
 
-        override fun doInBackground(vararg params:String?):String? {
+        override fun doInBackground(vararg params: String?):String? {
             var result: String? = null
             val con =
                 Connection()
@@ -680,7 +701,7 @@ class Termsconditions : AppCompatActivity() {
             return result
         }
 
-        override fun onPostExecute(resp:String?) {
+        override fun onPostExecute(resp: String?) {
             //Log.i("tabresp", resp + "")
             runOnUiThread {
             pDialo!!.dismiss()
@@ -750,7 +771,11 @@ class Termsconditions : AppCompatActivity() {
             Log.v("log_tag", "Height: " + v.height)
             if (bitmap == null) {
                 try {
-                    bitmap = Bitmap.createBitmap(canvasLL!!.width, canvasLL!!.height, Bitmap.Config.RGB_565)
+                    bitmap = Bitmap.createBitmap(
+                        canvasLL!!.width,
+                        canvasLL!!.height,
+                        Bitmap.Config.RGB_565
+                    )
 
                 } catch (e: Exception) {
 
@@ -817,10 +842,12 @@ class Termsconditions : AppCompatActivity() {
                 }
             }
 
-            invalidate((dirtyRect.left - HALF_STROKE_WIDTH).toInt(),
+            invalidate(
+                (dirtyRect.left - HALF_STROKE_WIDTH).toInt(),
                 (dirtyRect.top - HALF_STROKE_WIDTH).toInt(),
                 (dirtyRect.right + HALF_STROKE_WIDTH).toInt(),
-                (dirtyRect.bottom + HALF_STROKE_WIDTH).toInt())
+                (dirtyRect.bottom + HALF_STROKE_WIDTH).toInt()
+            )
 
             lastTouchX = eventX
             lastTouchY = eventY
@@ -858,8 +885,14 @@ class Termsconditions : AppCompatActivity() {
     }
 
     fun CheckingPermissionIsEnabledOrNot(context: Activity):Boolean {
-        val ACCESS_NETWORK_STATEt = ContextCompat.checkSelfPermission(context, android.Manifest.permission.READ_EXTERNAL_STORAGE)
-        val ACCESS_COARSE_LOCATION = ContextCompat.checkSelfPermission(context, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        val ACCESS_NETWORK_STATEt = ContextCompat.checkSelfPermission(
+            context,
+            android.Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+        val ACCESS_COARSE_LOCATION = ContextCompat.checkSelfPermission(
+            context,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
 
         return ACCESS_NETWORK_STATEt == PackageManager.PERMISSION_GRANTED &&
                 ACCESS_COARSE_LOCATION == PackageManager.PERMISSION_GRANTED
@@ -918,14 +951,22 @@ class Termsconditions : AppCompatActivity() {
 
                     textView72.visibility=View.GONE
                     progressBar5.visibility=View.GONE
-                    Toast.makeText(applicationContext, "Oops! Something went wrong please try again.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Oops! Something went wrong please try again.",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
                 }
             } catch (e: Exception) {
                 textView72.visibility=View.GONE
                 progressBar5.visibility=View.GONE
                 e.printStackTrace()
-                Toast.makeText(applicationContext, "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Please check your internet connection and try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
 
             }
 
@@ -939,7 +980,7 @@ class Termsconditions : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item:MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val id = item.itemId
         if (id == android.R.id.home) {
@@ -951,7 +992,7 @@ class Termsconditions : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode,resultCode,data)
+        super.onActivityResult(requestCode, resultCode, data)
         try {
             if (resultCode == Activity.RESULT_OK) {
                 if (requestCode == 1) {
@@ -1048,7 +1089,7 @@ class Termsconditions : AppCompatActivity() {
 
             }
         }
-        catch (e:Exception){
+        catch (e: Exception){
         }
     }
 
@@ -1114,9 +1155,9 @@ class Termsconditions : AppCompatActivity() {
                             api_key = json.getString("api_key")
                             api_secret = json.getString("api_secret")
 
-                            println("cloud_name"+cloud_name)
-                            println("api_key"+api_key)
-                            println("api_secret"+api_secret)
+                            println("cloud_name" + cloud_name)
+                            println("api_key" + api_key)
+                            println("api_secret" + api_secret)
                         }
                         pDialo.dismiss()
 
@@ -1129,7 +1170,11 @@ class Termsconditions : AppCompatActivity() {
             } catch (e: Exception) {
                 pDialo.dismiss()
                 e.printStackTrace()
-                Toast.makeText(applicationContext, "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Please check your internet connection and try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
 
             }
 
@@ -1172,7 +1217,7 @@ class Termsconditions : AppCompatActivity() {
 
         return ""
     }
-    private fun resize(image: Bitmap, maxWidth:Int, maxHeight:Int): Bitmap {
+    private fun resize(image: Bitmap, maxWidth: Int, maxHeight: Int): Bitmap {
         if (maxHeight > 0 && maxWidth > 0)
         {
             val width = image.getWidth()
@@ -1199,13 +1244,14 @@ class Termsconditions : AppCompatActivity() {
     }
 
 
-    private fun RequestMultiplePermission(context:Activity) {
-        ActivityCompat.requestPermissions(context,arrayOf<String>(
+    private fun RequestMultiplePermission(context: Activity) {
+        ActivityCompat.requestPermissions(
+            context, arrayOf<String>(
 
-            android.Manifest.permission.READ_EXTERNAL_STORAGE,
-            android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 
-        ), RequestPermissionCode
+            ), RequestPermissionCode
         )
 
     }

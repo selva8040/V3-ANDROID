@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +48,7 @@ public class Admin_reports extends AppCompatActivity
         setContentView(R.layout.activity_rewardpoints);
 
         getSupportActionBar().setTitle("Admin Reports");
-
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(Admin_reports.this,R.drawable.newdashboard_gradient));
         utils = new Utils(getApplicationContext());
 
         progress_lay = (LinearLayout) findViewById(R.id.progress_lay);

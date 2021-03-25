@@ -22,10 +22,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.elancier.healthzone.Common.Appconstants;
 import com.elancier.healthzone.Common.CheckNetwork;
@@ -94,6 +96,7 @@ public class Tableview extends AppCompatActivity
     String origin_domain="";
     String origin_count="";
     Button button4;
+    TableRow headertable;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -105,6 +108,7 @@ public class Tableview extends AppCompatActivity
         progbar.setContentView(R.layout.loadversion);
         progbar.setCancelable(false);
         utils=new Utils(getApplicationContext());
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(Tableview.this,R.drawable.newdashboard_gradient));
 
         tb1=(TableLayout) findViewById(R.id.tb1);
         skip=(TextView) findViewById(R.id.skip);
@@ -112,6 +116,7 @@ public class Tableview extends AppCompatActivity
         tb3=(TableLayout) findViewById(R.id.tb3);
         scr=(ScrollView) findViewById(R.id.scr);
         blue=(TextView) findViewById(R.id.textView40);
+        headertable=(TableRow) findViewById(R.id.headertable);
         green=(TextView) findViewById(R.id.textView44);
         brown=(TextView) findViewById(R.id.textView45);
         button4 = findViewById(R.id.button4);
@@ -205,8 +210,10 @@ public class Tableview extends AppCompatActivity
                 green.setVisibility(View.VISIBLE);
                 blue.setVisibility(View.GONE);
                 tb2.setVisibility(View.VISIBLE);
+                blue.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_green));
+                headertable.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_green));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_two));
+                    //scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_two));
                 }
 
 
@@ -218,8 +225,10 @@ public class Tableview extends AppCompatActivity
                 blue.setVisibility(View.GONE);
                 green.setVisibility(View.GONE);
                 tb3.setVisibility(View.VISIBLE);
+                blue.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_brown));
+                headertable.setBackgroundColor(ContextCompat.getColor(Tableview.this,R.color.light_brown));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_brown));
+                    //scr.setBackground(getResources().getDrawable(R.drawable.gradient_background_brown));
                 }
 
 

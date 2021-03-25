@@ -47,7 +47,7 @@ class Crore_Salary_FORM : AppCompatActivity() {
         shp = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
         unamevalue= utils.loadName()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.theme));
+            //getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.theme));
         }
 
         menu_img.setOnClickListener{

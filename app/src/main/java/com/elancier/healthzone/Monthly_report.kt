@@ -84,7 +84,7 @@ class Monthly_report : AppCompatActivity() {
             onBackPressed()
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.theme));
+            //getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.theme));
         }
         button3.setOnClickListener {
             if(frdt.text.isNotEmpty()&&todt.text.toString().isNotEmpty()) {

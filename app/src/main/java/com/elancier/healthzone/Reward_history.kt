@@ -93,6 +93,12 @@ class Reward_history : AppCompatActivity() {
         supportActionBar!!.title = "V3 Online TV"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         utils = Utils(applicationContext)
         progress_lay = findViewById<View>(R.id.progress_lay) as LinearLayout
         retry_lay = findViewById<View>(R.id.retry_lay) as LinearLayout
@@ -493,7 +499,7 @@ class Reward_history : AppCompatActivity() {
                     val reward: RewardpointsAsync = RewardpointsAsync()
                     reward.execute()
                 }
-            } catch (e:JSONException) {
+            } catch (e: JSONException) {
                 e.printStackTrace()
                 Log.e("E VALUE", e.toString())
                 mRecyclerListitems.addAll(productItems!!)
@@ -565,7 +571,7 @@ class Reward_history : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-               finish()
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -781,7 +787,7 @@ class Reward_history : AppCompatActivity() {
                     }
                 }
             }
-            catch (e:Exception){
+            catch (e: Exception){
 
             }
 

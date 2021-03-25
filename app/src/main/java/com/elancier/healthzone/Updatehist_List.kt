@@ -2,26 +2,24 @@ package com.elancier.healthzone
 
 import android.os.AsyncTask
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elancier.healthzone.Adapter.Notificationadap
 import com.elancier.healthzone.Adapter.Notificationadap.OnItemClickListener
-import com.elancier.healthzone.Adapter.Super_salhistoryadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.elancier.healthzone.Pojo.Rewardpointsbo
-import com.elancier.healthzone.Pojo.salarypo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
 import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.util.*
 
 class Updatehist_List : AppCompatActivity() {
     internal lateinit var itemsAdapter: Notificationadap
@@ -35,6 +33,12 @@ class Updatehist_List : AppCompatActivity() {
         supportActionBar!!.title = "Coupon Update History"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
         utils=Utils(this)
@@ -108,12 +112,38 @@ class Updatehist_List : AppCompatActivity() {
                         try {
 
 
-                            productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate, "", "", "", "", "", "", ""))
+                            productItems!!.add(
+                                Rewardpointsbo(
+                                    i.toString(),
+                                    frmdate,
+                                    todate,
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    ""
+                                )
+                            )
 
 
                         } catch (e: Exception) {
                             //Log.e("rewardrespnw", e.toString())
-                            productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate, "", "", "", "", "", "", ""))
+                            productItems!!.add(
+                                Rewardpointsbo(
+                                    i.toString(),
+                                    frmdate,
+                                    todate,
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    ""
+                                )
+                            )
 
 
                         }

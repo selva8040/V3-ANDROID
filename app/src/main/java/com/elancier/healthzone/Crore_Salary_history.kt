@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Star_perfadap
@@ -38,23 +39,32 @@ class Crore_Salary_history : AppCompatActivity() {
         supportActionBar!!.title = "Super Salary"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
         productItems = ArrayList()
 
-        itemsAdapter = Star_perfadap(mRecyclerListitems, this, Star_perfadap.OnItemClickListener { view, position, viewType ->
-            val item = mRecyclerListitems[position] as Rewardpointsbo
-            Log.e("clickresp", "value")
+        itemsAdapter = Star_perfadap(
+            mRecyclerListitems,
+            this,
+            Star_perfadap.OnItemClickListener { view, position, viewType ->
+                val item = mRecyclerListitems[position] as Rewardpointsbo
+                Log.e("clickresp", "value")
 
-            //clikffed();
-        })
+                //clikffed();
+            })
         recyclerlist.adapter = itemsAdapter
 
         //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
 
         addsalary.setOnClickListener{
-            val k= Intent(this@Crore_Salary_history,Crore_Salary_FORM::class.java)
+            val k= Intent(this@Crore_Salary_history, Crore_Salary_FORM::class.java)
             startActivity(k)
 
         }
@@ -63,8 +73,8 @@ class Crore_Salary_history : AppCompatActivity() {
             override fun onRefresh() {
                 //shuffle()
                 onResume()
-              //  finish()
-               // startActivity(Intent(this@Crore_Salary_history,Crore_Salary_history::class.java))
+                //  finish()
+                // startActivity(Intent(this@Crore_Salary_history,Crore_Salary_history::class.java))
                 swipeToRefresh.setRefreshing(false)
             }
         })
@@ -100,11 +110,11 @@ class Crore_Salary_history : AppCompatActivity() {
             return result
         }
 
-        override fun onPostExecute(resp:String?) {
+        override fun onPostExecute(resp: String?) {
             try {
                 //Log.e("rewardresp", resp)
             } catch (e: Exception) {
-                Log.e("rewardrespcatch",e.toString())
+                Log.e("rewardrespcatch", e.toString())
 
             }
 
@@ -120,7 +130,7 @@ class Crore_Salary_history : AppCompatActivity() {
 
                     if(obj.getString("Status").equals("Success")) {
                         val objs = obj.getString("Total Record")
-                        println("Total Record : "+objs)
+                        println("Total Record : " + objs)
                         if(objs.equals("0")){
                         addsalary.visibility=View.VISIBLE
                         }
@@ -143,7 +153,17 @@ class Crore_Salary_history : AppCompatActivity() {
                             //val feedback_absents=JO.getString("dtime")
 
                             try {
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", "",
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
                                         "",
                                         "",
                                         "",
@@ -153,12 +173,33 @@ class Crore_Salary_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
 
                             } catch (e: Exception) {
                                 //Log.e("rewardrespnw", e.toString())
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", "",
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
                                         "",
                                         "",
                                         "",
@@ -168,7 +209,18 @@ class Crore_Salary_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
                             }
 
@@ -181,7 +233,7 @@ class Crore_Salary_history : AppCompatActivity() {
                     }
                     else{
                         val objs = obj.getString("Total Record")
-                        println("Total Record : "+objs)
+                        println("Total Record : " + objs)
                         if(objs.equals("0")){
                             addsalary.visibility=View.VISIBLE
                         }

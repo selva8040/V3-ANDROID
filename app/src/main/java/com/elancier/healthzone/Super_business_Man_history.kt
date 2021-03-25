@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Super_business_perfadap
@@ -30,7 +31,7 @@ class Super_business_Man_history : AppCompatActivity() {
     internal lateinit var mLayoutManager: LinearLayoutManager
     internal lateinit var utils: Utils
 
-    override fun onCreate(savedInstanceState:Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_super__perf_history)
         utils = Utils(applicationContext)
@@ -38,31 +39,40 @@ class Super_business_Man_history : AppCompatActivity() {
         supportActionBar!!.title = "Super Business Man"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
         productItems = ArrayList()
 
-        itemsAdapter = Super_business_perfadap(mRecyclerListitems, this, Super_business_perfadap.OnItemClickListener { view, position, viewType ->
-            val item = mRecyclerListitems[position] as Rewardpointsbo
-            Log.e("clickresp", "value")
+        itemsAdapter = Super_business_perfadap(
+            mRecyclerListitems,
+            this,
+            Super_business_perfadap.OnItemClickListener { view, position, viewType ->
+                val item = mRecyclerListitems[position] as Rewardpointsbo
+                Log.e("clickresp", "value")
 
-            //clikffed();
-        })
+                //clikffed();
+            })
         recyclerlist.adapter = itemsAdapter
 
         //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
 
 
         addsalary.setOnClickListener{
-            val k= Intent(this@Super_business_Man_history,Super_Business_Man::class.java)
+            val k= Intent(this@Super_business_Man_history, Super_Business_Man::class.java)
             startActivity(k)
 
         }
         swipeToRefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
                 //shuffle()
-               onResume()
+                onResume()
                 swipeToRefresh.setRefreshing(false)
             }
         })
@@ -119,7 +129,7 @@ class Super_business_Man_history : AppCompatActivity() {
 
                     if(obj.getString("Status").equals("Success")) {
                         val objs = obj.getString("Total Record")
-                        println("Total Record : "+objs)
+                        println("Total Record : " + objs)
                         if(objs.equals("0")){
                         addsalary.visibility=View.VISIBLE
                         }
@@ -148,9 +158,21 @@ class Super_business_Man_history : AppCompatActivity() {
                             try {
 
 
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", feedback_present1,
-                                    feedback_present2,
-                                    feedback_present3,
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
+                                        "",
+                                        feedback_present1,
+                                        feedback_present2,
+                                        feedback_present3,
                                         "",
                                         "",
                                         "",
@@ -158,14 +180,35 @@ class Super_business_Man_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
 
                             } catch (e: Exception) {
                                 //Log.e("rewardrespnw", e.toString())
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", feedback_present1,
-                                    feedback_present2,
-                                    feedback_present3,
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
+                                        "",
+                                        feedback_present1,
+                                        feedback_present2,
+                                        feedback_present3,
                                         "",
                                         "",
                                         "",
@@ -173,7 +216,16 @@ class Super_business_Man_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
 
                             }
@@ -188,7 +240,7 @@ class Super_business_Man_history : AppCompatActivity() {
                     }
                     else{
                         val objs = obj.getString("Total Record")
-                        println("Total Record : "+objs)
+                        println("Total Record : " + objs)
                         if(objs.equals("0")){
                             addsalary.visibility=View.VISIBLE
                         }
@@ -204,7 +256,7 @@ class Super_business_Man_history : AppCompatActivity() {
                     nodata.visibility=View.VISIBLE
                     recyclerlist.visibility=View.GONE
                 }
-            } catch (e:JSONException) {
+            } catch (e: JSONException) {
                 e.printStackTrace()
                 Log.e("E VALUE", e.toString())
                 mRecyclerListitems.addAll(productItems!!)

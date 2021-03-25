@@ -8,16 +8,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.Rewardfeedadap
-import com.elancier.healthzone.Adapter.Rewardhistoryadap
 import com.elancier.healthzone.Adapter.Star_perfadap
-import com.elancier.healthzone.Adapter.Super_salhistoryadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import com.elancier.healthzone.Pojo.salarypo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
@@ -25,7 +22,7 @@ import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.util.*
 
 class star_perf_history : AppCompatActivity() {
     internal lateinit var itemsAdapter: Star_perfadap
@@ -34,7 +31,7 @@ class star_perf_history : AppCompatActivity() {
     internal lateinit var mLayoutManager: LinearLayoutManager
     internal lateinit var utils: Utils
 
-    override fun onCreate(savedInstanceState:Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_super__perf_history)
         utils = Utils(applicationContext)
@@ -42,24 +39,33 @@ class star_perf_history : AppCompatActivity() {
         supportActionBar!!.title = "Star Performer Request"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
         productItems = ArrayList()
 
-        itemsAdapter = Star_perfadap(mRecyclerListitems, this, Star_perfadap.OnItemClickListener { view, position, viewType ->
-            val item = mRecyclerListitems[position] as Rewardpointsbo
-            Log.e("clickresp", "value")
+        itemsAdapter = Star_perfadap(
+            mRecyclerListitems,
+            this,
+            Star_perfadap.OnItemClickListener { view, position, viewType ->
+                val item = mRecyclerListitems[position] as Rewardpointsbo
+                Log.e("clickresp", "value")
 
-            //clikffed();
-        })
+                //clikffed();
+            })
         recyclerlist.adapter = itemsAdapter
 
         //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
 
 
         addsalary.setOnClickListener{
-            val k= Intent(this@star_perf_history,Super_saver::class.java)
+            val k= Intent(this@star_perf_history, Super_saver::class.java)
             startActivity(k)
 
         }
@@ -71,7 +77,7 @@ class star_perf_history : AppCompatActivity() {
             override fun onRefresh() {
                 //shuffle()
                 finish()
-                startActivity(Intent(this@star_perf_history,star_perf_history::class.java))
+                startActivity(Intent(this@star_perf_history, star_perf_history::class.java))
                 swipeToRefresh.setRefreshing(false)
             }
         })
@@ -152,7 +158,17 @@ class star_perf_history : AppCompatActivity() {
                             try {
 
 
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", "",
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
                                         "",
                                         "",
                                         "",
@@ -162,12 +178,33 @@ class star_perf_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
 
                             } catch (e: Exception) {
                                 //Log.e("rewardrespnw", e.toString())
-                                productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", "",
+                                productItems!!.add(
+                                    salarypo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        name,
+                                        uname,
+                                        whome,
+                                        notview_without,
+                                        feedback_present,
+                                        feedback_absent,
                                         "",
                                         "",
                                         "",
@@ -177,7 +214,18 @@ class star_perf_history : AppCompatActivity() {
                                         "",
                                         "",
                                         "",
-                                        "", "", "", "", "", "","",""))
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        "",
+                                        ""
+                                    )
+                                )
 
 
                             }

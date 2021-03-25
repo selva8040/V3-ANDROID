@@ -91,9 +91,9 @@ class Daterequest_Activity : AppCompatActivity() {
             head!!.text = "Super Salary Achiever"
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.theme));
-        }
+        }*/
 
         val min = 1
         val max = 10

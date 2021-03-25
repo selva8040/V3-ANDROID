@@ -16,6 +16,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Pointsadap
@@ -47,7 +48,7 @@ class New_wallet_List : AppCompatActivity() {
     var welwallet=""
     var statusarr=ArrayList<String>()
 
-    override fun onCreate(savedInstanceState:Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_point__list)
         utils = Utils(applicationContext)
@@ -55,10 +56,10 @@ class New_wallet_List : AppCompatActivity() {
         try{
             val from=intent.extras
             crore=from!!.getString("from").toString()
-            println("crore"+crore)
+            println("crore" + crore)
 
         }
-        catch (e:Exception){
+        catch (e: Exception){
 
         }
 
@@ -73,6 +74,12 @@ class New_wallet_List : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
@@ -80,7 +87,7 @@ class New_wallet_List : AppCompatActivity() {
 
         itemsAdapter = Pointsadap(mRecyclerListitems, this, object :
             Pointsadap.OnItemClickListener {
-            override fun OnItemClick(view: View, position: Int, viewType:Int) {
+            override fun OnItemClick(view: View, position: Int, viewType: Int) {
                 val item = mRecyclerListitems[position] as Rewardpointsbo
                 // Log.e("clickresp", "value")
 
@@ -112,7 +119,7 @@ class New_wallet_List : AppCompatActivity() {
                     }
                 }
             }
-            catch (e:Exception){
+            catch (e: Exception){
 
             }
         }
@@ -134,7 +141,7 @@ class New_wallet_List : AppCompatActivity() {
                     }
                 }
             }
-            catch (e:Exception){
+            catch (e: Exception){
 
             }
         }
@@ -145,16 +152,24 @@ class New_wallet_List : AppCompatActivity() {
                 //shuffle()
                 finish()
 
-                if(crore!="crore"&&crore!="welcome") {
+                if (crore != "crore" && crore != "welcome") {
                     startActivity(Intent(this@New_wallet_List, New_wallet_List::class.java))
                     swipeToRefresh.setRefreshing(false)
-                }
-                else if(crore=="crore"){
-                    startActivity(Intent(this@New_wallet_List, New_wallet_List::class.java).putExtra("from","crore"))
+                } else if (crore == "crore") {
+                    startActivity(
+                        Intent(this@New_wallet_List, New_wallet_List::class.java).putExtra(
+                            "from",
+                            "crore"
+                        )
+                    )
                     swipeToRefresh.setRefreshing(false)
-                }
-                else if(crore=="welcome"){
-                    startActivity(Intent(this@New_wallet_List, New_wallet_List::class.java).putExtra("from","welcome"))
+                } else if (crore == "welcome") {
+                    startActivity(
+                        Intent(this@New_wallet_List, New_wallet_List::class.java).putExtra(
+                            "from",
+                            "welcome"
+                        )
+                    )
                     swipeToRefresh.setRefreshing(false)
                 }
             }
@@ -194,7 +209,7 @@ class New_wallet_List : AppCompatActivity() {
                                 }
                             }
                         }
-                        catch (e:Exception){
+                        catch (e: Exception){
 
                         }
                     }
@@ -221,12 +236,16 @@ class New_wallet_List : AppCompatActivity() {
 
                     }
 
-                    override fun beforeTextChanged(s: CharSequence, start: Int,
-                                                   count: Int, after: Int) {
+                    override fun beforeTextChanged(
+                        s: CharSequence, start: Int,
+                        count: Int, after: Int
+                    ) {
                     }
 
-                    override fun onTextChanged(s: CharSequence, start: Int,
-                                               before: Int, count: Int) {
+                    override fun onTextChanged(
+                        s: CharSequence, start: Int,
+                        before: Int, count: Int
+                    ) {
 
                     }
                 })
@@ -236,48 +255,45 @@ class New_wallet_List : AppCompatActivity() {
                     Log.e("click", "cli")
 
 
-                    if (!otp_edit_box1!!.getText().toString().isEmpty()&&
+                    if (!otp_edit_box1!!.getText().toString().isEmpty() &&
                         otp_edit_box2!!.getText().toString().isNotEmpty()
                     ) {
 
-                            if(otp_edit_box2!!.text.toString().toFloat()<500||otp_edit_box2!!.text.toString().toInt()>=tot){
+                        if (otp_edit_box2!!.text.toString()
+                                .toFloat() < 500 || otp_edit_box2!!.text.toString().toInt() >= tot
+                        ) {
 
-                                if(otp_edit_box2!!.text.toString().toFloat()<500) {
-                                    otp_edit_box2!!.setText(null)
+                            if (otp_edit_box2!!.text.toString().toFloat() < 500) {
+                                otp_edit_box2!!.setText(null)
 
-                                    toast("Amount should be greater than 500")
-                                }
-                                else if(otp_edit_box2!!.text.toString().toFloat()>=tot){
-                                    otp_edit_box2!!.setText(null)
+                                toast("Amount should be greater than 500")
+                            } else if (otp_edit_box2!!.text.toString().toFloat() >= tot) {
+                                otp_edit_box2!!.setText(null)
 
-                                    toast("Could not request full amount from wallet\n Wallet will remain ₹1 atleast.")
+                                toast("Could not request full amount from wallet\n Wallet will remain ₹1 atleast.")
 
-                                }
                             }
-                            else{
+                        } else {
 
-                                if(otp_edit_box2!!.text.toString().toInt()<tot) {
+                            if (otp_edit_box2!!.text.toString().toInt() < tot) {
 
-                                    if(BuildConfig.VERSION_CODE>=43) {
-                                        val task = ChangepinTask()
-                                        task.execute()
-                                        button14.isEnabled = false
-                                    }
-                                    else{
-                                        toast("Please update the latest version of V3 Online TV.")
+                                if (BuildConfig.VERSION_CODE >= 43) {
+                                    val task = ChangepinTask()
+                                    task.execute()
+                                    button14.isEnabled = false
+                                } else {
+                                    toast("Please update the latest version of V3 Online TV.")
 
-                                    }
                                 }
-                                else{
-                                    toast("Enter lesser amount")
-                                    otp_edit_box2!!.setText(null)
-                                }
+                            } else {
+                                toast("Enter lesser amount")
+                                otp_edit_box2!!.setText(null)
                             }
-
+                        }
 
 
                     } else {
-                            toast("Please fill above fields")
+                        toast("Please fill above fields")
                     }
                 })
                 update!!.setContentView(vs)
@@ -304,7 +320,7 @@ class New_wallet_List : AppCompatActivity() {
 
         }
 
-        override fun doInBackground(vararg strings:String): String? {
+        override fun doInBackground(vararg strings: String): String? {
             var result:String? = null
             val con = Connection()
 
@@ -321,7 +337,7 @@ class New_wallet_List : AppCompatActivity() {
 
                 }
                 else{
-                    jobj.put("types","")
+                    jobj.put("types", "")
 
                 }
 
@@ -334,7 +350,7 @@ class New_wallet_List : AppCompatActivity() {
             return result
         }
 
-        override fun onPostExecute(resp:String?) {
+        override fun onPostExecute(resp: String?) {
             try {
                 //Log.e("rewardresp", resp)
             } catch (e: Exception) {
@@ -357,8 +373,8 @@ class New_wallet_List : AppCompatActivity() {
                         val wallet=obj.getJSONObject(0).getString("wallet");
                         val base_wallet=obj.getJSONObject(0).getString("base_wallet");
                         welwallet=obj.getJSONObject(0).getString("wel_wallet");
-                        utils.savePreferences("wallet",wallet)
-                        utils.savePreferences("base_wallet",base_wallet)
+                        utils.savePreferences("wallet", wallet)
+                        utils.savePreferences("base_wallet", base_wallet)
 
                         val arrayLanguage = obj.getJSONObject(0).getJSONArray("Response")
 
@@ -376,9 +392,35 @@ class New_wallet_List : AppCompatActivity() {
                             statusarr.add(todate)
 
                             try {
-                                productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid ,feedback_absents, reason, ""))
+                                productItems!!.add(
+                                    Rewardpointsbo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        feedback_absent,
+                                        frombank,
+                                        vdtime,
+                                        tid,
+                                        feedback_absents,
+                                        reason,
+                                        ""
+                                    )
+                                )
                             } catch (e: Exception) {
-                                productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid , feedback_absents, reason, ""))
+                                productItems!!.add(
+                                    Rewardpointsbo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        feedback_absent,
+                                        frombank,
+                                        vdtime,
+                                        tid,
+                                        feedback_absents,
+                                        reason,
+                                        ""
+                                    )
+                                )
                             }
                         }
 
@@ -462,7 +504,7 @@ class New_wallet_List : AppCompatActivity() {
 
                 }
                 else{
-                    jobj.put("types","")
+                    jobj.put("types", "")
 
                 }
 
@@ -521,7 +563,7 @@ class New_wallet_List : AppCompatActivity() {
     }
 
 
-    fun clikffed(pos: String, time: String,time1:String ,time2:String) {
+    fun clikffed(pos: String, time: String, time1: String, time2: String) {
         try {
             val update = Dialog(this@New_wallet_List)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -551,7 +593,7 @@ class New_wallet_List : AppCompatActivity() {
         }
     }
 
-    fun clikffed_rej(pos: String, time: String,time1:String ,time2:String) {
+    fun clikffed_rej(pos: String, time: String, time1: String, time2: String) {
         try {
             val update = Dialog(this@New_wallet_List)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)

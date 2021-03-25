@@ -40,7 +40,7 @@ class Forgot_Activity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.hide()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.sky_blue));
+            //getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.sky_blue));
         }
 
         login.setOnClickListener {

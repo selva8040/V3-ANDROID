@@ -2,10 +2,8 @@ package com.elancier.healthzone
 
 import android.app.Dialog
 import android.app.ProgressDialog
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +13,7 @@ import android.view.View
 import android.view.Window
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elancier.healthzone.Adapter.pinboard_adap
 import com.elancier.healthzone.Common.Appconstants
@@ -54,6 +53,12 @@ class Pin_Service_Board : AppCompatActivity() {
         supportActionBar!!.title = "Pin & Service Board"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
@@ -110,29 +115,28 @@ class Pin_Service_Board : AppCompatActivity() {
                 id: Long
             ) {
 
-                if(distspin.selectedItemPosition!=0){
-                if(countryspin.selectedItemPosition!=0&&
-                    statespin.selectedItemPosition!=0&&
-                    distspin.selectedItemPosition!=0){
-                    Listload().execute()
+                if (distspin.selectedItemPosition != 0) {
+                    if (countryspin.selectedItemPosition != 0 &&
+                        statespin.selectedItemPosition != 0 &&
+                        distspin.selectedItemPosition != 0
+                    ) {
+                        Listload().execute()
 
-                }
-                else{
-                    if(countryspin.selectedItemPosition==0){
-                        toast("Please select country")
+                    } else {
+                        if (countryspin.selectedItemPosition == 0) {
+                            toast("Please select country")
+                        }
+                        if (statespin.selectedItemPosition == 0) {
+                            toast("Please select state")
+                        }
+                        if (distspin.selectedItemPosition == 0) {
+                            toast("Please select district")
+                        }
                     }
-                    if(statespin.selectedItemPosition==0){
-                        toast("Please select state")
-                    }
-                    if(distspin.selectedItemPosition==0){
-                        toast("Please select district")
-                    }
+                } else {
+
                 }
             }
-                else{
-
-                }
-                }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         })
@@ -140,7 +144,7 @@ class Pin_Service_Board : AppCompatActivity() {
     }
 
 
-    fun rate(name:String ,id:String ){
+    fun rate(name: String, id: String){
         try {
             val update = Dialog(this@Pin_Service_Board)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -252,7 +256,7 @@ class Pin_Service_Board : AppCompatActivity() {
                         ratings=rate5
                     }
                     update.dismiss()
-                    saverating().execute(name,ratings)
+                    saverating().execute(name, ratings)
                 }
                 else if(click.isEmpty()){
                     toast("Please select your rating")
@@ -294,7 +298,7 @@ class Pin_Service_Board : AppCompatActivity() {
             });*/
         } catch (e: java.lang.Exception) {
             //logger.info("PerformVersionTask error" + e.getMessage());
-            Log.e("rateerr",e.toString())
+            Log.e("rateerr", e.toString())
         }
     }
 
@@ -355,23 +359,23 @@ class Pin_Service_Board : AppCompatActivity() {
                             try{
                                 rate1=jarr1.getJSONObject(0).getString("name")
                             }
-                            catch (e:Exception){}
+                            catch (e: Exception){}
                             try{
                                 rate2=jarr1.getJSONObject(1).getString("name")
                             }
-                            catch (e:Exception){}
+                            catch (e: Exception){}
                             try{
                                 rate3=jarr1.getJSONObject(2).getString("name")
                             }
-                            catch (e:Exception){}
+                            catch (e: Exception){}
                             try{
                                 rate4=jarr1.getJSONObject(3).getString("name")
                             }
-                            catch (e:Exception){}
+                            catch (e: Exception){}
                             try{
                                 rate5=jarr1.getJSONObject(4).getString("name")
                             }
-                            catch (e:Exception){}
+                            catch (e: Exception){}
 
 
                         val cntareaadap=ArrayAdapter(
@@ -484,7 +488,7 @@ class Pin_Service_Board : AppCompatActivity() {
 
                 }
             } catch (e: Exception) {
-                Log.e("err",e.toString())
+                Log.e("err", e.toString())
 
             }
 
@@ -494,7 +498,7 @@ class Pin_Service_Board : AppCompatActivity() {
 
 
 
-    private inner class Listload : AsyncTask<String,Void,String>() {
+    private inner class Listload : AsyncTask<String, Void, String>() {
 
         override fun onPreExecute() {
             //progbar.setVisibility(View.VISIBLE);
@@ -559,7 +563,7 @@ class Pin_Service_Board : AppCompatActivity() {
             return result
         }
 
-        override fun onPostExecute(resp:String?) {
+        override fun onPostExecute(resp: String?) {
             Log.i("stateresp", resp!! + "")
 
             try {

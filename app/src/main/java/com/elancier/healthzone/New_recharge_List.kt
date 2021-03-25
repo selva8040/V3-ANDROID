@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Rechargeadap
@@ -72,6 +73,12 @@ class New_recharge_List : AppCompatActivity() {
         supportActionBar!!.title = "Recharge Request"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.newdashboard_gradient
+            )
+        )
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
 
@@ -97,14 +104,14 @@ class New_recharge_List : AppCompatActivity() {
             override fun onRefresh() {
                 //shuffle()
                 finish()
-                startActivity(Intent(this@New_recharge_List,New_recharge_List::class.java))
+                startActivity(Intent(this@New_recharge_List, New_recharge_List::class.java))
                 swipeToRefresh.setRefreshing(false)
             }
         })
 
         addsalary.setOnClickListener{
             try {
-                println("check_tod : "+check_tod)
+                println("check_tod : " + check_tod)
                  update = Dialog(this@New_recharge_List)
                 update!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
                 update!!.window!!.setBackgroundDrawable(
@@ -138,14 +145,13 @@ class New_recharge_List : AppCompatActivity() {
                         DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                             otp_edit_box1!!.setText(year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth)
                             ChangepinTask_date().execute()
-                            val k=SimpleDateFormat("yyyy-M-d")
-                            val dt=k.format(Calendar.getInstance().time)
-                            println("dt"+dt);
-                            if(otp_edit_box1!!.text.toString()==dt){
+                            val k = SimpleDateFormat("yyyy-M-d")
+                            val dt = k.format(Calendar.getInstance().time)
+                            println("dt" + dt);
+                            if (otp_edit_box1!!.text.toString() == dt) {
                                 toast("Unable to select today date")
                                 otp_edit_box1!!.setText(null)
-                            }
-                            else{
+                            } else {
 
                             }
                             /*if(check_tod.isNotEmpty()) {
@@ -170,14 +176,20 @@ class New_recharge_List : AppCompatActivity() {
                                         val date1 = myFormat.parse(inputString1)
                                         val date2 = myFormat.parse(inputString2)
                                         val diff = date2.time - date1.time
-                                        println("Days: " + TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS))
+                                        println(
+                                            "Days: " + TimeUnit.DAYS.convert(
+                                                diff,
+                                                TimeUnit.MILLISECONDS
+                                            )
+                                        )
 
-                                        if(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS).toInt()+1==90){
-                                            button14!!.visibility=View.VISIBLE
-                                        }
-                                        else{
-                                            button14!!.visibility=View.GONE
-                                            if(otp_edit_box2!!.text.toString().isNotEmpty()){
+                                        if (TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS)
+                                                .toInt() + 1 == 90
+                                        ) {
+                                            button14!!.visibility = View.VISIBLE
+                                        } else {
+                                            button14!!.visibility = View.GONE
+                                            if (otp_edit_box2!!.text.toString().isNotEmpty()) {
                                                 otp_edit_box2!!.setText(null)
                                             }
                                             toast("From - To limit should be 90 days")
@@ -193,9 +205,10 @@ class New_recharge_List : AppCompatActivity() {
                                     toast("You're offline")
                                 }
                             } else {
-                               // Toast.makeText(this@New_recharge_List, "Select 'To' date", Toast.LENGTH_LONG).show()
+                                // Toast.makeText(this@New_recharge_List, "Select 'To' date", Toast.LENGTH_LONG).show()
                             }
-                        }, year, month, day)
+                        }, year, month, day
+                    )
 
                     if (check_tod.isNotEmpty()){
                         val str_date = check_tod
@@ -275,22 +288,23 @@ class New_recharge_List : AppCompatActivity() {
 
                 button14!!.setOnClickListener(View.OnClickListener {
                     Log.e("click", "cli")
-                    if (!otp_edit_box1!!.getText().toString().isEmpty()&&
-                        otp_edit_box2!!.getText().toString().isNotEmpty()&&
-                        otp_edit_box3!!.getText().toString().isNotEmpty()&&
-                        otp_edit_box4!!.getText().toString().isNotEmpty()&&
-                        otp_edit_box5!!.getText().toString().isNotEmpty()&&
-                        otp_edit_box6!!.getText().toString().isNotEmpty()&&BuildConfig.VERSION_CODE>=43
+                    if (!otp_edit_box1!!.getText().toString().isEmpty() &&
+                        otp_edit_box2!!.getText().toString().isNotEmpty() &&
+                        otp_edit_box3!!.getText().toString().isNotEmpty() &&
+                        otp_edit_box4!!.getText().toString().isNotEmpty() &&
+                        otp_edit_box5!!.getText().toString().isNotEmpty() &&
+                        otp_edit_box6!!.getText().toString()
+                            .isNotEmpty() && BuildConfig.VERSION_CODE >= 43
                     ) {
-                            val task = ChangepinTask()
-                            task.execute()
-                            button14!!.isEnabled = false
+                        val task = ChangepinTask()
+                        task.execute()
+                        button14!!.isEnabled = false
 
                     } else {
-                            if(BuildConfig.VERSION_CODE<43){
-                                toast("Please update the latest version of V3 Online TV.")
+                        if (BuildConfig.VERSION_CODE < 43) {
+                            toast("Please update the latest version of V3 Online TV.")
 
-                            }
+                        }
                     }
                 })
                 update!!.setContentView(vs)
@@ -338,8 +352,8 @@ class New_recharge_List : AppCompatActivity() {
                 jobj.put("type", "List")
 
 
-                Log.i("rewardinput",  Appconstants.recharge + "    " + jobj.toString())
-                result = con.sendHttpPostjson2(Appconstants.recharge,jobj, "")
+                Log.i("rewardinput", Appconstants.recharge + "    " + jobj.toString())
+                result = con.sendHttpPostjson2(Appconstants.recharge, jobj, "")
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -394,9 +408,35 @@ class New_recharge_List : AppCompatActivity() {
                             }
 
                             try {
-                                productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid ,frombanks, tids, vdtimes))
+                                productItems!!.add(
+                                    Rewardpointsbo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        feedback_absent,
+                                        frombank,
+                                        vdtime,
+                                        tid,
+                                        frombanks,
+                                        tids,
+                                        vdtimes
+                                    )
+                                )
                             } catch (e: Exception) {
-                                productItems!!.add(Rewardpointsbo(i.toString(), frmdate, todate,feedback_absent,frombank,vdtime,tid , frombanks, tids, vdtimes))
+                                productItems!!.add(
+                                    Rewardpointsbo(
+                                        i.toString(),
+                                        frmdate,
+                                        todate,
+                                        feedback_absent,
+                                        frombank,
+                                        vdtime,
+                                        tid,
+                                        frombanks,
+                                        tids,
+                                        vdtimes
+                                    )
+                                )
                             }
                         }
                         nodata.visibility=View.GONE
@@ -461,9 +501,9 @@ class New_recharge_List : AppCompatActivity() {
                 val d = otp_edit_box1!!.text.toString().replace(",".toRegex(), "")
                 val jobj = JSONObject()
                 jobj.put("uname", utils.loadName())
-                jobj.put("from", otp_edit_box1!!.text.toString() )
+                jobj.put("from", otp_edit_box1!!.text.toString())
                 jobj.put("to", otp_edit_box6!!.text.toString())
-                jobj.put("type","Add")
+                jobj.put("type", "Add")
 
                 Log.i(
                     "HomePage Input",
@@ -535,8 +575,8 @@ class New_recharge_List : AppCompatActivity() {
                // val d = otp_edit_box1!!.text.toString().replace(",".toRegex(), "")
                 val jobj = JSONObject()
                 jobj.put("uname", utils.loadName())
-                jobj.put("type","Dates")
-                jobj.put("date",otp_edit_box1!!.text.toString().trim())
+                jobj.put("type", "Dates")
+                jobj.put("date", otp_edit_box1!!.text.toString().trim())
 
                 Log.i(
                     "HomePage Input",
@@ -554,7 +594,7 @@ class New_recharge_List : AppCompatActivity() {
             try {
                 if (resp != null) {
                     //val jsonarr = JSONArray(resp)
-                    Log.e("errort",resp)
+                    Log.e("errort", resp)
                     val json = JSONObject(resp)
                     if (json.getString("Status") == "Success") {
 
@@ -653,7 +693,7 @@ class New_recharge_List : AppCompatActivity() {
                 // val d = otp_edit_box1!!.text.toString().replace(",".toRegex(), "")
                 val jobj = JSONObject()
                 jobj.put("uname", utils.loadName())
-                jobj.put("type","Date")
+                jobj.put("type", "Date")
                // jobj.put("date",otp_edit_box1!!.text.toString().trim())
 
                 Log.i(
@@ -672,7 +712,7 @@ class New_recharge_List : AppCompatActivity() {
             try {
                 if (resp != null) {
                     //val jsonarr = JSONArray(resp)
-                    Log.e("errort",resp)
+                    Log.e("errort", resp)
                     val json = JSONObject(resp)
                     if (json.getString("Status") == "Success") {
 
@@ -753,7 +793,7 @@ class New_recharge_List : AppCompatActivity() {
     }
 
 
-    fun clikffed(pos: String, time: String,time1:String ,time2:String) {
+    fun clikffed(pos: String, time: String, time1: String, time2: String) {
         try {
             val update = Dialog(this@New_recharge_List)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -786,7 +826,7 @@ class New_recharge_List : AppCompatActivity() {
             //logger.info("PerformVersionTask error" + e.getMessage());
         }
     }
-    fun clikffed_rej(pos: String, time: String,time1:String ,time2:String) {
+    fun clikffed_rej(pos: String, time: String, time1: String, time2: String) {
         try {
             val update = Dialog(this@New_recharge_List)
             update.requestWindowFeature(Window.FEATURE_NO_TITLE)

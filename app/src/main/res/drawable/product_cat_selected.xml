@@ -16,10 +16,15 @@
     <!-- Background -->
     <item>
         <shape>
-            <solid android:color="#111f3a" />
+            <solid android:color="#622774" /><!-- #111f3a-->
             <stroke
                 android:color="#111f3a"
                 android:width="1dp"/>
+
+            <gradient
+                android:angle="135"
+                android:startColor="#c53364"
+                android:endColor="#622774"/>
 
             <corners android:radius="20dp" />
         </shape>
