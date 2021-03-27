@@ -97,11 +97,6 @@ class New_wallet_List : AppCompatActivity() {
         recyclerlist.adapter = itemsAdapter
 
 
-
-
-        //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
-
-
         if (!utils.loadWallet().isEmpty()&&crore!="crore") {
             val point =
                 utils.loadWallet().toString().split("\\.".toRegex(), 2).toTypedArray()[0]
@@ -217,6 +212,23 @@ class New_wallet_List : AppCompatActivity() {
                 }
                 else if(crore=="welcome"){
                     otp_edit_box1!!.setText(welwallet)
+
+                    try {
+                        if (!welwallet.isEmpty()) {
+                            val d = welwallet.replace(",".toRegex(), "").toInt()
+                            tot=d.toFloat()
+                            println("total$tot")
+
+                            if (d >= 500) {
+                                // addsalary.setVisibility(View.VISIBLE)
+                            } else {
+                                // addsalary.setVisibility(View.GONE)
+                            }
+                        }
+                    }
+                    catch (e: Exception){
+
+                    }
                     titlename.setText("Your Welcome Pin Wallet Balance")
 
                 }
