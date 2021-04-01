@@ -89,9 +89,7 @@ class New_wallet_List : AppCompatActivity() {
             Pointsadap.OnItemClickListener {
             override fun OnItemClick(view: View, position: Int, viewType: Int) {
                 val item = mRecyclerListitems[position] as Rewardpointsbo
-                // Log.e("clickresp", "value")
 
-                //clikffed();
             }
         })
         recyclerlist.adapter = itemsAdapter
@@ -364,6 +362,7 @@ class New_wallet_List : AppCompatActivity() {
 
         override fun onPostExecute(resp: String?) {
             try {
+
                 //Log.e("rewardresp", resp)
             } catch (e: Exception) {
                // Log.e("rewardrespcatch", e.toString())
@@ -655,7 +654,6 @@ class New_wallet_List : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
-
 
         if (id == android.R.id.home) {
             onBackPressed()

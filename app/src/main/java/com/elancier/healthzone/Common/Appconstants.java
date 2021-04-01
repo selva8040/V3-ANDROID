@@ -186,6 +186,7 @@ public class Appconstants {
     // public static String WALLET= domain+"wallet.php";
 
     public static String WALLET = domain + "wallet.php";
+    public static String Reward_WALLET = domain + "rewardPoint.php";
 
 
     /*16/10/2018*/

@@ -347,7 +347,8 @@
         <activity
             android:name=".Rewardpoints"
             android:parentActivityName=".HomePage"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.MyCompatTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

@@ -35,7 +35,8 @@ class Complaint : AppCompatActivity() {
         Handler().postDelayed(Runnable {
             if (CheckingPermissionIsEnabledOrNot()) {
 
-            }else{
+            }
+            else{
                 RequestMultiplePermission()
             }
         }, 2000)
@@ -113,8 +114,6 @@ class Complaint : AppCompatActivity() {
 
     }
 
-
-
     private fun shareImage(file: File) {
         val uri = Uri.fromFile(file)
         val intent = Intent()
@@ -132,6 +131,7 @@ class Complaint : AppCompatActivity() {
         }
 
     }
+
     fun CheckingPermissionIsEnabledOrNot(): Boolean {
 
         val INTERNET = ContextCompat.checkSelfPermission(this, android.Manifest.permission.INTERNET)

@@ -60,11 +60,11 @@ public class WalletBookAdapter extends ArrayAdapter<PassbookBo> {
         holder.mode = (TextView) convertView.findViewById(R.id.mode);
         holder.balance=(TextView)convertView.findViewById(R.id.balance);
 
-        holder.mode.setText(items.get(position).getMode());
+        holder.mode.setText(items.get(position).getType());
         holder.balance.setText(items.get(position).getBalance());
         holder.date.setText(items.get(position).getDate());
 
-         if(items.get(position).getType().equals("Debit")) {
+         if(items.get(position).getMode().equals("Debit")) {
              holder.debit.setText(items.get(position).getAmount());
              holder.credit.setText("");
            // holder.debit.setTextColor(ContextCompat.getColor(context, R.color.status_red));

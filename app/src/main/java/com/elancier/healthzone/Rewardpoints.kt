@@ -1,34 +1,207 @@
 package com.elancier.healthzone
 
-import android.content.Intent
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.SearchView
+import android.view.Window
+import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.MenuItemCompat
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.RewardpointsAdapter
+import com.elancier.healthzone.Adapter.WalletBookAdapter
 import com.elancier.healthzone.Common.Appconstants
-import com.elancier.healthzone.Common.CheckNetwork
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Rewardpointsbo
-import kotlinx.android.synthetic.main.activity_reward_history.swipeToRefresh
-import kotlinx.android.synthetic.main.activity_rewardpoints.*
+import com.elancier.healthzone.Pojo.PassbookBo
 import org.json.JSONArray
-import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
 
+
+class Rewardpoints : MainView() {
+    var retry: Dialog? = null
+    var retrybut: ImageView? = null
+    var passlist: ArrayList<PassbookBo>? = null
+    var plistvw: ListView? = null
+    var crore: String? = ""
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_wallet)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        val d = resources.getDrawable(R.drawable.menu_bar_bg)
+        supportActionBar!!.setBackgroundDrawable(d)
+        supportActionBar!!.setTitle("Reward Points")
+        utils = Utils(applicationContext)
+        loadprogress()
+        retry = Dialog(this)
+        retry!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        retry!!.window!!.setBackgroundDrawable(
+            ColorDrawable(Color.TRANSPARENT)
+        )
+        val v = layoutInflater.inflate(R.layout.retrylay, null)
+        retrybut = v.findViewById<View>(R.id.retry) as ImageView
+        retry!!.setContentView(v)
+        retry!!.setCancelable(false)
+        plistvw = findViewById<View>(R.id.listView) as ListView
+        nodata = findViewById<View>(R.id.nodata) as TextView
+        startprogress()
+        val task: GetInfoTask = GetInfoTask()
+        task.execute()
+
+        retrybut!!.setOnClickListener {
+            retry!!.dismiss()
+            startprogress()
+            val task: GetInfoTask =
+                GetInfoTask()
+            task.execute()
+        }
+    }
+
+     inner class GetInfoTask :
+        AsyncTask<String?, Void?, String?>() {
+        override fun onPreExecute() {
+            //progbar.setVisibility(View.VISIBLE);
+            Log.i("GetInfoTask", "started")
+        }
+
+        protected override fun doInBackground(vararg param: String?): String {
+            var result: String? = null
+            val con = Connection()
+            try {
+                val jobj = JSONObject()
+
+                    jobj.put("uname", utils.loadName())
+
+                Log.i("utilsInput", Appconstants.Reward_WALLET + "    " + jobj.toString())
+                result = con.sendHttpPostjson2(Appconstants.Reward_WALLET, jobj, "")
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            return result!!
+        }
+
+        protected override fun onPostExecute(resp: String?) {
+            Log.i("utilsresp", resp + "")
+            stopprogress()
+            passlist = ArrayList()
+            try {
+                if (resp != null) {
+                    val json = JSONArray(resp)
+                    val obj1 = json.getJSONObject(0)
+                    if (obj1.getString("Status") == "Success") {
+                        val jarr = obj1.getJSONArray("Response")
+                        for (i in 0 until jarr.length()) {
+                            val jobj = jarr.getJSONObject(i)
+                            val bo = PassbookBo()
+                            bo.date = if (jobj.getString("date").toString().trim { it <= ' ' }
+                                    .equals(
+                                        "null",
+                                        ignoreCase = true
+                                    )) "" else jobj.getString("date")
+                            bo.mode = if (jobj.getString("mode").toString().trim { it <= ' ' }
+                                    .equals(
+                                        "null",
+                                        ignoreCase = true
+                                    )) "" else jobj.getString("mode")
+                            bo.type = if (jobj.getString("type").toString().trim { it <= ' ' }
+                                    .equals(
+                                        "null",
+                                        ignoreCase = true
+                                    )) "0.00" else jobj.getString("type")
+                            bo.amount = if (jobj.getString("amount").toString().trim { it <= ' ' }
+                                    .equals(
+                                        "null",
+                                        ignoreCase = true
+                                    )) "0.00" else jobj.getString("amount")
+                            bo.balance = if (jobj.getString("balance").toString().trim { it <= ' ' }
+                                    .equals(
+                                        "null",
+                                        ignoreCase = true
+                                    )) "0.00" else jobj.getString("balance")
+                            /*if(jobj.getString("debit").toString().equals("")){
+                                bo.setType1("");
+                            }
+                            else{
+                                JSONArray array=jobj.getJSONArray("debit");
+                                JSONObject object=array.getJSONObject(0);
+                                bo.setType1("Debit");
+                                Log.i("positionnnnnnn",i+"       "+object.toString());
+
+                                bo.setDebit1(object.getString("wamount").toString().trim().equalsIgnoreCase("null")?"":object.getString("wamount"));
+                                bo.setDate1(object.getString("wdate").toString().trim().equalsIgnoreCase("null")?"":object.getString("wdate"));
+                                bo.setBalance1(object.getString("balance").toString().trim().equalsIgnoreCase("null")?"0.00":object.getString("balance"));
+                                bo.setCredit1("");
+
+                            }
+                            if(jobj.getString("credit").toString().equals("")){
+                                bo.setType("");
+                            }
+                            else{
+                                JSONArray array=jobj.getJSONArray("credit");
+                                JSONObject object=array.getJSONObject(0);
+                                bo.setType("Credit");
+                                bo.setCredit(object.getString("amount").toString().trim().equalsIgnoreCase("null")?"":object.getString("amount"));
+                                bo.setDate(object.getString("date").toString().trim().equalsIgnoreCase("null")?"":object.getString("date"));
+                                bo.setBalance(object.getString("total").toString().trim().equalsIgnoreCase("null")?"0.00":object.getString("total"));
+                                bo.setDebit("");
+
+                            }*/
+                            // bo.setUserid(jobj.getString("username").toString().trim().equalsIgnoreCase("null")?"":jobj.getString("username"));
+                            passlist!!.add(bo)
+                        }
+                        val adapter =
+                            WalletBookAdapter(this@Rewardpoints, R.layout.wallet_book_list_item, passlist)
+                        plistvw!!.adapter = adapter
+                        scrollMyListViewToBottom(passlist!!.size - 1)
+                    } else {
+                        nodata.setVisibility(View.GONE)
+                    }
+                } else {
+                    retry!!.show()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                retry!!.show()
+            }
+        }
+    }
+
+    private fun scrollMyListViewToBottom(pos: Int) {
+        plistvw!!.post { // Select the last row so it will scroll into view...
+            plistvw!!.setSelection(pos)
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_my_portal, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id = item.itemId
+        if (id == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+}
+
+/*
 class Rewardpoints : AppCompatActivity() {
     var progress_lay: LinearLayout? = null
     var retry_lay: LinearLayout? = null
@@ -449,4 +622,4 @@ class Rewardpoints : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-}
+}*/

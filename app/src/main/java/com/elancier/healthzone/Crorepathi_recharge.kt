@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.ProgressDialog
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
@@ -16,25 +15,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.elancier.healthzone.Adapter.Crore_Rechargeadap
-import com.elancier.healthzone.Adapter.Rechargeadap
 import com.elancier.healthzone.Common.Appconstants
-import com.elancier.healthzone.Common.CheckNetwork
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
 import com.elancier.healthzone.Pojo.Rewardpointsbo
-import kotlinx.android.synthetic.main.activity_online_training.*
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
-import kotlinx.android.synthetic.main.activity_super__salry_history.recyclerlist
-import kotlinx.android.synthetic.main.activity_super__salry_history.swipeToRefresh
 import kotlinx.android.synthetic.main.common_layout.*
-import kotlinx.android.synthetic.main.new_recharge_popup.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 class Crorepathi_recharge : AppCompatActivity() {
     internal lateinit var itemsAdapter: Crore_Rechargeadap
@@ -140,7 +131,7 @@ class Crorepathi_recharge : AppCompatActivity() {
                 up.setText("Recharge")//sk
                 // laterbut=(ImageView) vs.findViewById(R.id.img);
                 //TextView titlename=(TextView) vs.findViewById(R.id.titlename);
-                 otp_edit_box1 = vs.findViewById<View>(R.id.otp_edit_box1) as EditText
+                otp_edit_box1 = vs.findViewById<View>(R.id.otp_edit_box1) as EditText
                 otp_edit_box2 = vs.findViewById<View>(R.id.otp_edit_box2) as EditText
                 otp_edit_box3 = vs.findViewById<View>(R.id.otp_edit_box3) as EditText
                 otp_edit_box4 = vs.findViewById<View>(R.id.otp_edit_box4) as EditText
