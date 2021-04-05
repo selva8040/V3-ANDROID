@@ -150,6 +150,11 @@ public class PrimarySuperPinAdapter extends ArrayAdapter<PinBo> {
             holder.img.setImageResource(R.mipmap.welcomeimg);
 
         }
+        else if(items.get(position).gettype().equalsIgnoreCase("NSP Pin"))
+        {
+            holder.img.setImageResource(R.drawable.nspimage);
+
+        }
 
 
         if(items.get(position).getPinstatus().equalsIgnoreCase("Activated")){
