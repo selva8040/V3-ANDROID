@@ -1145,7 +1145,7 @@ public class Tableview extends AppCompatActivity
         String versionname="";
         @Override
         protected void onPreExecute() {
-            button4.setTextColor(Color.parseColor("#DC143C"));
+            button4.setTextColor(Color.parseColor("#ffffff"));
             button4.setText("Loading\n...");
 
         }
@@ -1225,7 +1225,7 @@ public class Tableview extends AppCompatActivity
                 if(resps!=null) {
                    // progbar.dismiss();
                     button4.setEnabled(true);
-                    button4.setTextColor(Color.parseColor("#DC143C"));
+                    button4.setTextColor(Color.parseColor("#ffffff"));
                     button4.setText("GO TO \nVIDEOPAGE");
                     button4.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_video,0);
                     videoresp = resps;

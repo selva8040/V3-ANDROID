@@ -249,7 +249,6 @@ public class AddPrimeTreeUser extends MainView {
             try {
                 if (resp != null) {
 
-
                     JSONArray json = new JSONArray(resp);
                     JSONObject obj1 = json.getJSONObject(0);
                     if (obj1.getString("Status").equals("Success")) {
@@ -322,6 +321,7 @@ public class AddPrimeTreeUser extends MainView {
 
                 Log.i("check Input", PIN_API+"    "+jobj.toString());
                 result = con.sendHttpPostjson2(PIN_API,jobj,"");
+
 			/*JSONObject json = new JSONObject();
 			json.put("mobile",param[0]);
 			json.put("otp", param[1]);
@@ -402,7 +402,6 @@ public class AddPrimeTreeUser extends MainView {
                 jobj.put("sponsor",edit_upline.getText().toString().trim());
                 jobj.put("opqid",edit_username.getText().toString().trim());
                 jobj.put("us",edit_name.getText().toString().trim());
-
 
                 Log.i("check Input", API+"    "+jobj.toString());
                 result = con.sendHttpPostjson2(API,jobj,"");

@@ -448,17 +448,27 @@ class New_wallet_List : AppCompatActivity() {
                         mRecyclerListitems.clear()
                         mRecyclerListitems.addAll(productItems!!)
                         itemsAdapter.notifyDataSetChanged()
+                        if(productItems!!.size==0){
+                            addsalary.visibility=View.VISIBLE
+                        }
+
                     }
                     else{
                         progbar!!.dismiss()
                         nodata.visibility=View.VISIBLE
                         recyclerlist.visibility=View.GONE
+                        if(productItems!!.size==0){
+                            addsalary.visibility=View.VISIBLE
+                        }
                     }
 
                 } else {
                     nodata.visibility=View.VISIBLE
                     recyclerlist.visibility=View.GONE
                     progbar!!.dismiss()
+                    if(productItems!!.size==0){
+                        addsalary.visibility=View.VISIBLE
+                    }
 
                 }
             } catch (e: JSONException) {
@@ -469,6 +479,9 @@ class New_wallet_List : AppCompatActivity() {
                 nodata.visibility=View.VISIBLE
                 recyclerlist.visibility=View.GONE
                 progbar!!.dismiss()
+                if(productItems!!.size==0){
+                    addsalary.visibility=View.VISIBLE
+                }
 
             }
 

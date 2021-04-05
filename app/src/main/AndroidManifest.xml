@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.elancier.healthzone">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -18,6 +21,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".TestApplication"
         android:allowBackup="true"
@@ -25,13 +29,15 @@
         android:icon="@mipmap/v3"
         android:label="@string/app_name"
         android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Pin_Service_Board"></activity>
+        <activity android:name=".SSCredit_List"></activity>
+        <activity android:name=".Network_Activation" />
+        <activity android:name=".Pin_Service_Board" />
         <activity android:name=".Point_List" />
-        <activity android:name=".Termsconditions"/>
+        <activity android:name=".Termsconditions" />
         <activity
             android:name=".Super_saver"
             android:screenOrientation="portrait"
@@ -61,7 +67,6 @@
             android:name=".Super_Salry_history"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".star_perf_history"
@@ -82,12 +87,12 @@
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Reward_reduce"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar1"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Monthly_report"
             android:screenOrientation="portrait"
@@ -324,8 +329,8 @@
         <activity
             android:name=".OptionTree"
             android:label="Auto Withdraw"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Wallet"
             android:label="Wallet"
@@ -340,7 +345,7 @@
         <activity
             android:name=".Videoimage"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Videoimage2"
             android:screenOrientation="portrait" />
@@ -348,8 +353,8 @@
             android:name=".Rewardpoints"
             android:parentActivityName=".HomePage"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/Theme.MyCompatTheme">
+            android:theme="@style/Theme.MyCompatTheme"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
 
@@ -393,20 +398,35 @@
         <activity android:name=".Updatehist_List" />
         <activity android:name=".New_recharge_List_Dup" />
         <activity android:name=".PROM_BOX_history" />
-        <activity android:name=".Prom_BOX_FORM"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Super_Business_Man"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Prom_BOX_FORM"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Super_Business_Man"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Super_Teamleader_history" />
         <activity android:name=".Super_business_Man_history" />
-        <activity android:name=".Super_TeamLeadaer_FORM"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Super_TeamLeadaer_FORM"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Crorepathi_recharge" />
-        <activity android:name=".Crore_Salary_FORM"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Crore_Salary_FORM"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Crore_Salary_history" />
-        <activity android:name=".Front_VideoActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Front_VideoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NSP_Wallet"
+            android:label="Wallet"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".NSP_PROM_BOX_List" />
+        <activity
+            android:name=".NSP_Prom_BOX_FORM"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NSP_Redeem_Wallet" />
         <!--
 <provider
             android:name="android.support.v4.content.FileProvider"

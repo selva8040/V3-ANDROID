@@ -57,6 +57,13 @@ public class Utils {
         return data;
     }
 
+    public String loadnspwallet() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nsp_wallet", "");
+        return data;
+    }
+
+
     public String loadfirstversion() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
         String data = sharedPreferences.getString("clearversion", "");
@@ -266,6 +273,11 @@ public class Utils {
         String data = sharedPreferences.getString("pb_uname", "");
         return data;
     }
+    public String nspb_uname() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nspb_uname", "");
+        return data;
+    }
     public String sr_uname() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
         String data = sharedPreferences.getString("sr_uname", "");
@@ -369,6 +381,22 @@ public class Utils {
     public String loadpb_uname3() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
         String data = sharedPreferences.getString("pb_uname3", "");
+        return data;
+    }
+
+    public String loadnspb_uname1() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nspb_uname1", "");
+        return data;
+    }
+    public String loadnspb_uname2() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nspb_uname2", "");
+        return data;
+    }
+    public String loadnspb_uname3() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nspb_uname3", "");
         return data;
     }
     public String loadgd_uname4() {

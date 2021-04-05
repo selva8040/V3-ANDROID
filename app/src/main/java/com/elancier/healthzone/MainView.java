@@ -67,7 +67,7 @@ import java.util.Random;
 public class MainView extends AppCompatActivity {
 
     LinearLayout profile_lay, reports_lay, tree_lay,more_lay,autofill_header, profile_header, reports_header, tree_header, home_header,more_header,
-            auto_fill_lay,vip_lay,cr_superbuis,cr_superlead,cr_rech,cr_super;
+            auto_fill_lay,vip_lay,cr_superbuis,cr_superlead,cr_rech,cr_super,network_child_layred;
     TextView profile, tree, reports,titlename, my_portal, my_info, my_sponcer, my_bank, direct_team, genealogy_tree,reward_hist,
             ibv_reports, gbv_reports, bonus_reports, withdraw_reports,purchase_detail,purchase_quotation,livefill_bonus, reward_points;
     LinearLayout my_portal_lay, my_info_lay, my_sponcer_lay, my_bank_lay, direct_team_lay, genealogy_tree_lay,prime_fill_bonus_lay,super_fill_bonus_lay,
@@ -85,7 +85,7 @@ public class MainView extends AppCompatActivity {
 
     FrameLayout wallet,sales_point_lay,terms_frame,rechargewallet1,cmds_frame,pin_frame_service,cmdg_frame,rechargewallet,redeemwallet,
                 benefit_frame,onlinepay,support_frame,saver_frame,compframe,admin_frame,v3pinlay,online_lay,welcome_report,rewardred_lay,
-                datereq,supersalry_frame,cr_frame,welc_frame,monthreport,logout_frame,vip_frame,pin_frame,commission_frame,tree_frame,coupon_frame,reports_frame;
+                datereq,supersalry_frame,cr_frame,network_frame,welc_frame,monthreport,logout_frame,vip_frame,pin_frame,commission_frame,tree_frame,coupon_frame,reports_frame;
 
     ImageView profile_img,autofill_img,  laterbut,tree_img, reports_img,more_arrow,binary_tree_arrow,binary_sponsor_arrow,binary_pair_arrow,binary_point_arrow;
 
@@ -109,8 +109,8 @@ public class MainView extends AppCompatActivity {
     TextView title, submit, save, choose_file, nodata;
     ImageView back, pencil, category_img, edit_img;
     ImageButton prochange;
-    LinearLayout phone_lay, email_lay;
-    LinearLayout saleslay,purchaselay;
+    LinearLayout phone_lay, email_lay,activation_lay,n_wallet,n_redeem;
+    LinearLayout saleslay,purchaselay,n_promotion,n_sscredit;
     EditText otp_edit_box1;
     Button button14;
     EditText  otp_edit_box2;
@@ -256,6 +256,7 @@ public class MainView extends AppCompatActivity {
         reward_points=(TextView) findViewById(R.id.reward_points);
         reward_hist=(TextView) findViewById(R.id.reward_hist);
         saver_frame=(FrameLayout) findViewById(R.id.saver_frame);
+        network_frame=(FrameLayout) findViewById(R.id.network_frame);
         coupon_frame=(FrameLayout) findViewById(R.id.coupon_frame);
         chngpass=(TextView) findViewById(R.id.chgpass);
         version=(TextView) findViewById(R.id.version);
@@ -290,6 +291,7 @@ public class MainView extends AppCompatActivity {
         crore_lay=(LinearLayout) findViewById(R.id.crore_lay);
         cr_child_layred=findViewById(R.id.cr_child_layred);
         welc_child_layred=findViewById(R.id.welcome_child_layred);
+        network_child_layred=findViewById(R.id.network_child_layred);
         cr_terms=findViewById(R.id.cr_terms);
         welcome_terms=findViewById(R.id.welcome_terms);
         cr_rech2=findViewById(R.id.cr_rech2);
@@ -305,6 +307,47 @@ public class MainView extends AppCompatActivity {
         cr_superlead=findViewById(R.id.cr_superlead);
         cr_rech=findViewById(R.id.cr_rech);
         cr_super=findViewById(R.id.cr_super);
+        activation_lay=findViewById(R.id.activation_lay);
+        n_wallet=findViewById(R.id.n_wallet);
+        n_redeem=findViewById(R.id.n_redeem);
+        n_promotion=findViewById(R.id.n_promotion);
+        n_sscredit=findViewById(R.id.n_sscredit);
+
+
+        n_sscredit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainView.this,SSCredit_List.class));
+            }
+        });
+
+        n_redeem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainView.this,NSP_Redeem_Wallet.class));
+            }
+        });
+
+        n_promotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainView.this,NSP_PROM_BOX_List.class));
+            }
+        });
+
+        activation_lay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainView.this,Network_Activation.class));
+            }
+        });
+
+        n_wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainView.this,NSP_Wallet.class));
+            }
+        });
 
         cr_prbox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -590,6 +633,21 @@ public class MainView extends AppCompatActivity {
                 else{
                     //utils.savePreferences("crframe","0");
                     collapse(welc_child_layred);
+                }
+
+            }
+        });
+
+        network_frame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(network_child_layred.getVisibility()==View.GONE){
+                    // utils.savePreferences("crframe","1");
+                    expand(network_child_layred);
+                }
+                else{
+                    //utils.savePreferences("crframe","0");
+                    collapse(network_child_layred);
                 }
 
             }

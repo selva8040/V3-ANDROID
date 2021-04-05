@@ -5,7 +5,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -169,6 +168,7 @@ public class AddTree extends AppCompatActivity {
                         GetPcodeTask task = new GetPcodeTask();
                         task.execute(uname.getText().toString().trim());
                         progbar.show();
+
                         GetPinTask task1 = new GetPinTask();
                         task1.execute(pin.getText().toString().trim());
 

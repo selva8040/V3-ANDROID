@@ -99,6 +99,7 @@ class BankDetails : AppCompatActivity() {
         acc_type_spin!!.isEnabled = false
         onclick()
        loadprogress()
+
         retry = Dialog(this)
         retry!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
         retry!!.window!!.setBackgroundDrawable(

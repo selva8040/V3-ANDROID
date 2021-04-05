@@ -220,6 +220,7 @@ public class Appconstants {
     public static String silver = domain + "cdm_silver.php";
     public static String point_request = domain + "point_request.php";
     public static String wallet_request = domain + "wallet_request.php";
+    public static String nsp_activation = domain + "nsp.php";
     public static String recharge = domain + "recharge.php";
     //https://www.v3healthzone.com/app/super_recharge.php
     public static String sal_req = domain + "super_recharge.php";

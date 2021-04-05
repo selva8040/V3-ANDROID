@@ -102,6 +102,7 @@ public class AddBinaryTreeUser extends MainView {
 
             }
         });
+
         edit_pinno.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus){

@@ -10,14 +10,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.elancier.healthzone.Adapter.Rewardfeedadap
-import com.elancier.healthzone.Adapter.Rewardhistoryadap
 import com.elancier.healthzone.Adapter.Star_perfadap
-import com.elancier.healthzone.Adapter.Super_salhistoryadap
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
-import com.elancier.healthzone.Pojo.Feedbackbo
 import com.elancier.healthzone.Pojo.Rewardpointsbo
 import com.elancier.healthzone.Pojo.salarypo
 import kotlinx.android.synthetic.main.activity_super__salry_history.*
@@ -25,7 +21,7 @@ import kotlinx.android.synthetic.main.common_layout.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.util.*
 
 class CMD_GOLD_history : AppCompatActivity() {
     internal lateinit var itemsAdapter: Star_perfadap
@@ -55,14 +51,12 @@ class CMD_GOLD_history : AppCompatActivity() {
         })
         recyclerlist.adapter = itemsAdapter
 
-        //itemsAdapter1 = Rewardfeedadap(mRecyclerListitems1, applicationContext, Rewardfeedadap.OnItemClickListener { view, position, viewType -> val item = mRecyclerListitems1.get(position) as Feedbackbo })
-
-
         addsalary.setOnClickListener{
             val k= Intent(this@CMD_GOLD_history,CMD_GOLD_FORM::class.java)
             startActivity(k)
 
         }
+
         swipeToRefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
                 //shuffle()
@@ -124,13 +118,14 @@ class CMD_GOLD_history : AppCompatActivity() {
                     if(obj.getString("Status").equals("Success")) {
                         val objs = obj.getString("Total Record")
                         println("Total Record : "+objs)
+
                         if(objs.equals("0")){
                         addsalary.visibility=View.VISIBLE
                         }
                         else if(objs.equals("1")){
                             addsalary.visibility=View.GONE
-
                         }
+
                         val arrayLanguage = obj.getJSONArray("Response")
 
                         for (i in 0 until arrayLanguage.length()) {
@@ -143,11 +138,8 @@ class CMD_GOLD_history : AppCompatActivity() {
                             val notview_without = JO.getString("user5")
                             val feedback_present = JO.getString("user6")
                             val feedback_absent = JO.getString("dtime")
-                            //val feedback_absents=JO.getString("dtime")
-
 
                             try {
-
 
                                 productItems!!.add(salarypo(i.toString(), frmdate, todate, name, uname, whome, notview_without, feedback_present, feedback_absent, "", "",
                                         "",

@@ -6,7 +6,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -275,7 +274,6 @@ public class AddCustomerActivity extends MainView {
                 jobj.put("city", param[3]);
                 jobj.put("pincode", param[4]);
                 jobj.put("user", utils.loadName());
-
 
                 Log.i("check Input", Appconstants.ADD_NEW_CUSTOMER + "    " + jobj.toString());
                 result = con.sendHttpPostjson2(Appconstants.ADD_NEW_CUSTOMER, jobj, "");

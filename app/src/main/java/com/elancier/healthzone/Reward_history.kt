@@ -90,7 +90,7 @@ class Reward_history : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reward_history)
-        supportActionBar!!.title = "V3 Online TV"
+        supportActionBar!!.title = "Reward History"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.setBackgroundDrawable(

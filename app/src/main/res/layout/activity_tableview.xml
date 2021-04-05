@@ -816,16 +816,17 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/carddesign"
                 android:drawableLeft="@drawable/ic_dashboard"
+                android:drawableTint="@color/white"
+                android:background="@drawable/carddesign_grad"
+                android:padding="8dp"
                 android:paddingLeft="8dp"
                 android:text="go to \ndashboard"
-                android:textColor="@color/themes" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/button4"
@@ -833,16 +834,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/carddesign"
-                android:drawableRight="@drawable/ic_videodis"
+                android:background="@drawable/carddesign_grad"
                 android:enabled="false"
                 android:gravity="center"
+                android:padding="8dp"
                 android:paddingRight="8dp"
                 android:text="go to \nvideo page"
-                android:textColor="@color/normal"
+                android:textColor="@color/white"
                 android:visibility="visible" />
         </LinearLayout>
 

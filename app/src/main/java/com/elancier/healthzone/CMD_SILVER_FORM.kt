@@ -15,10 +15,8 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
 import com.elancier.healthzone.Common.Utils
@@ -27,7 +25,6 @@ import kotlinx.android.synthetic.main.activity_super__salary.custname
 import kotlinx.android.synthetic.main.activity_super__salary.uname
 import kotlinx.android.synthetic.main.activity_super_saver.*
 import kotlinx.android.synthetic.main.saver_header.*
-import org.json.JSONArray
 import org.json.JSONObject
 
 class CMD_SILVER_FORM : AppCompatActivity() {
@@ -155,16 +152,16 @@ class CMD_SILVER_FORM : AppCompatActivity() {
                 ) {
                     val task = stateload()
                     task.execute(custname.text.toString().trim(), "custname")
+
                 } else {
                     toast("Username already used")
                     custname.setText("")
                 }
             }
             else{
+
                 toast("Please fill this field")
                 custname.setError("Required field")
-
-
             }
 
         }

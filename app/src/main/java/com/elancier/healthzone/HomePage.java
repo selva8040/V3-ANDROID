@@ -1418,6 +1418,7 @@ public class HomePage extends MainView {
                             utils.savePreferences("cmd_silver", jobj.getString("cmd_silver").trim().equalsIgnoreCase("null") || jobj.getString("cmd_silver").trim().length() == 0 ? "0" : jobj.getString("cmd_silver"));
                             utils.savePreferences("cmd_gold", jobj.getString("cmd_gold").trim().equalsIgnoreCase("null") || jobj.getString("cmd_gold").trim().length() == 0 ? "0" : jobj.getString("cmd_gold"));
                             utils.savePreferences("support", jobj.getString("support").trim().equalsIgnoreCase("null") || jobj.getString("support").trim().length() == 0 ? "0" : jobj.getString("support"));
+                            utils.savePreferences("nsp_wallet", jobj.getString("nsp_wallet").trim());
 
                             if(!jobj.getString("pinName").isEmpty()&&(jobj.getString("pinName")!=null)){
                                 utils.savePreferences("pinName", jobj.getString("pinName").trim());
