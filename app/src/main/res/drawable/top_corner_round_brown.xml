@@ -33,8 +33,8 @@
                 android:bottomLeftRadius="0dp" android:bottomRightRadius="0dp"/>
             <gradient
                 android:angle="90"
-                android:startColor="#d7d4d4"
-                android:endColor="#D0977878"
+                android:startColor="#fff"
+                android:endColor="#fff"
                 android:centerColor="#fff"
                 android:centerX="0.9"
                 android:type="linear" />

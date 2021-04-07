@@ -1,7 +1,9 @@
 package com.elancier.healthzone;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -12,6 +14,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
@@ -24,11 +27,14 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.os.SystemClock;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.speech.RecognizerIntent;
 import android.telephony.TelephonyManager;
+import android.util.Base64;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -80,6 +86,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.text.DateFormat;
@@ -173,6 +180,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
     Button submit_btn;
     String videocomplete = "";
     private final int REQ_CODE = 100;
+    private final int imagecode = 1;
+    int RequestPermissionCode = 7;
 
     SliderLayout sliderLayout;
     ConstraintLayout cos;
@@ -217,6 +226,10 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
     CircleImageView speak;
     String str = "";
     final String[] fradcheck = {""};
+    AlertDialog pop;
+    byte[] byteArray;
+    ImageView imageone;
+    String imagecode1;
 
     //NetworkChangeReceiver receiver=null;
 /*
@@ -424,6 +437,15 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+
+        if(CheckingPermissionIsEnabledOrNot(this))
+        {
+
+        }
+        else
+        {
+            requestpermission();
+        }
 
         System.out.println("video" + "njs");
         if (CheckNetwork.isInternetAvailable(Videoimage.this)) {
@@ -3255,9 +3277,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
                 if (CheckNetwork.isInternetAvailable(Videoimage.this)) {
                     if (countval.equals("0") && (countdownText.getText().toString().equals("00:00:01"))) {
+                        cam();
 
-                        Videosubmit submit = new Videosubmit();
-                        submit.execute("completed");
                     } else if (countval.equals("1")) {
                         // Log.i("inside counts val","jkj");
                         Intent i = new Intent(Videoimage.this, HomePage.class);
@@ -3676,8 +3697,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                         dialog.dismiss();
                         cls6 = "cls";
 
-                        Videosubmit submit = new Videosubmit();
-                        submit.execute("completed");
+                        cam();
                         int versionCode = com.elancier.healthzone.BuildConfig.VERSION_CODE;
 
                         /*Intent i=new Intent(Videoimage.this,Offline_video.class);
@@ -4561,6 +4581,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                 jobj.put("status", duplicateuser);
                 jobj.put("mobile_model", android.os.Build.MODEL);
                 jobj.put("language", dmlang);
+                jobj.put("image", imagecode1);
                 jobj.put("network", getNetworkClass(getApplicationContext()));
 
                 if (Build.VERSION.SDK_INT >= 21 && Build.VERSION.SDK_INT <= 23) {
@@ -5013,6 +5034,57 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                 }
                 break;
             }
+            case imagecode:{
+                Uri photoUri = data.getData();
+
+                Log.e("Photouri", photoUri.toString());
+                Bitmap bitmap = null;
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(Videoimage.this.getContentResolver(), photoUri);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+// ...Irrelevant code for customizing the buttons and title
+                LayoutInflater inflater = this.getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.imagepopup, null);
+                imageone=dialogView.findViewById(R.id.imageView);
+               imageone.setImageBitmap(bitmap);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 40,stream);
+                byteArray = stream.toByteArray();
+                imagecode1 = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                imagecode1 = "data:image/png;base64,$imagecode";
+
+                Button retke=dialogView.findViewById(R.id.retke);
+                Button button=dialogView.findViewById(R.id.button);
+                dialogBuilder.setView(dialogView);
+                dialogBuilder.setCancelable(true);
+                pop=dialogBuilder.create();
+                pop.show();
+                pop.setCancelable(false);
+
+                retke.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        pop.dismiss();
+                        cam();
+
+                    }
+                });
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        pop.dismiss();
+                        Videosubmit submit = new Videosubmit();
+                        submit.execute("completed");
+                    }
+                });
+                break;
+                }
+
         }
     }
 
@@ -5068,6 +5140,52 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
             }
         });
     }
+
+    public void cam(){
+
+        if(CheckingPermissionIsEnabledOrNot(this)) {
+            Intent startCustomCameraIntent = new Intent(getApplicationContext(), CameraActivity.class);
+            startActivityForResult(startCustomCameraIntent, 1);
+        }
+        else{
+            requestpermission();
+        }
+    }
+
+
+    public boolean CheckingPermissionIsEnabledOrNot(Activity context) {
+        int CAMERA = ContextCompat.checkSelfPermission(
+                context,
+                android.Manifest.permission.CAMERA
+        );
+        int ACCESS_NETWORK_STATEt = ContextCompat.checkSelfPermission(
+                context,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE
+        );
+        int ACCESS_COARSE_LOCATION = ContextCompat.checkSelfPermission(
+                context,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+        );
+
+        return ACCESS_NETWORK_STATEt == PackageManager.PERMISSION_GRANTED &&
+                ACCESS_COARSE_LOCATION == PackageManager.PERMISSION_GRANTED&&
+                CAMERA == PackageManager.PERMISSION_GRANTED;
+
+    }
+
+    public void requestpermission(){
+        ActivityCompat.requestPermissions(
+                Videoimage.this,
+                new String[]{
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        /*Manifest.permission.ACCESS_FINE_LOCATION*/
+                },RequestPermissionCode
+
+        );
+    }
+
     @Override
     public void networkAvailable() {
         Log.d("tommydevall", "I'm in, baby!");

@@ -87,6 +87,7 @@ class Reward_history : AppCompatActivity() {
     private var productItems: MutableList<Rewardpointsbo>? = null
     private var productItems1: MutableList<Feedbackbo>? = null
     private var productItems2: MutableList<Feedbackbo>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reward_history)
@@ -113,12 +114,14 @@ class Reward_history : AppCompatActivity() {
         scrollNeed = true
         start = 0
         limit = 20
+
         val c = Calendar.getInstance().time
         println("Current time => $c")
         val df = SimpleDateFormat("yyyy-MM-dd")
         val formattedDate = df.format(c)
         frdt!!.text = formattedDate
         todt!!.text = formattedDate
+
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist!!.layoutManager = mLayoutManager
         if (!frdt!!.text.toString().isEmpty()) {
@@ -145,6 +148,7 @@ class Reward_history : AppCompatActivity() {
 
         px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, resources.displayMetrics)
             .toInt()
+
         frdt!!.setOnClickListener {
             val cldr = Calendar.getInstance()
             val day = cldr[Calendar.DAY_OF_MONTH]
@@ -319,6 +323,7 @@ class Reward_history : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_SECURE,
             WindowManager.LayoutParams.FLAG_SECURE
         )
+
         retry!!.setOnClickListener {
             if (CheckNetwork.isInternetAvailable(this@Reward_history)) {
                 recyclerlist!!.visibility = View.VISIBLE
@@ -680,7 +685,9 @@ class Reward_history : AppCompatActivity() {
                 } else {
                 }
             } catch (e: Exception) {
+
             }
+
             download.setOnClickListener {
                 if (checkPermission() && download.text.toString() == "DOWNLOAD") {
                     try {
@@ -695,6 +702,7 @@ class Reward_history : AppCompatActivity() {
                         e.printStackTrace()
                         Log.e("filerr", e.toString())
                     }
+
                 } else {
                     requestPermission()
                 }

@@ -56,12 +56,12 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:longClickable="false"
 
                     android:background="@drawable/carddesigncol"
                     android:ems="10"
                     android:hint="Enter Activation Pin"
                     android:inputType="textPersonName|textPassword"
+                    android:longClickable="false"
                     android:paddingStart="16dp"
                     android:textColorHint="@color/text3"
                     android:textSize="16sp"

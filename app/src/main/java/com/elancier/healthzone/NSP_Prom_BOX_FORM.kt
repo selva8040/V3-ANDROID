@@ -89,9 +89,9 @@ class NSP_Prom_BOX_FORM : AppCompatActivity() {
         }*/
 
 
-        if(utils.pb_uname().isNotEmpty()){
-            if(utils.pb_uname()!=utils.loadName()){
-                println("utils.pb_uname()"+utils.pb_uname())
+        if(utils.nspb_uname().isNotEmpty()){
+            if(utils.nspb_uname()!=utils.loadName()){
+                println("utils.pb_uname()"+utils.nspb_uname())
                 println("utils.loadName()"+utils.loadName())
                 utils.savePreferences("nspb_uname1","")
                 utils.savePreferences("nspb_uname2","")

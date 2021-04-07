@@ -32,7 +32,8 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:theme">
         <activity android:name=".SSCredit_List"></activity>
         <activity android:name=".Network_Activation" />
         <activity android:name=".Pin_Service_Board" />
@@ -427,6 +428,7 @@
             android:name=".NSP_Prom_BOX_FORM"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NSP_Redeem_Wallet" />
+        <activity android:name=".CameraActivity" />
         <!--
 <provider
             android:name="android.support.v4.content.FileProvider"

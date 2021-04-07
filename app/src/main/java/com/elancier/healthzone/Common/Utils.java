@@ -50,6 +50,11 @@ public class Utils {
         String data = sharedPreferences.getString("sign", "");
         return data;
     }
+    public String loadnsp_designation() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nsp_designation", "");
+        return data;
+    }
 
     public String loadbasewallet() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
@@ -60,6 +65,11 @@ public class Utils {
     public String loadnspwallet() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
         String data = sharedPreferences.getString("nsp_wallet", "");
+        return data;
+    }
+    public String loadnspdtime() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        String data = sharedPreferences.getString("nsp_dtime", "");
         return data;
     }
 

@@ -19,8 +19,9 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:background="@color/white">
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="220dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -89,7 +90,27 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="left"
+                                android:padding="2dp"
                                 android:text="rraja8701"
+                                android:textColor="#777777"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/desig"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:padding="2dp"
+                                android:text="rraja8701"
+                                android:textColor="#777777"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nspdesig"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:padding="2dp"
                                 android:textColor="#777777"
                                 android:textSize="12sp" />
 
@@ -1173,7 +1194,7 @@
                             android:paddingRight="8dp"
                             android:paddingBottom="8dp"
                             android:text="Version 1.28"
-                            android:textColor="@color/color8red"
+                            android:textColor="@color/theme"
                             android:textSize="12sp"
                             app:fontFamily="@font/poppins" />
 

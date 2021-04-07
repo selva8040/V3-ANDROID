@@ -12,7 +12,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat
 import com.elancier.healthzone.Adapter.OptionTreeListAdapter
 import com.elancier.healthzone.Common.Appconstants
 import com.elancier.healthzone.Common.Connection
@@ -372,6 +371,13 @@ class OptionTree : AppCompatActivity() {
 
                         }
 
+                        try {
+                            nsp_uname2!!.text = jsonObject1.getString("nsp_designation")
+                        }
+                        catch (e: Exception){
+
+                        }
+
                         sub_user!!.text = if (jsonObject1.getString("plan").trim { it <= ' ' }
                                 .equals(
                                     "null",
@@ -441,6 +447,13 @@ class OptionTree : AppCompatActivity() {
                                                 "null",
                                                 ignoreCase = true
                                             )) "None" else jsonObject2.getString("welcome_up")
+
+                                pojo!!.whom =
+                                    if (jsonObject2.getString("nsp_designation").trim { it <= ' ' }
+                                            .equals(
+                                                "null",
+                                                ignoreCase = true
+                                            )) "None" else jsonObject2.getString("nsp_designation")
 
                                 // pojo.setUnique(jsonObject2.getString("unique").trim().equalsIgnoreCase("null") ? "" : jsonObject2.getString("unique"));
                                 //pojo.setSub_users(jsonObject2.getString("child_count").trim().equalsIgnoreCase("null") ? "" : jsonObject2.getString("child_count"));

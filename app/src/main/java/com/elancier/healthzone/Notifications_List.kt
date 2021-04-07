@@ -31,6 +31,8 @@ class Notifications_List : AppCompatActivity() {
         supportActionBar!!.title = "Notifications"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+        val d = resources.getDrawable(R.drawable.menu_bar_bg)
+        supportActionBar!!.setBackgroundDrawable(d)
         mLayoutManager = LinearLayoutManager(this)
         recyclerlist.setLayoutManager(mLayoutManager)
         utils=Utils(this)

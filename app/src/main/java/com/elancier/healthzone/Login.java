@@ -7,15 +7,12 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -33,11 +30,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.elancier.healthzone.Common.Appconstants;
-import com.elancier.healthzone.Common.CheckNetwork;
 import com.elancier.healthzone.Common.Connection;
 import com.elancier.healthzone.Common.Utils;
 import com.elancier.healthzone.contacts.Contact;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONArray;
@@ -70,7 +65,7 @@ public class Login extends AppCompatActivity {
         listContacts=new ArrayList<>();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.sky_blue));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.theme));
         }
 
         init();

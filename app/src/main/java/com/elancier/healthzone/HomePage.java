@@ -335,11 +335,11 @@ public class HomePage extends MainView {
         //LinearLayout scroll2 = findViewById(R.id.scroll2);
         String type = utils.loadtype();
         if (type.equals("0")){
-            scroll.setBackgroundResource(R.drawable.top_corner_round_blue);
+            scroll.setBackgroundResource(R.drawable.top_corner_round_brown);
             //scroll2.setBackgroundResource(R.drawable.top_corner_round_blue);
         }
         else if(type.equals("1")) {
-            scroll.setBackgroundResource(R.drawable.top_corner_round_green);
+            scroll.setBackgroundResource(R.drawable.top_corner_round_brown);
             //scroll2.setBackgroundResource(R.drawable.top_corner_round_green);
         }
         else if(type.equals("2")){
@@ -1347,6 +1347,7 @@ public class HomePage extends MainView {
                             utils.savePreferences("commition", "");
                             utils.savePreferences("jsonobj", "");
                             utils.savePreferences("countvalue","");
+                            utils.savePreferences("plantype","");
 
                             Toast.makeText(HomePage.this, "Logged Out.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(HomePage.this, Login.class));
@@ -1399,6 +1400,7 @@ public class HomePage extends MainView {
                         for (int i = 0; i < jarr.length(); i++) {
                             JSONObject jobj = jarr.getJSONObject(i);
                             ReportsPojo bo = new ReportsPojo();
+                            utils.savePreferences("designation", jobj.getString("designation").trim().equalsIgnoreCase("null") || jobj.getString("designation").trim().length() == 0 ? "0" : jobj.getString("designation"));
                             utils.savePreferences("ibv", jobj.getString("ibv").trim().equalsIgnoreCase("null") || jobj.getString("ibv").trim().length() == 0 ? "0" : jobj.getString("ibv"));
                             utils.savePreferences("gbv", jobj.getString("gbv").trim().equalsIgnoreCase("null") || jobj.getString("gbv").trim().length() == 0 ? "0" : jobj.getString("gbv"));
                             utils.savePreferences("commition", jobj.getString("p_commition").trim().equalsIgnoreCase("null") || jobj.getString("p_commition").trim().length() == 0 ? "0" : jobj.getString("p_commition"));
@@ -1419,6 +1421,8 @@ public class HomePage extends MainView {
                             utils.savePreferences("cmd_gold", jobj.getString("cmd_gold").trim().equalsIgnoreCase("null") || jobj.getString("cmd_gold").trim().length() == 0 ? "0" : jobj.getString("cmd_gold"));
                             utils.savePreferences("support", jobj.getString("support").trim().equalsIgnoreCase("null") || jobj.getString("support").trim().length() == 0 ? "0" : jobj.getString("support"));
                             utils.savePreferences("nsp_wallet", jobj.getString("nsp_wallet").trim());
+                            utils.savePreferences("nsp_dtime", jobj.getString("nsp_dtime").trim());
+                            utils.savePreferences("nsp_designation", jobj.getString("nsp_designation").trim());
 
                             if(!jobj.getString("pinName").isEmpty()&&(jobj.getString("pinName")!=null)){
                                 utils.savePreferences("pinName", jobj.getString("pinName").trim());

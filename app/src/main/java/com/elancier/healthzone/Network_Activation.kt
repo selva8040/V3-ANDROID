@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.*
 import android.widget.Toast
@@ -34,6 +35,17 @@ class Network_Activation : AppCompatActivity() {
             )
         )
         supportActionBar!!.setTitle("Activation")
+
+
+        if(utils.loadnspdtime().toString().isNotEmpty()){
+            act1.visibility=View.VISIBLE
+            act1.setInputType(InputType.TYPE_CLASS_TEXT)
+            act1.setText(utils.loadnspdtime())
+            act1.setFocusable(false)
+            act2.visibility=View.INVISIBLE
+            act3.visibility=View.GONE
+            button17.visibility=View.INVISIBLE
+        }
 
         act1.setLongClickable(false);
         act1.setTextIsSelectable(false);
@@ -200,6 +212,7 @@ class Network_Activation : AppCompatActivity() {
                         progbar!!.dismiss()
                         try {
                             toast("Request Submitted.")
+                            finish()
 
                         } catch (e: java.lang.Exception) {
                             progbar!!.dismiss()

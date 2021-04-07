@@ -70,8 +70,10 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.cons= (ConstraintLayout) convertView.findViewById(R.id.cons);
         holder.linearLayout = (TextView) convertView.findViewById(R.id.textView84);
         holder.welc_desig=(TextView) convertView.findViewById(R.id.welc_desig);
+        holder.nsp_desigtext=(TextView) convertView.findViewById(R.id.nsp_desig);
         holder.verify=(Button) convertView.findViewById(R.id.button15);
         holder.welccard=(CardView) convertView.findViewById(R.id.cardView10welc);
+        holder.nsp_desig=(CardView) convertView.findViewById(R.id.cardView10nsp);
         holder.cards=(CardView) convertView.findViewById(R.id.card);
 
 
@@ -176,6 +178,7 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         holder.super_desig1.setText(items.get(position).getMrp());
         holder.super_desig2.setText(items.get(position).getQty());
         holder.welc_desig.setText(items.get(position).getDoj());
+        holder.nsp_desigtext.setText(items.get(position).getWhom());
 
 
 
@@ -199,8 +202,10 @@ public class OptionTreeListAdapter extends ArrayAdapter<AutofillPojo> {
         public TextView linearLayout;
         public TextView netamt;
         public TextView welc_desig;
+        public TextView nsp_desigtext;
         public Button verify;
         public CardView welccard;
+        public CardView nsp_desig;
         public CardView cards;
 
     }

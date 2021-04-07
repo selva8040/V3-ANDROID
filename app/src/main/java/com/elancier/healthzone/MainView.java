@@ -469,6 +469,10 @@ public class MainView extends AppCompatActivity {
 
         TextView uname = (TextView) findViewById(R.id.uname);
         TextView uid = (TextView) findViewById(R.id.uid);
+        TextView dessig = (TextView) findViewById(R.id.desig);
+        TextView nspdessig = (TextView) findViewById(R.id.nspdesig);
+        dessig.setText(utils.loadplan());
+        nspdessig.setText(utils.loadnsp_designation());
         prochange = (ImageButton) findViewById(R.id.prochange);
         uname.setText(utils.loadFname() + " " + utils.loadLname());
         uid.setText(utils.loadName());
