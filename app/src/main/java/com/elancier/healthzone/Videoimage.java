@@ -119,13 +119,15 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
     String cls3 = "";
     String cls4 = "";
     String cls5 = "";
+    String cameracls = "";
     String cls6 = "";
     String origin_domain = "";
     String origin_domain1 = "http://v3onlinetv.com/v3app/";
     String video_responseval = "";
     String cutoffstime = "";
-    TextView videotitle, videodescription, countdownText, nodata, retry, skip;
+    TextView videotitle, videodescription, countdownText,countdownText1, nodata, retry, skip;
     private static CountDownTimer countDownTimer;
+    private static CountDownTimer countDownTimer1;
     String getMinutes;
     //ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("https://drive.google.com/file/d/1IYu1uepy2V7k9tMGwQ2CBkvmPPs1YYZ8/view"));
     int index = 0;
@@ -134,6 +136,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
     Utils utils;
     Dialog progbar;
     String id = "";
+    Dialog Adialog;
+
     TextView points;
     int imgnoofminutes;
     AudioManager audioManager;
@@ -2290,6 +2294,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                                     return false;
                                 }
                             });
+
                             videoView.setWebViewClient(new WebViewClient() {
                                 @Override
                                 public void onPageFinished(WebView view, String url) {
@@ -3277,7 +3282,20 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
                 if (CheckNetwork.isInternetAvailable(Videoimage.this)) {
                     if (countval.equals("0") && (countdownText.getText().toString().equals("00:00:01"))) {
-                        cam();
+
+                        if(utils.loadplan().equals("Welcome Pin")&& !utils.loadnsp_designation().toString().isEmpty()){
+
+                            Videosubmit submit = new Videosubmit();
+                            submit.execute("completed");
+                        }
+                        else if(utils.loadplan().equals("Welcome Pin")){
+                            Videosubmit submit = new Videosubmit();
+                            submit.execute("completed");
+                        }
+                        else{
+                            cam();
+
+                        }
 
                     } else if (countval.equals("1")) {
                         // Log.i("inside counts val","jkj");
@@ -3311,6 +3329,42 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                 /*countdownTimerText.setText("TIME'S UP!!"); //On finish change timer text
                 countDownTimer = null;//set CountDownTimer to null
                 startTimer.setText(getString(R.string.start_timer));//Change button text*/
+            }
+        }.start();
+    }
+
+
+
+    private void startTimer1(int noOfMinutes, String count) {
+        final String countval = count;
+        Log.e("countval",countval);
+        countDownTimer1 = new CountDownTimer(noOfMinutes, 1000) {
+            public void onTick(long millisUntilFinished) {
+                long millis = millisUntilFinished;
+                //Convert milliseconds into hour,minute and seconds
+                String hms = String.format("%02d", TimeUnit.MILLISECONDS.toSeconds(millis));
+                countdownText1.setText("Okay("+hms+")");
+            }
+
+            public void onFinish() {
+
+                if(cameracls.isEmpty()) {
+                    Intent i = new Intent(Videoimage.this, HomePage.class);
+                    i.putExtra("amount", amount);
+                    i.putExtra("gpv", gpv);
+                    i.putExtra("ibv", ibv);
+                    i.putExtra("purchase", purchase);
+                    i.putExtra("sales", sales);
+                    i.putExtra("target", target);
+                    i.putExtra("achieve", achieve);
+                    i.putExtra("balance", balance);
+                    i.putExtra("wallet_amt", wallet_amt);
+                    i.putExtra("todayreward", todayreward);
+                    i.putExtra("totalreward", totalreward);
+                    i.putExtra("available_reward", available_reward);
+                    startActivity(i);
+                    finish();
+                }
             }
         }.start();
     }
@@ -3638,9 +3692,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
             try {
                 JSONObject jobj = new JSONObject();
-
                 jobj.put("uname", utils.loadName());
-
 
                 //Log.i("Videossubmitinput", Appconstants.logout + "    " + jobj.toString() + "");
                 result = con.sendHttpPostjson2(Appconstants.logout, jobj, "");
@@ -3696,8 +3748,19 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         cls6 = "cls";
+                      if(utils.loadplan().equals("Welcome Pin")&& !utils.loadnsp_designation().toString().isEmpty()){
 
-                        cam();
+                            Videosubmit submit = new Videosubmit();
+                            submit.execute("completed");
+                        }
+                        else if(utils.loadplan().equals("Welcome Pin")){
+                            Videosubmit submit = new Videosubmit();
+                            submit.execute("completed");
+                        }
+                        else{
+                            cam();
+
+                        }
                         int versionCode = com.elancier.healthzone.BuildConfig.VERSION_CODE;
 
                         /*Intent i=new Intent(Videoimage.this,Offline_video.class);
@@ -5054,8 +5117,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 40,stream);
                 byteArray = stream.toByteArray();
-                imagecode1 = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                imagecode1 = "data:image/png;base64,$imagecode";
+                imagecode1 = Base64.encodeToString(byteArray,Base64.DEFAULT);
+                imagecode1 = "data:image/png;base64"+","+imagecode1;
 
                 Button retke=dialogView.findViewById(R.id.retke);
                 Button button=dialogView.findViewById(R.id.button);
@@ -5069,6 +5132,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                     @Override
                     public void onClick(View view) {
                         pop.dismiss();
+                        cameracls="";
                         cam();
 
                     }
@@ -5144,8 +5208,27 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
     public void cam(){
 
         if(CheckingPermissionIsEnabledOrNot(this)) {
-            Intent startCustomCameraIntent = new Intent(getApplicationContext(), CameraActivity.class);
-            startActivityForResult(startCustomCameraIntent, 1);
+
+            final Dialog dialog = new Dialog(this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+            dialog.setContentView(R.layout.dialog_achievement_congrat);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            dialog.setCancelable(false);
+            countdownText1=dialog.findViewById(R.id.okay);
+            dialog.findViewById(R.id.okay).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    countDownTimer1.cancel();
+                    cameracls="cls";
+                    //Toast.makeText(getApplicationContext(), "Play Now Clicked", Toast.LENGTH_SHORT).show();
+                    Intent startCustomCameraIntent = new Intent(getApplicationContext(), CameraActivity.class);
+                    startActivityForResult(startCustomCameraIntent, 1);
+                }
+            });
+            dialog.show();
+            startTimer1(15*1000,"0");
+
         }
         else{
             requestpermission();

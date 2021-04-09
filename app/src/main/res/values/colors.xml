@@ -46,6 +46,10 @@
     <!--<color name="theme">#9b63f8</color>-->
     <color name="theme">#622774</color>
     <color name="themes">#009788</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_90">#263238</color>
+    <color name="blue_grey_600">#546E7A</color>
+
     <color name="xml_back">#F0F0F0</color>
     <color name="linear_back">#f5f5f5</color>
     <color name="edit_back">#FFFF</color>

@@ -2826,6 +2826,8 @@ public class MainView extends AppCompatActivity {
                         utils.savePreferences("mpin_first", "");
                         utils.savePreferences("notitime", "");
                         utils.savePreferences("noti", "");
+                        utils.savePreferences("plantype","");
+                        utils.savePreferences("nsp_designation","");
 
 
                         Toast.makeText(MainView.this, "Logout Successfully.", Toast.LENGTH_SHORT).show();

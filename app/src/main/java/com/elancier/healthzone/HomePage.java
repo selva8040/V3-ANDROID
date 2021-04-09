@@ -331,6 +331,7 @@ public class HomePage extends MainView {
         uname2.setText(""+utils.loadName());
         mobile2.setText("" + utils.loadmob());
 
+
         ScrollView scroll = findViewById(R.id.scroll);
         //LinearLayout scroll2 = findViewById(R.id.scroll2);
         String type = utils.loadtype();
@@ -1348,6 +1349,7 @@ public class HomePage extends MainView {
                             utils.savePreferences("jsonobj", "");
                             utils.savePreferences("countvalue","");
                             utils.savePreferences("plantype","");
+                            utils.savePreferences("nsp_designation","");
 
                             Toast.makeText(HomePage.this, "Logged Out.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(HomePage.this, Login.class));

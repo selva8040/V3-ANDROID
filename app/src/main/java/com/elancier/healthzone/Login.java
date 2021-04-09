@@ -405,6 +405,8 @@ public class Login extends AppCompatActivity {
                         utils.savePreferences("lname",jobj.getString("lastname"));
                         utils.savePreferences("country",jobj.getString("country"));
                         utils.savePreferences("language",jobj.getString("language"));
+                        utils.savePreferences("plantype",jobj.getString("plan"));
+                        utils.savePreferences("nsp_designation",jobj.getString("nsp_designation"));
                         /*utils.savePreferences("purchase",jobj.getString("purchase"));
                         utils.savePreferences("sales",jobj.getString("sales"));*/
 
