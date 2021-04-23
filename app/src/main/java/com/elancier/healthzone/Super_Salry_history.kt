@@ -114,6 +114,7 @@ class Super_Salry_history : AppCompatActivity() {
             val k= Intent(this@Super_Salry_history, Super_Salary::class.java)
             k.putExtra("frm", intenttype)
             startActivity(k)
+            finish()
 
         }
 

@@ -445,6 +445,7 @@ class Reward_history : AppCompatActivity() {
                         val type = JO.getString("status")
                         val fcolor = JO.getString("fcolor")
                         val fextra = JO.getString("fextra")
+                        val time = JO.getString("time")
                         try {
                             feed = JO.getJSONArray("feedback")
                             productItems!!.add(
@@ -456,7 +457,7 @@ class Reward_history : AppCompatActivity() {
                                     name,
                                     uname,
                                     whome,
-                                    "",
+                                    time,
                                     "feed",
                                     type
                                 )
@@ -490,7 +491,7 @@ class Reward_history : AppCompatActivity() {
                                     name,
                                     uname,
                                     whome,
-                                    "",
+                                    time,
                                     "notfeed",
                                     type
                                 )
@@ -592,7 +593,7 @@ class Reward_history : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun clikffed(pos: String, time: String, cutoffs: String, feedextra: String) {
+    fun clikffed(pos: String, time: String, cutoffs: String, feedextra: String,times:String) {
         try {
             visual_time = time
             cutoff = cutoffs
@@ -615,6 +616,11 @@ class Reward_history : AppCompatActivity() {
             feed.text = "Feedback - " + utils!!.loadName()
             feedvt.text = "Visual Time - $time"
             feedcut.text = "Cutoff Time - $cutoffs"
+
+            if(times.equals("0")){
+                download.visibility=View.GONE
+
+            }
             update.setContentView(v)
             val window = update.window
             window!!.setLayout(

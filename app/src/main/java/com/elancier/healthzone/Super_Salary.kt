@@ -6,13 +6,13 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
-
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -40,10 +40,7 @@ import kotlinx.android.synthetic.main.supersalary_header.head
 import kotlinx.android.synthetic.main.supersalary_header.menu_img
 import org.json.JSONArray
 import org.json.JSONObject
-
-import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.check
 
 class Super_Salary : AppCompatActivity() {
     private var mYear: Int = 0
@@ -571,6 +568,9 @@ class Super_Salary : AppCompatActivity() {
                     if(jarray.getString("Status").equals("Success")){
 
                         Toast.makeText(applicationContext,"Data saved successfully",Toast.LENGTH_LONG).show()
+                        val k= Intent(this@Super_Salary, Super_Salry_history::class.java)
+                        k.putExtra("frm", intenttype)
+                        startActivity(k)
                         finish()
                     }
                     else{

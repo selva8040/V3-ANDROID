@@ -186,7 +186,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
     private final int REQ_CODE = 100;
     private final int imagecode = 1;
     int RequestPermissionCode = 7;
-
+     String videocuttime="";
+     String vidoerunningstatus="";
     SliderLayout sliderLayout;
     ConstraintLayout cos;
     ConstraintLayout adview;
@@ -1495,7 +1496,24 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                 //System.out.println("resp vid : "+resp);
                 JSONObject jobj = new JSONObject(resp);
 
+                try{
 
+                    videocuttime=jobj.getString("videocuttime");
+                    Log.e("videocuttime",videocuttime);
+                }
+                catch (Exception e){
+
+                }
+
+                try{
+
+                    vidoerunningstatus=jobj.getString("vidoerunningstatus");
+                    Log.e("vidoerunningstatus",vidoerunningstatus);
+
+                }
+                catch (Exception e){
+
+                }
                 if (jobj.getString("Status").equals("Success")) {
                     progbar.dismiss();
 
@@ -1894,6 +1912,11 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                             }
 
 
+
+
+
+
+
                             try {
                                 lannguage = jobject.getString("language");
                                 dmlang = lannguage;
@@ -2170,6 +2193,23 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
                     // layoutlay.setVisibility(View.VISIBLE);
                     points.setVisibility(View.GONE);
+
+
+                    try{
+
+                        videocuttime=jobj.getString("videocuttime");
+                    }
+                    catch (Exception e){
+
+                    }
+
+                    try{
+
+                        vidoerunningstatus=jobj.getString("vidoerunningstatus");
+                    }
+                    catch (Exception e){
+
+                    }
 
                     JSONArray jarray = jobj.getJSONArray("Response");
                     for (int j = 0; j < jarray.length(); j++) {
@@ -2948,6 +2988,31 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
 
                         //Toast.makeText(getApplicationContext(),"Are you still watching",Toast.LENGTH_SHORT).show();
 
+                    }
+                }
+
+                if(vidoerunningstatus.equals("1")) {
+                    if (Integer.parseInt(String.valueOf(TimeUnit.MILLISECONDS.toSeconds(millis))) == Integer.parseInt(videocuttime)) {
+                        try {
+                            Log.e("inside", "this");
+                            Intent i = new Intent(Videoimage.this, HomePage.class);
+                            i.putExtra("amount", amount);
+                            i.putExtra("gpv", gpv);
+                            i.putExtra("ibv", ibv);
+                            i.putExtra("purchase", purchase);
+                            i.putExtra("sales", sales);
+                            i.putExtra("target", target);
+                            i.putExtra("achieve", achieve);
+                            i.putExtra("balance", balance);
+                            i.putExtra("wallet_amt", wallet_amt);
+                            i.putExtra("todayreward", todayreward);
+                            i.putExtra("totalreward", totalreward);
+                            i.putExtra("available_reward", available_reward);
+                            startActivity(i);
+
+                        } catch (Exception e) {
+
+                        }
                     }
                 }
 

@@ -129,7 +129,7 @@ public class Rewardhistoryadap extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 
                             Log.e("inside",String.valueOf(item.getId()));
-                            ((Reward_history)context).clikffed(item.getId(),item.getVisual_time(),item.getWhome(),item.getUsername());
+                            ((Reward_history)context).clikffed(item.getId(),item.getVisual_time(),item.getWhome(),item.getUsername(),item.getWhomename());
 
 
                     }

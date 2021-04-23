@@ -46,6 +46,7 @@ public class Appconstants {
     public static String corection = "https://www.v3healthzone.com/img/notice/profile%20correction.jpeg";
 
     public static String LOGIN_API = domain + "login.php";
+    public static String LOGINNEW_API = domain + "loginNew.php";
     public static String forget_API = domain + "forgot_password.php";
     public static String FEEDBACK_API = domain + "feedback.php";
     public static String FEEDBACK_APIs = "feedback.php";
