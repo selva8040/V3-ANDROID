@@ -85,7 +85,7 @@ public class MainView extends AppCompatActivity {
 
     FrameLayout wallet,sales_point_lay,terms_frame,rechargewallet1,cmds_frame,pin_frame_service,cmdg_frame,rechargewallet,redeemwallet,
                 benefit_frame,onlinepay,support_frame,saver_frame,compframe,admin_frame,v3pinlay,online_lay,welcome_report,rewardred_lay,
-                datereq,supersalry_frame,cr_frame,network_frame,welc_frame,monthreport,logout_frame,vip_frame,pin_frame,commission_frame,tree_frame,coupon_frame,reports_frame;
+                datereq,supersalry_frame,cr_frame,referframe,network_frame,welc_frame,monthreport,logout_frame,vip_frame,pin_frame,commission_frame,tree_frame,coupon_frame,reports_frame;
 
     ImageView profile_img,autofill_img,  laterbut,tree_img, reports_img,more_arrow,binary_tree_arrow,binary_sponsor_arrow,binary_pair_arrow,binary_point_arrow;
 
@@ -312,7 +312,15 @@ public class MainView extends AppCompatActivity {
         n_redeem=findViewById(R.id.n_redeem);
         n_promotion=findViewById(R.id.n_promotion);
         n_sscredit=findViewById(R.id.n_sscredit);
+        referframe=findViewById(R.id.referframe);
 
+
+        referframe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Refer_Friend.class));
+            }
+        });
 
         n_sscredit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1250,8 +1258,7 @@ public class MainView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent k=new Intent(MainView.this,Termsconditions.class);
-                k.putExtra("term","welcome");
+                Intent k=new Intent(MainView.this,Welcome_Network_Activation.class);
                 startActivity(k);
             }
         });

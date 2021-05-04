@@ -14,7 +14,8 @@ public class Appconstants {
 
     // public static String domain="https://virtuewin.com/app/";
 
-    public static String domain = "https://www.v3healthzone.com/app/";
+    //public static String domain = "https://www.v3healthzone.com/app/";
+    public static String domain = "https://v3.v3onlinetv.com/app/";
     public static String domains = "http://v3onlinetv.in/v3app/";
     public static String domain1 = "https://www.v3healthzone.com/app/";
     public static String domain10 = "http://v3onlinetv.com/v3app/";
@@ -222,6 +223,7 @@ public class Appconstants {
     public static String point_request = domain + "point_request.php";
     public static String wallet_request = domain + "wallet_request.php";
     public static String nsp_activation = domain + "nsp.php";
+    public static String welnsp_activation = domain + "welcomePin.php";
     public static String recharge = domain + "recharge.php";
     //https://www.v3healthzone.com/app/super_recharge.php
     public static String sal_req = domain + "super_recharge.php";

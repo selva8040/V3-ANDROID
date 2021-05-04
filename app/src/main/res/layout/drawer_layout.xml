@@ -2710,7 +2710,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="16dp"
                                 android:layout_weight="1"
-                                android:text="Terms and conditions"
+                                android:text="Activation"
                                 android:textColor="@color/num_color"
                                 android:textSize="14sp" />
 
@@ -5029,6 +5029,44 @@
 
                         <view
                            class="android.widget.ActionMenuView"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#777777" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/referframe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/refer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:drawableStart="@drawable/ic_dot"
+                            android:drawableLeft="@drawable/ic_dot"
+                            android:drawablePadding="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="16dp"
+                            android:text="Refer a friend"
+                            android:textColor="#333333"
+                            android:textSize="16sp"
+                            app:fontFamily="@font/poppins" />
+
+                        <view
+                            class="android.widget.ActionMenuView"
 
                             android:layout_width="match_parent"
                             android:layout_height="0.5dp"

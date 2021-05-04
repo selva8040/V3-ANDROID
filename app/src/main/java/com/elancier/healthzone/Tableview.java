@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.elancier.healthzone.Common.Appconstants;
@@ -34,6 +35,7 @@ import com.elancier.healthzone.Common.CheckNetwork;
 import com.elancier.healthzone.Common.Connection;
 import com.elancier.healthzone.Common.Utils;
 import com.elancier.healthzone.Pojo.ReportsPojo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
@@ -97,6 +99,8 @@ public class Tableview extends AppCompatActivity
     String origin_count="";
     Button button4;
     TableRow headertable;
+    FloatingActionButton gorefer;
+    CardView cardrefer;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -121,6 +125,8 @@ public class Tableview extends AppCompatActivity
         brown=(TextView) findViewById(R.id.textView45);
         button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
+        gorefer=findViewById(R.id.floatingActionButton);
+        cardrefer=findViewById(R.id.refercard);
         /*{"id":"1","name":"Tamil"},
         {"id":"2","name":"English"},
         {"id":"3","name":"Malayalam"},
@@ -128,6 +134,20 @@ public class Tableview extends AppCompatActivity
         {"id":"5","name":"Telugu"},
         {"id":"6","name":"Hindi"}*/
 
+        gorefer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            startActivity(new Intent(Tableview.this,Refer_Friend.class));
+            }
+        });
+
+        cardrefer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Tableview.this,Refer_Friend.class));
+
+            }
+        });
 
 
         if(utils.loadlang().equals("1")){

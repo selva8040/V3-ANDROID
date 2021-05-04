@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="56dp"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/refer_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_gravity="center|start"
+                        android:background="@drawable/referfriend"
+                        android:scaleType="fitCenter" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layoutbg"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="Refer Via"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:id="@+id/icons"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                            android:id="@+id/wtapp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="8dp"
+                                            android:padding="8dp"
+                                            android:src="@drawable/ic_whatsapp"
+                                            app:backgroundTint="@color/white"
+                                            app:elevation="6dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:text="Whatsapp" />
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                            android:id="@+id/instagram"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="8dp"
+                                            android:padding="8dp"
+                                            android:src="@drawable/ic_facebook"
+                                            app:backgroundTint="@color/white"
+                                            app:elevation="6dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+
+                                            android:text="Facebook" />
+                                    </LinearLayout>
+
+                                    <!--<LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                            android:id="@+id/twitter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="8dp"
+                                            android:padding="8dp"
+                                            android:src="@drawable/ic_twitter"
+                                            app:backgroundTint="@color/whiteTextColor"
+                                            app:elevation="6dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+
+                                            android:text="Twitter" />
+                                    </LinearLayout>-->
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                            android:id="@+id/fb"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="8dp"
+                                            android:padding="8dp"
+                                            android:src="@drawable/ic_more"
+                                            app:backgroundTint="@color/white"
+                                            app:elevation="6dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+
+                                            android:text="More" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                                <!--<LinearLayout
+                                android:id="@+id/icons"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/refer_view"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dimen_15"
+                                android:layout_marginTop="@dimen/dimen_20"
+                                android:layout_marginRight="@dimen/dimen_15"
+                                android:layout_marginBottom="@dimen/dimen_20"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/wtapp"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/whatsapp"
+
+                                        android:scaleType="centerCrop" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/instagram"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/insta_unsel"
+                                        android:scaleType="centerCrop" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/twitter"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/twitter_unsel"
+                                        android:scaleType="centerCrop" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:id="@+id/googleplus"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/googleplus_unsel"
+                                        android:scaleType="centerCrop" />
+                                </LinearLayout>
+
+                            </LinearLayout>-->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+
+                                </LinearLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/or_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/icons"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp">
+
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+
+                        </ScrollView>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/refer_views"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_gravity="center|start"
+                        android:background="@drawable/referfriends"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

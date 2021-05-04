@@ -429,6 +429,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NSP_Redeem_Wallet" />
         <activity android:name=".CameraActivity" />
+        <activity android:name=".Refer_Friend" />
+        <activity android:name=".Welcome_Network_Activation" />
         <!--
 <provider
             android:name="android.support.v4.content.FileProvider"
