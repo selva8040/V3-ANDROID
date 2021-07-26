@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
 import android.os.Bundle
+import android.provider.Settings
 import android.text.InputType
 import android.util.Log
 import android.view.*
@@ -150,11 +151,11 @@ class Welcome_Network_Activation : AppCompatActivity() {
             }
             else if(button17.text.toString()=="SUBMIT"){
                 if(act3.text.isNotEmpty()){
-                    if(act3.text.toString().equals(utils.loadmpin())){
+                    if(act3.text.toString().equals(utils.loadmob())){
                         ChangepinTask().execute()
                     }
                     else{
-                        act3.setError("Incorrect MPIN")
+                        act3.setError("Incorrect Mobile Number")
                     }
                 }
                 else{
@@ -181,6 +182,10 @@ class Welcome_Network_Activation : AppCompatActivity() {
 
         @SuppressLint("WrongThread")
         override fun doInBackground(vararg params: String?): String? {
+            val deviceId = Settings.Secure.getString(
+                this@Welcome_Network_Activation.contentResolver,
+                Settings.Secure.ANDROID_ID
+            )
             var result: String? = null
             val con =
                 Connection()
@@ -188,7 +193,10 @@ class Welcome_Network_Activation : AppCompatActivity() {
                 val jobj = JSONObject()
                 jobj.put("uname", utils.loadName())
                 jobj.put("type", "Activation")
+                jobj.put("deviceid", deviceId)
                 jobj.put("pin", act2.text.toString().toString())
+                jobj.put("mobile", act3.text.toString().toString())
+                jobj.put("version", BuildConfig.VERSION_CODE)
 
                 Log.i(
                     "HomePage Input",

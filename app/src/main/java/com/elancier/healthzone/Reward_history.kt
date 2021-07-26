@@ -593,7 +593,7 @@ class Reward_history : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun clikffed(pos: String, time: String, cutoffs: String, feedextra: String,times:String) {
+    fun clikffed(pos: String, time: String, cutoffs: String, feedextra: String, times: String) {
         try {
             visual_time = time
             cutoff = cutoffs
@@ -612,6 +612,7 @@ class Reward_history : AppCompatActivity() {
             val feedcut = v.findViewById<View>(R.id.textView15vcut) as TextView
             val textView88 = v.findViewById<View>(R.id.textView88) as TextView
             val laterbut = v.findViewById<View>(R.id.agree) as Button
+            val viewfile = v.findViewById<View>(R.id.viewfile) as Button
             val download = v.findViewById<View>(R.id.download) as Button
             feed.text = "Feedback - " + utils!!.loadName()
             feedvt.text = "Visual Time - $time"
@@ -700,9 +701,9 @@ class Reward_history : AppCompatActivity() {
                         val bitmap = takeScreenShot(update)
                         Log.e("timenull", feedextra)
                         if (time != "null") {
-                            saveBitmap(bitmap, time, download, textView88)
+                            saveBitmap(bitmap, time, download, textView88, viewfile)
                         } else {
-                            saveBitmap(bitmap, feedextra, download, textView88)
+                            saveBitmap(bitmap, feedextra, download, textView88, viewfile)
                         }
                     } catch (e: Exception) {
                         e.printStackTrace()
@@ -719,7 +720,7 @@ class Reward_history : AppCompatActivity() {
         }
     }
 
-    fun saveBitmap(bitmap: Bitmap, time: String, button: Button, tt: TextView) {
+    fun saveBitmap(bitmap: Bitmap, time: String, button: Button, tt: TextView, viewfile: Button) {
         Log.e("timenull", time)
         val times = time.replace("-".toRegex(), "_")
         val times1 = times.replace(":".toRegex(), "_")
@@ -731,7 +732,7 @@ class Reward_history : AppCompatActivity() {
             Environment.getExternalStorageState(), File.separator + "V3 Online TV/V3 reward images")
         }//sk*/
         val directory = File(
-            Environment.getExternalStorageDirectory()
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
                 .toString() + File.separator + "V3 Online TV/V3 reward images"
         )
             Log.e("directory", directory.exists().toString())//sk
@@ -755,15 +756,18 @@ class Reward_history : AppCompatActivity() {
             fos.flush()
             fos.close()
             button.text = "DOWNLOADED"
+            //viewfile.visibility=View.VISIBLE
             tt.visibility = View.VISIBLE
             tt.text =
-                "Downloaded Path : " + "storage/V3 Online TV/V3 reward images/" + time2 + utils!!.loadName() + ".png"
+                "Downloaded Path : " + "Pictures/V3 Online TV/V3 reward images/" + time2 + utils!!.loadName() + ".png"
             save()
             button.setOnClickListener {
                 if (button.text.toString() == "Open") {
                     openScreenshot(imagePath)
                 }
             }
+
+
         } catch (e: FileNotFoundException) {
             Log.e("GREC", e.message, e)
             val directory = File(
@@ -793,7 +797,7 @@ class Reward_history : AppCompatActivity() {
                 button.text = "DOWNLOADED"
                 tt.visibility = View.VISIBLE
                 tt.text =
-                    "Downloaded Path : " + "storage/V3 Online TV/V3 reward images/" + time2 + utils!!.loadName() + ".png"
+                    "Downloaded Path : " + "storage/Pictures/V3 Online TV/V3 reward images/" + time2 + utils!!.loadName() + ".png"
                 save()
                 button.setOnClickListener {
                     if (button.text.toString() == "Open") {

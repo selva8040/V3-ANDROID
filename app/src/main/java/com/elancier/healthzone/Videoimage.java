@@ -2890,6 +2890,8 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
         }
     }
 
+
+
     //Start Countodwn method
     private void startTimer(final int noOfMinutes, final int nomiddle, String count, String lang) {
         final String countval = count;
@@ -3348,10 +3350,11 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                 if (CheckNetwork.isInternetAvailable(Videoimage.this)) {
                     if (countval.equals("0") && (countdownText.getText().toString().equals("00:00:01"))) {
 
-                        if(utils.loadplan().equals("Welcome Pin")&& !utils.loadnsp_designation().toString().isEmpty()){
+                        Videosubmit submit = new Videosubmit();
+                        submit.execute("completed");
+                        /*if(utils.loadplan().equals("Welcome Pin")&& !utils.loadnsp_designation().toString().isEmpty()){
 
-                            Videosubmit submit = new Videosubmit();
-                            submit.execute("completed");
+
                         }
                         else if(utils.loadplan().equals("Welcome Pin")){
                             Videosubmit submit = new Videosubmit();
@@ -3360,7 +3363,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                         else{
                             cam();
 
-                        }
+                        }*/
 
                     } else if (countval.equals("1")) {
                         // Log.i("inside counts val","jkj");
@@ -3813,10 +3816,11 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         cls6 = "cls";
-                      if(utils.loadplan().equals("Welcome Pin")&& !utils.loadnsp_designation().toString().isEmpty()){
+                        Videosubmit submit = new Videosubmit();
+                        submit.execute("completed");
+                      /*if(utils.loadplan().equals("Welcome Pin")&& !utils.loadnsp_designation().toString().isEmpty()){
 
-                            Videosubmit submit = new Videosubmit();
-                            submit.execute("completed");
+
                         }
                         else if(utils.loadplan().equals("Welcome Pin")){
                             Videosubmit submit = new Videosubmit();
@@ -3825,7 +3829,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                         else{
                             cam();
 
-                        }
+                        }*/
                         int versionCode = com.elancier.healthzone.BuildConfig.VERSION_CODE;
 
                         /*Intent i=new Intent(Videoimage.this,Offline_video.class);
@@ -4617,7 +4621,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                         }
                         pdialog.dismiss();
 
-                        Toast.makeText(Videoimage.this, "Congratulations! you are now eligible for reward points", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Videoimage.this, "Congratulations!", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(Videoimage.this, HomePage.class);
                         i.putExtra("amount", amount);
                         i.putExtra("gpv", gpv);
@@ -4761,7 +4765,7 @@ public class Videoimage extends AppCompatActivity implements netlisten.NetworkSt
                         }
                         pdialog.dismiss();
 
-                        Toast.makeText(Videoimage.this, "Congratulations! you are now eligible for reward points", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Videoimage.this, "Congratulations!", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(Videoimage.this, HomePage.class);
                         i.putExtra("amount", amount);
                         i.putExtra("gpv", gpv);

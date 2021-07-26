@@ -44,7 +44,7 @@ class Refer_Friend : AppCompatActivity() {
     fun onClickWhatsApp() {
         val waIntent = Intent(Intent.ACTION_SEND)
         waIntent.setType("text/plain")
-        val text = "https://v3.v3onlinetv.com/registers.php?username="+utils.loadName()
+        val text = "https://v3.v3onlinetv.com/registers.php?username="+utils.loadId()
         waIntent.setPackage("com.whatsapp")
         if (waIntent != null) {
             waIntent.putExtra(Intent.EXTRA_TEXT, text) //
@@ -54,7 +54,7 @@ class Refer_Friend : AppCompatActivity() {
         }
     }
     fun moresend(){
-        val message = "https://v3.v3onlinetv.com/registers.php?username="+utils.loadName()
+        val message = "https://v3.v3onlinetv.com/registers.php?username="+utils.loadId()
         val share = Intent(Intent.ACTION_SEND)
         share.type = "text/plain"
         share.putExtra(Intent.EXTRA_TEXT, message)
@@ -63,7 +63,7 @@ class Refer_Friend : AppCompatActivity() {
     }
 
     fun fbsend(){
-        val message = "https://v3.v3onlinetv.com/registers.php?username="+utils.loadName()
+        val message = "https://v3.v3onlinetv.com/registers.php?username="+utils.loadId()
         val intent1 =  Intent(Intent.ACTION_SEND);
         intent1.setPackage("com.facebook.katana");
         intent1.setAction("android.intent.action.SEND");
